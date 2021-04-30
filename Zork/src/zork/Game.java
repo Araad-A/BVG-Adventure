@@ -19,7 +19,7 @@ public class Game {
    */
   public Game() {
     try {
-      initRooms("src\\zork\\data\\rooms.json");
+      initRooms("Zork\\src\\zork\\data\\rooms.json");
       currentRoom = roomMap.get("Bedroom");
     } catch (Exception e) {
       e.printStackTrace();
