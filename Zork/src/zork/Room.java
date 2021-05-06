@@ -80,11 +80,11 @@ public class Room {
 
       }
     } catch (IllegalArgumentException ex) {
-      System.out.println(direction + " is not a valid direction.");
+      System.out.println(direction + " is not a possible direction.");
       return null;
     }
 
-    System.out.println(direction + " is not a valid direction.");
+    System.out.println(direction + " is not a possible direction.");
     return null;
   }
 
