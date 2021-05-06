@@ -27,7 +27,6 @@ public class Room {
   public Room() {
     roomName = "DEFAULT ROOM";
     description = "DEFAULT DESCRIPTION";
-    floor = 1;
     exits = new ArrayList<Exit>();
   }
 
@@ -102,14 +101,6 @@ public class Room {
 
   public void setRoomName(String roomName) {
     this.roomName = roomName;
-  }
-
-  public int getFloor(){
-    return floor;
-  }
-
-  public void setFloor(int floor){
-    this.floor = floor;
   }
 
   public String getDescription() {
