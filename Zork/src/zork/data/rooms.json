@@ -126,7 +126,80 @@
           "adjacentRoom": "LowerHallway1"
         }
       ]
-    }
-
+    },
+    {
+      "id": "Class1",
+      "name": "Classroom",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Hallway2-1"
+        }
+      ]
+    },
+    {
+      "id": "Hallway2-1",
+      "name": "Hallway",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "West Staircase"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Hallway2-2"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Hallway2-3"
+        }
+      ]
+    }, 
+    {
+      "id": "Hallway2-2",
+      "name": "Hallway",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Central Staircase"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Hallway2-1"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Hallway2-4"
+        }
+      ]
+    },
+    {
+      "id": "Hallway2-3",
+      "name": "Hallway",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Hallway 2-6"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Hallway2-5"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Hallway2-1"
+        }
+      ]
+    }    
   ]
 }
