@@ -84,8 +84,8 @@ public class Game {
    */
   private void printWelcome() {
     System.out.println();
-    System.out.println("Welcome to Zork!");
-    System.out.println("Zork is a new, incredibly boring adventure game.");
+    System.out.println("Welcome to Bayview Glen School!");
+    System.out.println("You are a student at Bayview Glen, but something seems off...");
     System.out.println("Type 'help' if you need help.");
     System.out.println();
     System.out.println(currentRoom.longDescription());
@@ -125,7 +125,7 @@ public class Game {
    */
   private void printHelp() {
     System.out.println("You are lost. You are alone. You wander");
-    System.out.println("around at Monash Uni, Peninsula Campus.");
+    System.out.println("around at the Bayview Glen Upper School");
     System.out.println();
     System.out.println("Your command words are:");
     parser.showCommands();

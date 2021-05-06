@@ -5,6 +5,7 @@ public class Room {
   private String roomName;
   private String description;
   private ArrayList<Exit> exits;
+  private int floor;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -13,7 +14,7 @@ public class Room {
   public void setExits(ArrayList<Exit> exits) {
     this.exits = exits;
   }
-
+  
   /**
    * Create a room described "description". Initially, it has no exits.
    * "description" is something like "a kitchen" or "an open court yard".
@@ -26,6 +27,7 @@ public class Room {
   public Room() {
     roomName = "DEFAULT ROOM";
     description = "DEFAULT DESCRIPTION";
+    floor = 1;
     exits = new ArrayList<Exit>();
   }
 
@@ -100,6 +102,14 @@ public class Room {
 
   public void setRoomName(String roomName) {
     this.roomName = roomName;
+  }
+
+  public int getFloor(){
+    return floor;
+  }
+
+  public void setFloor(int floor){
+    this.floor = floor;
   }
 
   public String getDescription() {
