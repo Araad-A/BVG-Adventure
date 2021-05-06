@@ -1,74 +1,132 @@
 {
     "rooms": [
       {
-        "id": "Hallway",
-        "name": "Hallway",
-        "description": "You are in a long hallway. There are family pictures on all of the walls.",
+        "id": "Hallway1",
+        "name": "Hallway1",
+        "description": "You are in a long hallway. You notice the chairs in front of you. The closed doors of the classroom frighten you.",
         "exits": [
           {
-            "isLocked": false,
+            "isLocked": true,
             "direction": "North",
-            "adjacentRoom": "Bedroom"
+            "adjacentRoom": "Grade 12 Common Area"
           },
           {
             "isLocked": true,
             "direction": "East",
-            "adjacentRoom": "Bathroom",
-            "keyId": "1234"
-          }
-        ]
-      },
-      {
-        "id": "Bedroom",
-        "name": "Bedroom",
-        "description": "You are in a large bedroom",
-        "exits": [
-          {
-            "isLocked": false,
-            "direction": "South",
-            "adjacentRoom": "Hallway"
+            "adjacentRoom": "LowerHallway1"
           },
           {
-            "isLocked": false,
+            "isLocked": true,
+            "direction": "SouthWest",
+            "adjacentRoom": "Science 2"
+          },
+          {
+            "isLocked": true,
             "direction": "SouthEast",
-            "adjacentRoom": "Bathroom"
+            "adjacentRoom": "Science 3"
           },
           {
-            "isLocked": false,
-            "direction": "East",
-            "adjacentRoom": "Closet"
+            "isLocked": true,
+            "direction": "West",
+            "adjacentRoom": "UpperHallway1"
           }
         ]
       },
       {
-        "id": "Bathroom",
-        "name": "Bathroom",
-        "description": "You are in a blue bathroom",
+        "id": "UpperHallway1",
+        "name": "UpperHallway1",
+        "description": "You see a never ending amount of classroom doors.",
+        "exits": [
+          {
+            "isLocked": true,
+            "direction": "SouthWest",
+            "adjacentRoom": "SouthStaircase"
+          },
+          {
+            "isLocked": true,
+            "direction": "South",
+            "adjacentRoom": "Science 1"
+          },
+          {
+            "isLocked": true,
+            "direction": "North",
+            "adjacentRoom": "Hallway2"
+          },
+          {
+            "isLocked": true,
+            "direction": "West",
+            "adjacentRoom": "EndHallway1"
+          }
+        ]
+      },
+      {
+        "id": "Hallway2",
+        "name": "Hallway2",
+        "description": "You are in another hallway.",
+        "exits": [
+          {
+            "isLocked": true,
+            "direction": "NorthWest",
+            "adjacentRoom": "ICS"
+          },
+          {
+            "isLocked": true,
+            "direction": "North",
+            "adjacentRoom": "Robotics"
+          },
+          {
+            "isLocked": true,
+            "direction": "NorthEast",
+            "adjacentRoom": "EastStaircase"
+          },
+          {
+            "isLocked": true,
+            "direction": "East",
+            "adjacentRoom": "LowerHallway1"
+          }
+        ]
+      },
+      {
+        "id": "LowerHallway1",
+        "name": "LowerHallway1",
+        "description": "You can see a brief glimpse of the outside world.",
+        "exits": [
+          {
+            "isLocked": true,
+            "direction": "East",
+            "adjacentRoom": "Outside"
+          }
+        ]
+      },
+      {
+        "id": "Grade 12 Common Area",
+        "name": "Grade 12 Common Area",
+        "description": "It smells like coffee and stress",
+        "exits": [
+          {
+            "isLocked": true,
+            "direction": "North",
+            "adjacentRoom": "Hallway2"
+          },
+          {
+            "isLocked": true,
+            "direction": "South",
+            "adjacentRoom": "Hallway1"
+          }
+        ]
+      },
+      {
+        "id": "Outside",
+        "name": "Outside",
+        "description": "The gasoline in the air makes you gag",
         "exits": [
           {
             "isLocked": true,
             "direction": "West",
-            "adjacentRoom": "Hallway",
-            "keyId": "1234"
-          },
-          {
-            "isLocked": false,
-            "direction": "NorthWest",
-            "adjacentRoom": "Bedroom"
-          }
-        ]
-      },
-      {
-        "id": "Closet",
-        "name": "Closet",
-        "description": "You are in the closet. It is dark.",
-        "exits": [
-          {
-            "isLocked": false,
-            "direction": "West",
-            "adjacentRoom": "Bedroom"
+            "adjacentRoom": "LowerHallway1"
           }
         ]
       }
+
     ]
   }
