@@ -18,12 +18,12 @@
         {
           "isLocked": true,
           "direction": "SouthWest",
-          "adjacentRoom": "Science 2"
+          "adjacentRoom": "Science2"
         },
         {
           "isLocked": true,
           "direction": "SouthEast",
-          "adjacentRoom": "Science 3"
+          "adjacentRoom": "Science3"
         },
         {
           "isLocked": true,
@@ -45,7 +45,7 @@
         {
           "isLocked": true,
           "direction": "South",
-          "adjacentRoom": "Science 1"
+          "adjacentRoom": "Science1"
         },
         {
           "isLocked": true,
@@ -55,7 +55,49 @@
         {
           "isLocked": true,
           "direction": "West",
-          "adjacentRoom": "EndHallway1"
+          "adjacentRoom": "WestHallway1"
+        },
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "Hallway1"
+        }
+      ]
+    },
+    {
+      "id": "WestHallway1",
+      "name": "WestHallway1",
+      "description": "You feel claustrophobic by the amount of chairs and the lack of space.",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "WestStaircase"
+        },
+        {
+          "isLocked": true,
+          "direction": "NorthWest",
+          "adjacentRoom": "UpperSchoolEquipmentRoom"
+        },
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "ITDepartment"
+        },
+        {
+          "isLocked": true,
+          "direction": "NorthEast",
+          "adjacentRoom": "CentralStaircase"
+        },
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "UpperSchoolGym"
+        },
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "UpperHallway1"
         }
       ]
     },
@@ -83,6 +125,11 @@
           "isLocked": true,
           "direction": "East",
           "adjacentRoom": "LowerHallway1"
+        },
+        {
+          "isLocked": true,
+          "direction": "SouthWest",
+          "adjacentRoom": "UpperHallway1"
         }
       ]
     },
@@ -95,6 +142,16 @@
           "isLocked": true,
           "direction": "East",
           "adjacentRoom": "Outside"
+        },
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "EastStaircase"
+        },
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "Hallway1"
         }
       ]
     },
@@ -127,6 +184,106 @@
         }
       ]
     },
+    {
+      "id": "Science2",
+      "name": "Science2",
+      "description": "You see empty beakers shattered on the ground",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "NorthEast",
+          "adjacentRoom": "Hallway1"
+        }
+      ]
+    },
+    {
+      "id": "Science3",
+      "name": "Science3",
+      "description": "There are chemistry formulas written on the chalkboard",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "NorthWest",
+          "adjacentRoom": "Hallway1"
+        }
+      ]
+    },
+    {
+      "id": "Science1",
+      "name": "Science1",
+      "description": "You can smell the chemicals",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "UpperHallway1"
+        }
+      ]
+    },
+    {
+      "id": "Robotics",
+      "name": "Robotics",
+      "description": "A robot hand is right beside your face",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "SouthWest",
+          "adjacentRoom": "Hallway2"
+        }
+      ]
+    },
+    {
+      "id": "ICS",
+      "name": "ICS",
+      "description": "You can almost hear the rage of former computer science students.",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "SouthEast",
+          "adjacentRoom": "Hallway2"
+        }
+      ]
+    },
+    {
+      "id": "UpperSchoolEquipmentRoom",
+      "name": "UpperSchoolEquipmentRoom",
+      "description": "The balls on the floor make it nearly impossible to walk in this room.",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "SouthEast",
+          "adjacentRoom": "WestHallway1"
+        }
+      ]
+    },
+    {
+      "id": "ITDepartment",
+      "name": "ITDepartment",
+      "description": "There are wires everywhere",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "WestHallway1"
+        }
+      ]
+    },
+    {
+      "id": "UpperSchoolGym",
+      "name": "UpperSchoolGym",
+      "description": "The floor is squeaky and the time on the board is incorrect.",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "WestHallway1"
+        }
+      ]
+    },
+    
+    
+
+    
     {
       "id": "Class1",
       "name": "Classroom",
