@@ -280,65 +280,8 @@
         }
       ]
     },
-    
-    
-
-    
     {
-      "id": "Class1",
-      "name": "Classroom",
-      "exits": [
-        {
-          "isLocked": true,
-          "direction": "North",
-          "adjacentRoom": "Hallway2-1"
-        }
-      ]
-    },
-    {
-      "id": "Hallway2-1",
-      "name": "Hallway",
-      "exits": [
-        {
-          "isLocked": true,
-          "direction": "West",
-          "adjacentRoom": "West Staircase"
-        },
-        {
-          "isLocked": false,
-          "direction": "East",
-          "adjacentRoom": "Hallway2-2"
-        },
-        {
-          "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "Hallway2-3"
-        }
-      ]
-    }, 
-    {
-      "id": "Hallway2-2",
-      "name": "Hallway",
-      "exits": [
-        {
-          "isLocked": true,
-          "direction": "North",
-          "adjacentRoom": "Central Staircase"
-        },
-        {
-          "isLocked": false,
-          "direction": "West",
-          "adjacentRoom": "Hallway2-1"
-        },
-        {
-          "isLocked": false,
-          "direction": "East",
-          "adjacentRoom": "Hallway2-4"
-        }
-      ]
-    },
-    {
-      "id": "Hallway2-3",
+      "id": "Hallway 2-1",
       "name": "Hallway",
       "exits": [
         {
@@ -347,16 +290,473 @@
           "adjacentRoom": "Hallway 2-6"
         },
         {
-          "isLocked": false,
-          "direction": "East",
-          "adjacentRoom": "Hallway2-5"
+          "isLocked": true,
+          "direction": "Northeast",
+          "adjacentRoom": "Central Staircase"
         },
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway2-1"
+          "adjacentRoom": "Hallway 2-2"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southwest",
+          "adjacentRoom": "Class 1"
+        },
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "West Staircase"
+        },
+        {
+          "isLocked": true,
+          "direction": "Northwest",
+          "adjacentRoom": "Theater"
         }
       ]
-    }    
+    }, 
+    {
+      "id": "Hallway 2-2",
+      "name": "Hallway",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Music 1"
+        },
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "Music Equipment"
+        },
+        {
+          "isLocked": false,
+          "direction": "Southeast",
+          "adjacentRoom": "Hallway 2-3"
+        },
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "Class 2"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southwest",
+          "adjacentRoom": "South Staircase"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Hallway 2-1"
+        },
+        {
+          "isLocked": true,
+          "direction": "Northwest",
+          "adjacentRoom": "Central Staircase"
+        }
+      ]
+    },
+    {
+      "id": "Hallway 2-3",
+      "name": "Hallway",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "Northeast",
+          "adjacentRoom": "Hallway 2-4"
+        },
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "Class 5"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southeast",
+          "adjacentRoom": "Class 4"
+        },
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "Class 3"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southwest",
+          "adjacentRoom": "Class 2"
+        },
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "South Staircase"
+        },
+        {
+          "isLocked": false,
+          "direction": "Northwest",
+          "adjacentRoom": "Hallway 2-2"
+        }
+      ]
+    },
+    {
+      "id": "Hallway 2-4",
+      "name": "Hallway",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Hallway 2-5"
+        },
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "East Staircase"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southeast",
+          "adjacentRoom": "Class 5"
+        },
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "Class 4"
+        },
+        {
+          "isLocked": false,
+          "direction": "Southwest",
+          "adjacentRoom": "Hallway 2-3"
+        },
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "Music Equipment"
+        },
+        {
+          "isLocked": true,
+          "direction": "Northwest",
+          "adjacentRoom": "Music 2"
+        }
+      ]
+    },
+    {
+      "id": "Hallway 2-5",
+      "name": "Hallway",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Fitness Room"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southeast",
+          "adjacentRoom": "East Staircase"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Hallway 2-4"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Hallway 2-6"
+        },
+        {
+          "isLocked": true,
+          "direction": "Northwest",
+          "adjacentRoom": "Learning Commons"
+        }
+      ]
+    },
+    {
+      "id": "Hallway 2-6",
+      "name": "Hallway",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Hallway 2-7"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Hallway 2-5"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Hallway 2-1"
+        }
+      ]
+    },
+    {
+      "id": "Hallway 2-7",
+      "name": "Hallway",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Lobby"
+        },
+        {
+          "isLocked": true,
+          "direction": "Northeast",
+          "adjacentRoom": "Cafeteria"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Hallway 2-8"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southeast",
+          "adjacentRoom": "Locked Staircase 2"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Hallway 2-6"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southwest",
+          "adjacentRoom": "Theater"
+        },
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "Locked Staircase 1"
+        }
+      ]
+    },
+    {
+      "id": "Hallway 2-8",
+      "name": "Hallway",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Gym"
+        },
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "Locked Staircase 3"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southeast",
+          "adjacentRoom": "Fitness Room"
+        },
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "Equipment Room"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southwest",
+          "adjacentRoom": "Learning Commons"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Hallway 2-7"
+        },
+        {
+          "isLocked": true,
+          "direction": "Northwest",
+          "adjacentRoom": "Cafeteria"
+        }
+      ]
+    },
+    {
+      "id": "Class 1",
+      "name": "Classroom",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Hallway 2-1"
+        }
+      ]
+    },
+    {
+      "id": "Class 2",
+      "name": "Classroom",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Hallway 2-2"
+        }
+      ]
+    },
+    {
+      "id": "Class 3",
+      "name": "Classroom",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Hallway 2-3"
+        }
+      ]
+    },
+    {
+      "id": "Class 4",
+      "name": "Classroom",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Hallway 2-4"
+        }
+      ]
+    },
+    {
+      "id": "Class 5",
+      "name": "Classroom",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "Northwest",
+          "adjacentRoom": "Hallway 2-4"
+        }
+      ]
+    },
+    {
+      "id": "Music 1",
+      "name": "Music Room",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "Hallway 2-2"
+        }
+      ]
+    },
+    {
+      "id": "Music 2",
+      "name": "Music Room",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "Hallway 2-4"
+        }
+      ]
+    },
+    {
+      "id": "Music Equipment",
+      "name": "Music Equipment",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "West",
+          "adjacentRoom": "Hallway 2-2"
+        },
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "Hallway 2-4"
+        }
+      ]
+    },
+    {
+      "id": "Fitness Room",
+      "name": "Fitness Room",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Hallway 2-8"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southwest",
+          "adjacentRoom": "Hallway 2-5"
+        }
+      ]
+    },
+    {
+      "id": "Learning Commons",
+      "name": "Learning Commons",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Hallway 2-7"
+        },
+        {
+          "isLocked": true,
+          "direction": "Southeast",
+          "adjacentRoom": "Hallway 2-5"
+        }
+      ]
+    },
+    {
+      "id": "Theater",
+      "name": "Theater",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Hallway 2-7"
+        },
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "Hallway 2-1"
+        }
+      ]
+    },
+    {
+      "id": "Lobby",
+      "name": "Lobby",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Hallway 2-7"
+        }
+      ]
+    },
+    {
+      "id": "Cafeteria",
+      "name": "Cafeteria",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "Southwest",
+          "adjacentRoom": "Hallway 2-7"
+        }
+      ]
+    },
+    {
+      "id": "Gym",
+      "name": "Gym",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "Hallway 2-8"
+        }
+      ]
+    },
+    {
+      "id": "Prep School Equipment Room",
+      "name": "Prep School Equipment Room",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Hallway 2-8"
+        }
+      ]
+    }
   ]
 }
