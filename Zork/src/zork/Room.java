@@ -5,7 +5,7 @@ public class Room {
   private String roomName;
   private String description;
   private ArrayList<Exit> exits;
-  private int floor;
+  private String floor;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -109,5 +109,13 @@ public class Room {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public String getFloor(){
+    return floor;
+  }
+
+  public void setFloor(String floor){
+    this.floor = floor;
   }
 }

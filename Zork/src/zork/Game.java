@@ -40,6 +40,8 @@ public class Game {
       String roomName = (String) ((JSONObject) roomObj).get("name");
       String roomId = (String) ((JSONObject) roomObj).get("id");
       String roomDescription = (String) ((JSONObject) roomObj).get("description");
+      String floor = (String) ((JSONObject) roomObj).get("floor");
+      room.setFloor(floor);
       room.setDescription(roomDescription);
       room.setRoomName(roomName);
 
