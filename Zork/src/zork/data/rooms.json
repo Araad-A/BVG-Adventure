@@ -1,157 +1,157 @@
 {
   "rooms": [ 
     {
-      "id": "Hallway1",
-      "name": "Hallway1",
+      "id": "Hallway1-2",
+      "name": "Grade 12 Common Area Hallway",
       "description": "You are in a long hallway. You notice the chairs in front of you. The closed doors of the classroom frighten you.",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
           "adjacentRoom": "Grade 12 Common Area"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "LowerHallway1"
+          "adjacentRoom": "Hallway1-1"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "SouthWest",
           "adjacentRoom": "Science2"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "SouthEast",
           "adjacentRoom": "Science3"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "UpperHallway1"
+          "adjacentRoom": "Hallway 1-3"
         }
       ]
     },
     {
-      "id": "UpperHallway1",
-      "name": "UpperHallway1",
+      "id": "Hallway1-3",
+      "name": "Science Classroom Hallway",
       "description": "You see a never ending amount of classroom doors.",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "SouthWest",
           "adjacentRoom": "SouthStaircase"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
           "adjacentRoom": "Science1"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway2"
+          "adjacentRoom": "Hallway1-5"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "WestHallway1"
+          "adjacentRoom": "Hallway1-4"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway1"
+          "adjacentRoom": "Hallway1-2"
         }
       ]
     },
     {
-      "id": "WestHallway1",
-      "name": "WestHallway1",
+      "id": "Hallway1-4",
+      "name": "Upper School Gym Hallway",
       "description": "You feel claustrophobic by the amount of chairs and the lack of space.",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
           "adjacentRoom": "WestStaircase"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "NorthWest",
           "adjacentRoom": "UpperSchoolEquipmentRoom"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
           "adjacentRoom": "ITDepartment"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "NorthEast",
           "adjacentRoom": "CentralStaircase"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
           "adjacentRoom": "UpperSchoolGym"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "UpperHallway1"
+          "adjacentRoom": "Hallway1-3"
         }
       ]
     },
     {
-      "id": "Hallway2",
-      "name": "Hallway2",
+      "id": "Hallway1-5",
+      "name": "Computer Science Hallway",
       "description": "You are in another hallway.",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "NorthWest",
           "adjacentRoom": "ICS"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
           "adjacentRoom": "Robotics"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "NorthEast",
           "adjacentRoom": "EastStaircase"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "LowerHallway1"
+          "adjacentRoom": "Hallway1-1"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "SouthWest",
-          "adjacentRoom": "UpperHallway1"
+          "adjacentRoom": "Hallway1-3"
         }
       ]
     },
     {
-      "id": "LowerHallway1",
-      "name": "LowerHallway1",
+      "id": "Hallway 1-1",
+      "name": "Outside hallway",
       "description": "You can see a brief glimpse of the outside world.",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "East",
           "adjacentRoom": "Outside"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
           "adjacentRoom": "EastStaircase"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway1"
+          "adjacentRoom": "Hallway1-2"
         }
       ]
     },
@@ -161,14 +161,14 @@
       "description": "It smells like coffee and stress",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway2"
+          "adjacentRoom": "Hallway1-5"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway1"
+          "adjacentRoom": "Hallway1-2"
         }
       ]
     },
@@ -178,45 +178,45 @@
       "description": "The gasoline in the air makes you gag",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "LowerHallway1"
+          "adjacentRoom": "Hallway1-1"
         }
       ]
     },
     {
       "id": "Science2",
-      "name": "Science2",
+      "name": "Chemistry Lab",
       "description": "You see empty beakers shattered on the ground",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "NorthEast",
-          "adjacentRoom": "Hallway1"
+          "adjacentRoom": "Hallway1-1"
         }
       ]
     },
     {
       "id": "Science3",
-      "name": "Science3",
+      "name": "Physics Lab",
       "description": "There are chemistry formulas written on the chalkboard",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "NorthWest",
-          "adjacentRoom": "Hallway1"
+          "adjacentRoom": "Hallway1-1"
         }
       ]
     },
     {
       "id": "Science1",
-      "name": "Science1",
+      "name": "Biology Lab",
       "description": "You can smell the chemicals",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "UpperHallway1"
+          "adjacentRoom": "Hallway1-3"
         }
       ]
     },
@@ -226,60 +226,61 @@
       "description": "A robot hand is right beside your face",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "SouthWest",
-          "adjacentRoom": "Hallway2"
+          "adjacentRoom": "Hallway1-5"
         }
       ]
     },
     {
       "id": "ICS",
-      "name": "ICS",
+      "name": "Computer Science Class",
       "description": "You can almost hear the rage of former computer science students.",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "SouthEast",
-          "adjacentRoom": "Hallway2"
+          "adjacentRoom": "Hallway1-5"
         }
       ]
     },
     {
       "id": "UpperSchoolEquipmentRoom",
-      "name": "UpperSchoolEquipmentRoom",
+      "name": "Upper School Equipment Room",
       "description": "The balls on the floor make it nearly impossible to walk in this room.",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "SouthEast",
-          "adjacentRoom": "WestHallway1"
+          "adjacentRoom": "Hallway1-4"
         }
       ]
     },
     {
       "id": "ITDepartment",
-      "name": "ITDepartment",
+      "name": "IT Department",
       "description": "There are wires everywhere",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "WestHallway1"
+          "adjacentRoom": "Hallway1-4"
         }
       ]
     },
     {
       "id": "UpperSchoolGym",
-      "name": "UpperSchoolGym",
+      "name": "Upper School Gym",
       "description": "The floor is squeaky and the time on the board is incorrect.",
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "WestHallway1"
+          "adjacentRoom": "Hallway1-4"
         }
       ]
     },
+    
     {
       "id": "Hallway 2-1",
       "name": "Hallway",
