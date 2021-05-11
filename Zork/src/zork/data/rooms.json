@@ -7,27 +7,27 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Grade 12 Common Area"
         },
         {
           "isLocked": false,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Hallway1-1"
         },
         {
           "isLocked": false,
-          "direction": "SouthWest",
+          "direction": "southwest",
           "adjacentRoom": "Science2"
         },
         {
           "isLocked": false,
-          "direction": "SouthEast",
+          "direction": "southeast",
           "adjacentRoom": "Science3"
         },
         {
           "isLocked": false,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "Hallway 1-3"
         }
       ]
@@ -39,27 +39,27 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "SouthWest",
+          "direction": "southwest",
           "adjacentRoom": "SouthStaircase"
         },
         {
           "isLocked": false,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Science1"
         },
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway1-5"
         },
         {
           "isLocked": false,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "Hallway1-4"
         },
         {
           "isLocked": false,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Hallway1-2"
         }
       ]
@@ -71,32 +71,32 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "WestStaircase"
         },
         {
           "isLocked": false,
-          "direction": "NorthWest",
+          "direction": "northWest",
           "adjacentRoom": "UpperSchoolEquipmentRoom"
         },
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "ITDepartment"
         },
         {
           "isLocked": false,
-          "direction": "NorthEast",
+          "direction": "northeast",
           "adjacentRoom": "CentralStaircase"
         },
         {
           "isLocked": false,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "UpperSchoolGym"
         },
         {
           "isLocked": false,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Hallway1-3"
         }
       ]
@@ -108,49 +108,49 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "NorthWest",
+          "direction": "northwest",
           "adjacentRoom": "ICS"
         },
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Robotics"
         },
         {
           "isLocked": false,
-          "direction": "NorthEast",
+          "direction": "northeast",
           "adjacentRoom": "EastStaircase"
         },
         {
           "isLocked": false,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Hallway1-1"
         },
         {
           "isLocked": false,
-          "direction": "SouthWest",
+          "direction": "southwest",
           "adjacentRoom": "Hallway1-3"
         }
       ]
     },
     {
       "id": "Hallway 1-1",
-      "name": "Outside hallway",
+      "name": "Outside Hallway",
       "description": "You can see a brief glimpse of the outside world.",
       "exits": [
         {
           "isLocked": false,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Outside"
         },
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "EastStaircase"
         },
         {
           "isLocked": false,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "Hallway1-2"
         }
       ]
@@ -162,12 +162,12 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway1-5"
         },
         {
           "isLocked": false,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Hallway1-2"
         }
       ]
@@ -179,7 +179,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "Hallway1-1"
         }
       ]
@@ -191,7 +191,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "NorthEast",
+          "direction": "northeast",
           "adjacentRoom": "Hallway1-1"
         }
       ]
@@ -203,7 +203,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "NorthWest",
+          "direction": "northwest",
           "adjacentRoom": "Hallway1-1"
         }
       ]
@@ -215,7 +215,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway1-3"
         }
       ]
@@ -227,7 +227,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "SouthWest",
+          "direction": "southwest",
           "adjacentRoom": "Hallway1-5"
         }
       ]
@@ -239,7 +239,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "SouthEast",
+          "direction": "southeast",
           "adjacentRoom": "Hallway1-5"
         }
       ]
@@ -251,7 +251,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "SouthEast",
+          "direction": "southeast",
           "adjacentRoom": "Hallway1-4"
         }
       ]
@@ -263,7 +263,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Hallway1-4"
         }
       ]
@@ -275,7 +275,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway1-4"
         }
       ]
@@ -287,32 +287,32 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway 2-6"
         },
         {
           "isLocked": true,
-          "direction": "Northeast",
+          "direction": "northeast",
           "adjacentRoom": "Central Staircase"
         },
         {
           "isLocked": false,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Hallway 2-2"
         },
         {
           "isLocked": true,
-          "direction": "Southwest",
+          "direction": "southwest",
           "adjacentRoom": "Class 1"
         },
         {
           "isLocked": true,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "West Staircase"
         },
         {
           "isLocked": true,
-          "direction": "Northwest",
+          "direction": "northwest",
           "adjacentRoom": "Theater"
         }
       ]
@@ -323,37 +323,37 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Music 1"
         },
         {
           "isLocked": true,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Music Equipment"
         },
         {
           "isLocked": false,
-          "direction": "Southeast",
+          "direction": "southeast",
           "adjacentRoom": "Hallway 2-3"
         },
         {
           "isLocked": true,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Class 2"
         },
         {
           "isLocked": true,
-          "direction": "Southwest",
+          "direction": "southwest",
           "adjacentRoom": "South Staircase"
         },
         {
           "isLocked": false,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "Hallway 2-1"
         },
         {
           "isLocked": true,
-          "direction": "Northwest",
+          "direction": "northwest",
           "adjacentRoom": "Central Staircase"
         }
       ]
@@ -364,37 +364,37 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "Northeast",
+          "direction": "northeast",
           "adjacentRoom": "Hallway 2-4"
         },
         {
           "isLocked": true,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Class 5"
         },
         {
           "isLocked": true,
-          "direction": "Southeast",
+          "direction": "southeast",
           "adjacentRoom": "Class 4"
         },
         {
           "isLocked": true,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Class 3"
         },
         {
           "isLocked": true,
-          "direction": "Southwest",
+          "direction": "southwest",
           "adjacentRoom": "Class 2"
         },
         {
           "isLocked": true,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "South Staircase"
         },
         {
           "isLocked": false,
-          "direction": "Northwest",
+          "direction": "northwest",
           "adjacentRoom": "Hallway 2-2"
         }
       ]
@@ -405,37 +405,37 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway 2-5"
         },
         {
           "isLocked": true,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "East Staircase"
         },
         {
           "isLocked": true,
-          "direction": "Southeast",
+          "direction": "southeast",
           "adjacentRoom": "Class 5"
         },
         {
           "isLocked": true,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Class 4"
         },
         {
           "isLocked": false,
-          "direction": "Southwest",
+          "direction": "southwest",
           "adjacentRoom": "Hallway 2-3"
         },
         {
           "isLocked": true,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "Music Equipment"
         },
         {
           "isLocked": true,
-          "direction": "Northwest",
+          "direction": "northwest",
           "adjacentRoom": "Music 2"
         }
       ]
@@ -446,27 +446,27 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Fitness Room"
         },
         {
           "isLocked": true,
-          "direction": "Southeast",
+          "direction": "southeast",
           "adjacentRoom": "East Staircase"
         },
         {
           "isLocked": false,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Hallway 2-4"
         },
         {
           "isLocked": false,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "Hallway 2-6"
         },
         {
           "isLocked": true,
-          "direction": "Northwest",
+          "direction": "northwest",
           "adjacentRoom": "Learning Commons"
         }
       ]
@@ -477,17 +477,17 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway 2-7"
         },
         {
           "isLocked": false,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Hallway 2-5"
         },
         {
           "isLocked": false,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Hallway 2-1"
         }
       ]
@@ -498,37 +498,37 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Lobby"
         },
         {
           "isLocked": true,
-          "direction": "Northeast",
+          "direction": "northeast",
           "adjacentRoom": "Cafeteria"
         },
         {
           "isLocked": false,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Hallway 2-8"
         },
         {
           "isLocked": true,
-          "direction": "Southeast",
+          "direction": "southeast",
           "adjacentRoom": "Locked Staircase 2"
         },
         {
           "isLocked": false,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Hallway 2-6"
         },
         {
           "isLocked": true,
-          "direction": "Southwest",
+          "direction": "southwest",
           "adjacentRoom": "Theater"
         },
         {
           "isLocked": true,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "Locked Staircase 1"
         }
       ]
@@ -539,37 +539,37 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Gym"
         },
         {
           "isLocked": true,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Locked Staircase 3"
         },
         {
           "isLocked": true,
-          "direction": "Southeast",
+          "direction": "southeast",
           "adjacentRoom": "Fitness Room"
         },
         {
           "isLocked": true,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Equipment Room"
         },
         {
           "isLocked": true,
-          "direction": "Southwest",
+          "direction": "southwest",
           "adjacentRoom": "Learning Commons"
         },
         {
           "isLocked": false,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "Hallway 2-7"
         },
         {
           "isLocked": true,
-          "direction": "Northwest",
+          "direction": "northwest",
           "adjacentRoom": "Cafeteria"
         }
       ]
@@ -580,7 +580,7 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway 2-1"
         }
       ]
@@ -591,7 +591,7 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway 2-2"
         }
       ]
@@ -602,7 +602,7 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway 2-3"
         }
       ]
@@ -613,7 +613,7 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway 2-4"
         }
       ]
@@ -624,7 +624,7 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "Northwest",
+          "direction": "northwest",
           "adjacentRoom": "Hallway 2-4"
         }
       ]
@@ -635,7 +635,7 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Hallway 2-2"
         }
       ]
@@ -646,7 +646,7 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Hallway 2-4"
         }
       ]
@@ -657,12 +657,12 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "West",
+          "direction": "west",
           "adjacentRoom": "Hallway 2-2"
         },
         {
           "isLocked": true,
-          "direction": "East",
+          "direction": "east",
           "adjacentRoom": "Hallway 2-4"
         }
       ]
@@ -673,12 +673,12 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway 2-8"
         },
         {
           "isLocked": true,
-          "direction": "Southwest",
+          "direction": "southwest",
           "adjacentRoom": "Hallway 2-5"
         }
       ]
@@ -689,12 +689,12 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway 2-7"
         },
         {
           "isLocked": true,
-          "direction": "Southeast",
+          "direction": "southeast",
           "adjacentRoom": "Hallway 2-5"
         }
       ]
@@ -705,12 +705,12 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway 2-7"
         },
         {
           "isLocked": true,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Hallway 2-1"
         }
       ]
@@ -721,7 +721,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Hallway 2-7"
         }
       ]
@@ -732,7 +732,7 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "Southwest",
+          "direction": "southwest",
           "adjacentRoom": "Hallway 2-7"
         }
       ]
@@ -743,7 +743,7 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "South",
+          "direction": "south",
           "adjacentRoom": "Hallway 2-8"
         }
       ]
@@ -754,8 +754,220 @@
       "exits": [
         {
           "isLocked": true,
-          "direction": "North",
+          "direction": "north",
           "adjacentRoom": "Hallway 2-8"
+        }
+      ]
+    },
+    {
+      "id": "CentralStaircase1",
+      "name": "Central Staircase",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "CentralStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "south",
+          "adjacentRoom": "WestHallway1"
+        }
+      ]
+    },
+    {
+      "id": "CentralStaircase2",
+      "name": "Central Staircase",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "CentralStaircase3"
+        },
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "CentralStaircase1"
+        },
+        {
+          "isLocked": true,
+          "direction": "south",
+          "adjacentRoom": "Hallway2-1"
+        }
+      ]
+    },
+    {
+      "id": "CentralStaircase3",
+      "name": "Central Staircase",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "CentralStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "south",
+          "adjacentRoom": "Federico'sDomain"
+        }
+      ]
+    },
+    {
+      "id": "EastStaircase1",
+      "name": "East Staircase",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "EastStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "west",
+          "adjacentRoom": "Hallway"
+        }
+      ]
+    },
+    {
+      "id": "EastStaircase2",
+      "name": "East Staircase",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "EastStaircase1"
+        },
+        {
+          "isLocked": true,
+          "direction": "west",
+          "adjacentRoom": "Hallway2-4"
+        }
+      ]
+    },
+    {
+      "id": "SouthStaircase1",
+      "name": "South Staircase",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "SouthStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "east",
+          "adjacentRoom": "UpperHallway1"
+        }
+      ]
+    },
+    {
+      "id": "SouthStaircase2",
+      "name": "South Staircase",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "SouthStaircase3"
+        },
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "SouthStaircase1"
+        },
+        {
+          "isLocked": true,
+          "direction": "east",
+          "adjacentRoom": "Hallway2-2"
+        }
+      ]
+    },
+    {
+      "id": "SouthStaircase3",
+      "name": "South Staircase",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "SouthStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "east",
+          "adjacentRoom": "Federico'sDomain"
+        }
+      ]
+    },
+    {
+      "id": "WestStaircase1",
+      "name": "West Staircase",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "WestStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "south",
+          "adjacentRoom": "WestHallway1"
+        }
+      ]
+    },
+    {
+      "id": "WestStaircase2",
+      "name": "West Staircase",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "WestStaircase3"
+        },
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "WestStaircase1"
+        },
+        {
+          "isLocked": true,
+          "direction": "east",
+          "adjacentRoom": "Hallway2-1"
+        }
+      ]
+    },
+    {
+      "id": "WestStaircase3",
+      "name": "West Staircase",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "WestStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "east",
+          "adjacentRoom": "Federico'sDomain"
+        }
+      ]
+    },
+    {
+      "id": "Federico'sDomain",
+      "name": "Federico's Domain",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "north",
+          "adjacentRoom": "CentralStaircase3"
+        },
+        {
+          "isLocked": true,
+          "direction": "south",
+          "adjacentRoom": "SouthStaircase3"
+        },
+        {
+          "isLocked": true,
+          "direction": "west",
+          "adjacentRoom": "WestStaircase3"
         }
       ]
     }
