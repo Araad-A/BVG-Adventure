@@ -7,6 +7,7 @@ public class Room {
   private ArrayList<Exit> exits;
   private String floor;
   private boolean isDark;
+  private static Room currentRoom;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -126,5 +127,5 @@ public class Room {
 
   public boolean isDark(){
     return isDark;
-  } 
+  }
 }

@@ -63,6 +63,10 @@ public class Game {
     }
   }
 
+  public Room getCurrentRoom(){
+    return currentRoom;
+  }
+
   /**
    * Main play routine. Loops until end of play.
    */

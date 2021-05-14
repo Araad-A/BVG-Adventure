@@ -6,8 +6,9 @@ public class Flashlight extends Item {
         battery = 100;
     }
 
-    public void turnOn(){
-        currentRoom.isDark();
+    public void turnOn(Game game){
+        game.getCurrentRoom().setIsDark(false);
+        System.out.println("You shine your flashlight. You can now see items in the room.");
     }
 
     public int getBattery(){
