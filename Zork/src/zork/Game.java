@@ -41,9 +41,11 @@ public class Game {
       String roomId = (String) ((JSONObject) roomObj).get("id");
       String roomDescription = (String) ((JSONObject) roomObj).get("description");
       String floor = (String) ((JSONObject) roomObj).get("floor");
+      boolean isDark = (boolean) ((JSONObject) roomObj).get("isDark");
       room.setFloor(floor);
       room.setDescription(roomDescription);
       room.setRoomName(roomName);
+      room.setIsDark(isDark);
 
       JSONArray jsonExits = (JSONArray) ((JSONObject) roomObj).get("exits");
       ArrayList<Exit> exits = new ArrayList<Exit>();

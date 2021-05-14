@@ -6,6 +6,7 @@ public class Room {
   private String description;
   private ArrayList<Exit> exits;
   private String floor;
+  private boolean isDark;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -118,4 +119,12 @@ public class Room {
   public void setFloor(String floor){
     this.floor = floor;
   }
+
+  public void setIsDark(boolean isDark){
+    this.isDark = isDark;
+  }
+
+  public boolean isDark(){
+    return isDark;
+  } 
 }
