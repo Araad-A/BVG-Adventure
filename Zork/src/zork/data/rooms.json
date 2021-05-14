@@ -3,6 +3,7 @@
     {
       "id": "Hallway1-2",
       "name": "Grade 12 Common Area Hallway",
+      "floor": "First Floor",
       "description": "You are in a long hallway. You notice the chairs in front of you. The closed doors of the classroom frighten you.",
       "exits": [
         {
@@ -35,6 +36,7 @@
     {
       "id": "Hallway1-3",
       "name": "Science Classroom Hallway",
+      "floor": "First Floor",
       "description": "You see a never ending amount of classroom doors.",
       "exits": [
         {
@@ -67,7 +69,8 @@
     {
       "id": "Hallway1-4",
       "name": "Upper School Gym Hallway",
-      "description": "You feel claustrophobic by the amount of chairs and the lack of space.",
+      "floor": "First Floor",
+      "description": "You feel claustrophobic from the amount of chairs and the lack of space.",
       "exits": [
         {
           "isLocked": false,
@@ -104,6 +107,7 @@
     {
       "id": "Hallway1-5",
       "name": "Computer Science Hallway",
+      "floor": "First Floor",
       "description": "You are in another hallway.",
       "exits": [
         {
@@ -135,7 +139,8 @@
     },
     {
       "id": "Hallway 1-1",
-      "name": "Outside hallway",
+      "name": "Outside Hallway",
+      "floor": "First Floor",
       "description": "You can see a brief glimpse of the outside world.",
       "exits": [
         {
@@ -158,6 +163,7 @@
     {
       "id": "Grade 12 Common Area",
       "name": "Grade 12 Common Area",
+      "floor": "First Floor",
       "description": "It smells like coffee and stress",
       "exits": [
         {
@@ -175,6 +181,7 @@
     {
       "id": "Outside",
       "name": "Outside",
+      "floor": "First Floor",
       "description": "The gasoline in the air makes you gag",
       "exits": [
         {
@@ -187,6 +194,7 @@
     {
       "id": "Science2",
       "name": "Chemistry Lab",
+      "floor": "First Floor",
       "description": "You see empty beakers shattered on the ground",
       "exits": [
         {
@@ -199,6 +207,7 @@
     {
       "id": "Science3",
       "name": "Physics Lab",
+      "floor": "First Floor",
       "description": "There are chemistry formulas written on the chalkboard",
       "exits": [
         {
@@ -211,6 +220,7 @@
     {
       "id": "Science1",
       "name": "Biology Lab",
+      "floor": "First Floor",
       "description": "You can smell the chemicals",
       "exits": [
         {
@@ -223,6 +233,7 @@
     {
       "id": "Robotics",
       "name": "Robotics",
+      "floor": "First Floor",
       "description": "A robot hand is right beside your face",
       "exits": [
         {
@@ -235,6 +246,7 @@
     {
       "id": "ICS",
       "name": "Computer Science Class",
+      "floor": "First Floor",
       "description": "You can almost hear the rage of former computer science students.",
       "exits": [
         {
@@ -247,6 +259,7 @@
     {
       "id": "UpperSchoolEquipmentRoom",
       "name": "Upper School Equipment Room",
+      "floor": "First Floor",
       "description": "The balls on the floor make it nearly impossible to walk in this room.",
       "exits": [
         {
@@ -259,6 +272,7 @@
     {
       "id": "ITDepartment",
       "name": "IT Department",
+      "floor": "First Floor",
       "description": "There are wires everywhere",
       "exits": [
         {
@@ -271,6 +285,7 @@
     {
       "id": "UpperSchoolGym",
       "name": "Upper School Gym",
+      "floor": "First Floor",
       "description": "The floor is squeaky and the time on the board is incorrect.",
       "exits": [
         {
@@ -282,8 +297,9 @@
     },
     
     {
-      "id": "Hallway 2-1",
+      "id": "Hallway2-1",
       "name": "Hallway",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": false,
@@ -318,8 +334,9 @@
       ]
     }, 
     {
-      "id": "Hallway 2-2",
+      "id": "Hallway2-2",
       "name": "Hallway",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -359,8 +376,9 @@
       ]
     },
     {
-      "id": "Hallway 2-3",
+      "id": "Hallway2-3",
       "name": "Hallway",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": false,
@@ -400,8 +418,9 @@
       ]
     },
     {
-      "id": "Hallway 2-4",
+      "id": "Hallway2-4",
       "name": "Hallway",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": false,
@@ -441,8 +460,9 @@
       ]
     },
     {
-      "id": "Hallway 2-5",
+      "id": "Hallway2-5",
       "name": "Hallway",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -472,8 +492,9 @@
       ]
     },
     {
-      "id": "Hallway 2-6",
+      "id": "Hallway2-6",
       "name": "Hallway",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": false,
@@ -493,8 +514,9 @@
       ]
     },
     {
-      "id": "Hallway 2-7",
+      "id": "Hallway2-7",
       "name": "Hallway",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": false,
@@ -534,8 +556,9 @@
       ]
     },
     {
-      "id": "Hallway 2-8",
+      "id": "Hallway2-8",
       "name": "Hallway",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -575,8 +598,9 @@
       ]
     },
     {
-      "id": "Class 1",
+      "id": "Class1",
       "name": "Classroom",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -586,8 +610,9 @@
       ]
     },
     {
-      "id": "Class 2",
+      "id": "Class2",
       "name": "Classroom",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -597,8 +622,9 @@
       ]
     },
     {
-      "id": "Class 3",
+      "id": "Class3",
       "name": "Classroom",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -608,8 +634,9 @@
       ]
     },
     {
-      "id": "Class 4",
+      "id": "Class4",
       "name": "Classroom",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -619,8 +646,9 @@
       ]
     },
     {
-      "id": "Class 5",
+      "id": "Class5",
       "name": "Classroom",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -630,8 +658,9 @@
       ]
     },
     {
-      "id": "Music 1",
+      "id": "Music1",
       "name": "Music Room",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -641,8 +670,9 @@
       ]
     },
     {
-      "id": "Music 2",
+      "id": "Music2",
       "name": "Music Room",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -652,8 +682,9 @@
       ]
     },
     {
-      "id": "Music Equipment",
+      "id": "MusicEquipment",
       "name": "Music Equipment",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -668,8 +699,9 @@
       ]
     },
     {
-      "id": "Fitness Room",
+      "id": "FitnessRoom",
       "name": "Fitness Room",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -684,8 +716,9 @@
       ]
     },
     {
-      "id": "Learning Commons",
+      "id": "LearningCommons",
       "name": "Learning Commons",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -702,6 +735,7 @@
     {
       "id": "Theater",
       "name": "Theater",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -718,6 +752,7 @@
     {
       "id": "Lobby",
       "name": "Lobby",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": false,
@@ -729,6 +764,7 @@
     {
       "id": "Cafeteria",
       "name": "Cafeteria",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -738,8 +774,9 @@
       ]
     },
     {
-      "id": "Gym",
+      "id": "PrepSchoolGym",
       "name": "Gym",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
@@ -749,13 +786,238 @@
       ]
     },
     {
-      "id": "Prep School Equipment Room",
+      "id": "PrepSchoolEquipmentRoom",
       "name": "Prep School Equipment Room",
+      "floor": "Second Floor",
       "exits": [
         {
           "isLocked": true,
           "direction": "North",
           "adjacentRoom": "Hallway 2-8"
+        }
+      ]
+    },
+    {
+      "id": "CentralStaircase1",
+      "name": "Central Staircase",
+      "floor": "First Floor",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "CentralStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "south",
+          "adjacentRoom": "WestHallway1"
+        }
+      ]
+    },
+    {
+      "id": "CentralStaircase2",
+      "name": "Central Staircase",
+      "floor": "Second Floor",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "CentralStaircase3"
+        },
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "CentralStaircase1"
+        },
+        {
+          "isLocked": true,
+          "direction": "south",
+          "adjacentRoom": "Hallway2-1"
+        }
+      ]
+    },
+    {
+      "id": "CentralStaircase3",
+      "name": "Central Staircase",
+      "floor": "Third Floor",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "CentralStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "south",
+          "adjacentRoom": "Federico'sDomain"
+        }
+      ]
+    },
+    {
+      "id": "EastStaircase1",
+      "name": "East Staircase",
+      "floor": "First Floor",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "EastStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "west",
+          "adjacentRoom": "Hallway"
+        }
+      ]
+    },
+    {
+      "id": "EastStaircase2",
+      "name": "East Staircase",
+      "floor": "Second Floor",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "EastStaircase1"
+        },
+        {
+          "isLocked": true,
+          "direction": "west",
+          "adjacentRoom": "Hallway2-4"
+        }
+      ]
+    },
+    {
+      "id": "SouthStaircase1",
+      "name": "South Staircase",
+      "floor": "First Floor",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "SouthStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "east",
+          "adjacentRoom": "UpperHallway1"
+        }
+      ]
+    },
+    {
+      "id": "SouthStaircase2",
+      "name": "South Staircase",
+      "floor": "Second Floor",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "SouthStaircase3"
+        },
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "SouthStaircase1"
+        },
+        {
+          "isLocked": true,
+          "direction": "east",
+          "adjacentRoom": "Hallway2-2"
+        }
+      ]
+    },
+    {
+      "id": "SouthStaircase3",
+      "name": "South Staircase",
+      "floor": "Third Floor",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "SouthStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "east",
+          "adjacentRoom": "Federico'sDomain"
+        }
+      ]
+    },
+    {
+      "id": "WestStaircase1",
+      "name": "West Staircase",
+      "floor": "First Floor",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "WestStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "south",
+          "adjacentRoom": "WestHallway1"
+        }
+      ]
+    },
+    {
+      "id": "WestStaircase2",
+      "name": "West Staircase",
+      "floor": "Second Floor",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "up",
+          "adjacentRoom": "WestStaircase3"
+        },
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "WestStaircase1"
+        },
+        {
+          "isLocked": true,
+          "direction": "east",
+          "adjacentRoom": "Hallway2-1"
+        }
+      ]
+    },
+    {
+      "id": "WestStaircase3",
+      "name": "West Staircase",
+      "floor": "Third Floor",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "down",
+          "adjacentRoom": "WestStaircase2"
+        },
+        {
+          "isLocked": true,
+          "direction": "east",
+          "adjacentRoom": "Federico'sDomain"
+        }
+      ]
+    },
+    {
+      "id": "Federico'sDomain",
+      "name": "Federico's Domain",
+      "floor": "Third Floor",
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "north",
+          "adjacentRoom": "CentralStaircase3"
+        },
+        {
+          "isLocked": true,
+          "direction": "south",
+          "adjacentRoom": "SouthStaircase3"
+        },
+        {
+          "isLocked": true,
+          "direction": "west",
+          "adjacentRoom": "WestStaircase3"
         }
       ]
     }
