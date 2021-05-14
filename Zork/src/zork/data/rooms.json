@@ -135,7 +135,7 @@
     },
     {
       "id": "Hallway 1-1",
-      "name": "Outside Hallway",
+      "name": "Outside",
       "description": "You can see a brief glimpse of the outside world.",
       "exits": [
         {
