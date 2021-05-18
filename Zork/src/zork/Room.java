@@ -39,7 +39,7 @@ public class Room {
    * constructor).
    */
   public String shortDescription() {
-    return "Room: " + roomName + "\n\n" + description;
+    return "\n" + "Room: " + roomName + "\n\n" + description;
   }
 
   /**
@@ -48,7 +48,7 @@ public class Room {
    */
   public String longDescription() {
 
-    return "Room: " + roomName + "\n\n" + description + "\n" + exitString();
+    return "\n" + "Room: " + roomName + "\n" + floor + "\n\n" + description + "\n" + exitString();
   }
 
   /**
