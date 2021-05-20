@@ -1,6 +1,6 @@
 public class Flashlight extends Item {
-    private int battery;
-
+  private int battery;
+  
     public Flashlight(int weight, String name){
         super(weight, name, false);  
         battery = 100;
