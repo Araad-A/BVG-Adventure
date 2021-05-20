@@ -124,7 +124,7 @@ public class Game {
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
     } else if(commandWord.equals("leave")){
-      System.out.println(currentRoom.longDescription);
+      System.out.println(currentRoom.longDescription());
       atDoor=false;
     } else if(commandWord.equals("use")){
       useItem(command);
@@ -164,7 +164,7 @@ public class Game {
 
     if (nextRoom == null)
       System.out.println("There is no door!");
-    else if(currentRoom.getExit(direction).isLocked==true){
+    else if(currentRoom.getExit(direction).isLocked() ==true){
       System.out.println("The door is locked. Will you open it or leave?");
       atDoor=true;
       door=currentRoom.getExit(direction);
@@ -176,15 +176,15 @@ public class Game {
   }
 
   private void useItem(Command command){
-    if(!command.hasSecondWord){
+    if(!command.hasSecondWord()){
       System.out.println("Use what?");
       return;
     }
-    String item=command.getSecondWord;
+    String item=command.getSecondWord();
     if(atDoor){
-      if(item==door.getKeyId){
-        door.setLocked=false;
-        currentRoom = nextRoom;
+      if(item==door.getKeyId()){
+        door.setLocked(false);
+        currentRoom = roomMap.get(door.getAdjacentRoom());
         atDoor=false;
         System.out.println("The door opens. "+currentRoom.longDescription());
       }else{
