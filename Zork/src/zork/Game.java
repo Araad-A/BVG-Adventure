@@ -13,6 +13,8 @@ public class Game {
 
   private Parser parser;
   private Room currentRoom;
+  private boolean atDoor=false;
+  private Exit door;
 
   /**
    * Create the game and initialise its internal map.
@@ -121,6 +123,11 @@ public class Game {
         return true; // signal that we want to quit
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
+    } else if(commandWord.equals("leave")){
+      System.out.println(currentRoom.longDescription);
+      atDoor=false;
+    } else if(commandWord.equals("use")){
+      useItem(command);
     }
     return false;
   }
@@ -157,9 +164,33 @@ public class Game {
 
     if (nextRoom == null)
       System.out.println("There is no door!");
+    else if(currentRoom.getExit(direction).isLocked==true){
+      System.out.println("The door is locked. Will you open it or leave?");
+      atDoor=true;
+      door=currentRoom.getExit(direction);
+    }
     else {
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription());
+    }
+  }
+
+  private void useItem(Command command){
+    if(!command.hasSecondWord){
+      System.out.println("Use what?");
+      return;
+    }
+    String item=command.getSecondWord;
+    if(atDoor){
+      if(item==door.getKeyId){
+        door.setLocked=false;
+        currentRoom = nextRoom;
+        atDoor=false;
+        System.out.println("The door opens. "+currentRoom.longDescription());
+      }else{
+        System.out.println("You can't use that to open this door.");
+      }
+      return;
     }
   }
 }

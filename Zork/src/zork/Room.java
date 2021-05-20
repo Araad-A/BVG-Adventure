@@ -128,4 +128,14 @@ public class Room {
   public boolean isDark(){
     return isDark;
   }
+  public Exit getExit(String direction){
+    for (Exit exit : exits) {
+
+      if (exit.getDirection().equalsIgnoreCase(direction)) {
+        return exit;
+      }
+
+    }
+    return null;
+  }
 }
