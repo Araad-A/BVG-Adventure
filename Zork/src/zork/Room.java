@@ -40,17 +40,22 @@ public class Room {
    * Return the description of the room (the one that was defined in the
    * constructor).
    */
-  public String shortDescription() {
-    return "\n" + "Room: " + roomName + "\n\n" + description;
+  public String shortDescription(boolean hasFlashlight) {
+    if (!isDark || hasFlashlight)
+      return "\n" + "Room: " + roomName + "\n\n" + description;
+    else
+      return "\n" + "Room: " + roomName + "\n\nIt is dark.";
   }
 
   /**
    * Return a long description of this room, on the form: You are in the kitchen.
    * Exits: north west
    */
-  public String longDescription() {
-
-    return "\n" + "Room: " + roomName + "\n" + floor + "\n\n" + description + "\n" + exitString();
+  public String longDescription(boolean hasFlashlight) {
+    if (!isDark || hasFlashlight)
+      return "\n" + "Room: " + roomName + "\n" + floor + "\n\n" + description + "\n" + exitString();
+    else
+      return "\n" + "Room: " + roomName + "\nIt is dark.";
   }
 
   /**

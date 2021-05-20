@@ -13,8 +13,9 @@ public class Game {
 
   private Parser parser;
   private Room currentRoom;
-  private boolean atDoor=false;
+  private boolean atDoor;
   private Exit door;
+  private Inventory inventory;
 
   /**
    * Create the game and initialise its internal map.
@@ -23,6 +24,7 @@ public class Game {
     try {
       initRooms("Zork\\src\\zork\\data\\rooms.json");
       currentRoom = roomMap.get("Hallway1-2");
+      atDoor = false;
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -98,7 +100,7 @@ public class Game {
     System.out.println("You are a student at BVG, but something doesn't seem right...");
     System.out.println("Type 'help' if you need help.");
     System.out.println();
-    System.out.println(currentRoom.longDescription());
+    System.out.println(currentRoom.longDescription(true));
   }
 
   /**
@@ -124,7 +126,7 @@ public class Game {
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
     } else if(commandWord.equals("leave")){
-      System.out.println(currentRoom.longDescription());
+      System.out.println(currentRoom.longDescription(true));
       atDoor=false;
     } else if(commandWord.equals("use")){
       useItem(command);
@@ -164,14 +166,14 @@ public class Game {
 
     if (nextRoom == null)
       System.out.println("There is no door!");
-    else if(currentRoom.getExit(direction).isLocked() ==true){
+    else if(currentRoom.getExit(direction).isLocked()){
       System.out.println("The door is locked. Will you open it or leave?");
       atDoor=true;
       door=currentRoom.getExit(direction);
     }
     else {
       currentRoom = nextRoom;
-      System.out.println(currentRoom.longDescription());
+      System.out.println(currentRoom.longDescription(true));
     }
   }
 
@@ -186,7 +188,7 @@ public class Game {
         door.setLocked(false);
         currentRoom = roomMap.get(door.getAdjacentRoom());
         atDoor=false;
-        System.out.println("The door opens. "+currentRoom.longDescription());
+        System.out.println("The door opens. "+currentRoom.longDescription(true));
       }else{
         System.out.println("You can't use that to open this door.");
       }

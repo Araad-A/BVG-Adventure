@@ -5,7 +5,7 @@
       "name": "Grade 12 Common Area Hallway",
       "floor": "First Floor",
       "description": "You are in a long hallway. You notice the chairs in front of you. The closed doors of the classroom frighten you.",
-      "isDark": false,
+      "isDark": true,
       "exits": [
         {
           "isLocked": false,
