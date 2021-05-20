@@ -118,4 +118,14 @@ public class Room {
   public void setFloor(String floor){
     this.floor = floor;
   }
+
+  public Exit getExit(String direction){
+    for (Exit exit : exits) {
+
+      if (exit.getDirection().equalsIgnoreCase(direction)) {
+        return exit;
+      }
+
+    }
+  }
 }

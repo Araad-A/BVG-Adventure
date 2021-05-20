@@ -37,5 +37,4 @@ public class Exit extends OpenableObject {
     public void setAdjacentRoom(String adjacentRoom) {
       this.adjacentRoom = adjacentRoom;
     }
-  
   }
