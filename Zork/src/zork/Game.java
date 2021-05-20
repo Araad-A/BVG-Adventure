@@ -13,18 +13,14 @@ public class Game {
 
   private Parser parser;
   private Room currentRoom;
-  private boolean atDoor;
-  private Exit door;
-  private Inventory inventory;
 
   /**
    * Create the game and initialise its internal map.
    */
   public Game() {
     try {
-      initRooms("Zork\\src\\zork\\data\\rooms.json");
+      initRooms("BVG-Adventure\\Zork\\src\\zork\\data\\rooms.json");
       currentRoom = roomMap.get("Hallway1-2");
-      atDoor = false;
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -45,11 +41,9 @@ public class Game {
       String roomId = (String) ((JSONObject) roomObj).get("id");
       String roomDescription = (String) ((JSONObject) roomObj).get("description");
       String floor = (String) ((JSONObject) roomObj).get("floor");
-      boolean isDark = (boolean) ((JSONObject) roomObj).get("isDark");
       room.setFloor(floor);
       room.setDescription(roomDescription);
       room.setRoomName(roomName);
-      room.setIsDark(isDark);
 
       JSONArray jsonExits = (JSONArray) ((JSONObject) roomObj).get("exits");
       ArrayList<Exit> exits = new ArrayList<Exit>();
@@ -65,10 +59,6 @@ public class Game {
       room.setExits(exits);
       roomMap.put(roomId, room);
     }
-  }
-
-  public Room getCurrentRoom(){
-    return currentRoom;
   }
 
   /**
@@ -125,11 +115,8 @@ public class Game {
         return true; // signal that we want to quit
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
-    } else if(commandWord.equals("leave")){
-      System.out.println(currentRoom.longDescription(true));
-      atDoor=false;
-    } else if(commandWord.equals("use")){
-      useItem(command);
+    } else if (commandWord.equals("sleep")) {
+      System.out.println("You took a nice, long nap. You feel refreshed and ready to continue on your journey.");
     }
     return false;
   }
@@ -163,36 +150,11 @@ public class Game {
 
     // Try to leave current room.
     Room nextRoom = currentRoom.nextRoom(direction);
-
     if (nextRoom == null)
       System.out.println("There is no door!");
-    else if(currentRoom.getExit(direction).isLocked()){
-      System.out.println("The door is locked. Will you open it or leave?");
-      atDoor=true;
-      door=currentRoom.getExit(direction);
-    }
     else {
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription(true));
-    }
-  }
-
-  private void useItem(Command command){
-    if(!command.hasSecondWord()){
-      System.out.println("Use what?");
-      return;
-    }
-    String item=command.getSecondWord();
-    if(atDoor){
-      if(item==door.getKeyId()){
-        door.setLocked(false);
-        currentRoom = roomMap.get(door.getAdjacentRoom());
-        atDoor=false;
-        System.out.println("The door opens. "+currentRoom.longDescription(true));
-      }else{
-        System.out.println("You can't use that to open this door.");
-      }
-      return;
     }
   }
 }

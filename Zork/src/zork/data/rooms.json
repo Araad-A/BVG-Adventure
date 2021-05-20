@@ -199,6 +199,25 @@
       ]
     },
     {
+      "id": "Hallway1-1",
+      "name": "Art Room Hallway",
+      "floor": "First Floor",
+      "description": "You can glimpse the art room",
+      "isDark": false,
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Outside"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Hallway1-2"
+        }
+      ]
+    },
+    {
       "id": "Science2",
       "name": "Chemistry Lab",
       "floor": "First Floor",
@@ -208,7 +227,7 @@
         {
           "isLocked": false,
           "direction": "NorthEast",
-          "adjacentRoom": "Hallway1-1"
+          "adjacentRoom": "Hallway1-2"
         }
       ]
     },
@@ -222,7 +241,7 @@
         {
           "isLocked": false,
           "direction": "NorthWest",
-          "adjacentRoom": "Hallway1-1"
+          "adjacentRoom": "Hallway1-2"
         }
       ]
     },
