@@ -16,4 +16,8 @@ public class Flashlight extends Item {
     public int getBattery(){
         return battery;
     }
+
+    public boolean getOn(){
+        return isOn;
+    }
 }
