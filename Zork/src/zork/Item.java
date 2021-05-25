@@ -2,6 +2,9 @@ public class Item extends OpenableObject {
     private int weight;
     private String name;
     private boolean isOpenable;
+    public static final int DEFAULT = 0;
+    public static final int KEY = 1;
+    public static final int FLASHLIGHT = 2;
   
     public Item(int weight, String name, boolean isOpenable) {
       this.weight = weight;

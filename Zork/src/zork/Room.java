@@ -7,7 +7,7 @@ public class Room {
   private ArrayList<Exit> exits;
   private String floor;
   private boolean isDark;
-  private static Room currentRoom;
+  private Inventory inventory;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -30,6 +30,7 @@ public class Room {
     roomName = "DEFAULT ROOM";
     description = "DEFAULT DESCRIPTION";
     exits = new ArrayList<Exit>();
+    inventory = new Inventory();
   }
 
   public void addExit(Exit exit) throws Exception {
@@ -142,5 +143,9 @@ public class Room {
 
     }
     return null;
+  }
+
+  public Inventory getInventory(){
+    return inventory;
   }
 }

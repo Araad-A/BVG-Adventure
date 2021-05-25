@@ -11,6 +11,12 @@ public class Inventory {
     this.currentWeight = 0;
   }
 
+  public Inventory() {
+    this.items = new ArrayList<Item>();
+    this.maxWeight = Integer.MAX_VALUE;
+    this.currentWeight = 0;
+  }
+
   public int getMaxWeight() {
     return maxWeight;
   }
@@ -28,4 +34,18 @@ public class Inventory {
     }
   }
 
+  public boolean hasItem(String name){
+    for(Item item : items){
+      if(item.getName().equalsIgnoreCase(name))
+        return true;
+    }
+    return false;
+  }
+  
+  public void removeItem(String name){
+    for(int i=0;i<items.size();i++){
+      if(items.get(i).getName().equalsIgnoreCase(name))
+        items.remove(i);
+    }
+  }
 }

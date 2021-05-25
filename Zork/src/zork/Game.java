@@ -10,17 +10,21 @@ import org.json.simple.parser.JSONParser;
 public class Game {
 
   public static HashMap<String, Room> roomMap = new HashMap<String, Room>();
-
+  public static HashMap<String, Item> itemMap = new HashMap<String, Item>();
   private Parser parser;
   private Room currentRoom;
+  private boolean atDoor;
+  private Exit door;
+  private Inventory inventory;
 
   /**
    * Create the game and initialise its internal map.
    */
   public Game() {
     try {
-      initRooms("BVG-Adventure\\Zork\\src\\zork\\data\\rooms.json");
-      currentRoom = roomMap.get("Hallway1-2");
+      initRooms("Zork\\src\\zork\\data\\rooms.json");
+      initItems("Zork\\src\\zork\\data\\items.json");
+      currentRoom = roomMap.get("Hallway1-1");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -41,9 +45,11 @@ public class Game {
       String roomId = (String) ((JSONObject) roomObj).get("id");
       String roomDescription = (String) ((JSONObject) roomObj).get("description");
       String floor = (String) ((JSONObject) roomObj).get("floor");
+      boolean isDark = (boolean) ((JSONObject) roomObj).get("isDark");
       room.setFloor(floor);
       room.setDescription(roomDescription);
       room.setRoomName(roomName);
+      room.setIsDark(isDark);
 
       JSONArray jsonExits = (JSONArray) ((JSONObject) roomObj).get("exits");
       ArrayList<Exit> exits = new ArrayList<Exit>();
@@ -58,6 +64,42 @@ public class Game {
       }
       room.setExits(exits);
       roomMap.put(roomId, room);
+    }
+  }
+  /**
+  "itemType":1,
+  "name": "Key 1",
+  "keyId": "key1",
+  "weight": 6,
+  "room" : "Grade12CommonArea"
+  */
+  private void initItems(String fileName) throws Exception {
+    Path path = Path.of(fileName);
+    String jsonString = Files.readString(path);
+    JSONParser parser = new JSONParser();
+    JSONObject json = (JSONObject) parser.parse(jsonString);
+
+    JSONArray jsonItems = (JSONArray) json.get("items");
+
+    for (Object itemObj : jsonItems) {
+      int itemType =  ((Long)((JSONObject) itemObj).get("itemType")).intValue();
+      int weight = ((Long) ((JSONObject) itemObj).get("weight")).intValue();
+      String name = (String) ((JSONObject) itemObj).get("name");
+      String room = (String) ((JSONObject) itemObj).get("room");
+      Item item = null;
+      if(itemType==Item.DEFAULT){
+        Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
+        item = new Item(weight, name, isOpenable);
+        itemMap.put(name,item);
+      }else if(itemType==Item.KEY){
+        String keyId = (String) ((JSONObject) itemObj).get("keyId");
+        item = new Key(keyId, name, weight);
+        itemMap.put(name,item);
+      }else if(itemType==Item.FLASHLIGHT){
+        item = new Flashlight(weight, name);
+        itemMap.put(name,item);
+      }
+      roomMap.get(room).getInventory().addItem(item);
     }
   }
 
@@ -117,6 +159,11 @@ public class Game {
       System.out.println("Do you really think you should be eating at a time like this?");
     } else if (commandWord.equals("sleep")) {
       System.out.println("You took a nice, long nap. You feel refreshed and ready to continue on your journey.");
+    } else if(commandWord.equals("leave")){
+      System.out.println(currentRoom.longDescription(true));
+      atDoor=false;
+    } else if(commandWord.equals("use")){
+      useItem(command);
     }
     return false;
   }
@@ -133,6 +180,10 @@ public class Game {
     System.out.println();
     System.out.println("Your command words are:");
     parser.showCommands();
+  }
+
+  public Room getCurrentRoom(){
+    return currentRoom;
   }
 
   /**
@@ -152,9 +203,32 @@ public class Game {
     Room nextRoom = currentRoom.nextRoom(direction);
     if (nextRoom == null)
       System.out.println("There is no door!");
-    else {
+    else if(currentRoom.getExit(direction).isLocked()){
+      System.out.println("The door is locked. Will you open it or leave?");
+      atDoor=true;
+      door=currentRoom.getExit(direction);
+    }else {
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription(true));
+    }
+  }
+
+  private void useItem(Command command){
+    if(!command.hasSecondWord()){
+      System.out.println("Use what?");
+      return;
+    }
+    String item=command.getSecondWord();
+    if(atDoor){
+      if(item==door.getKeyId()){
+        door.setLocked(false);
+        currentRoom = roomMap.get(door.getAdjacentRoom());
+        atDoor=false;
+        System.out.println("The door opens. "+currentRoom.longDescription(true));
+      }else{
+        System.out.println("You can't use that to open this door.");
+      }
+      return;
     }
   }
 }
