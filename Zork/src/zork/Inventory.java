@@ -48,4 +48,12 @@ public class Inventory {
         items.remove(i);
     }
   }
+
+  public Item getItem(String name){
+    for(Item item : items){
+      if(item.getName().equalsIgnoreCase(name))
+        return item;
+    }
+    return null;
+  }
 }

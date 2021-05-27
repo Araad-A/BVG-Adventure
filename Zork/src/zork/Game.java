@@ -218,17 +218,42 @@ public class Game {
       System.out.println("Use what?");
       return;
     }
-    String item=command.getSecondWord();
+    String itemName=command.getSecondWord();
+    Item item = itemMap.get(itemName);
+    if(!inventory.hasItem(itemName)){
+      System.out.println("You don't have this item.");
+      return;
+    }
     if(atDoor){
-      if(item==door.getKeyId()){
+      if(item instanceof Key&&item.getKeyId().equalsIgnoreCase(door.getKeyId())){
         door.setLocked(false);
         currentRoom = roomMap.get(door.getAdjacentRoom());
         atDoor=false;
         System.out.println("The door opens. "+currentRoom.longDescription(true));
+        if(itemName.equalsIgnoreCase("acid")||itemName.equalsIgnoreCase("instrument")){
+          inventory.removeItem(itemName);
+          System.out.println("You lost your "+itemName);
+        }
       }else{
         System.out.println("You can't use that to open this door.");
       }
       return;
+    }
+    if(itemName.equalsIgnoreCase("gps")){
+      if(inventory.hasItem("Key 7"))
+        System.out.println("The GPS is blank.");
+      else if(inventory.hasItem("Key 6"))
+        System.out.println("The key is on the west side of the school.");
+      else if(inventory.hasItem("Key 5"))
+        System.out.println("The key is on the north side of the school.");
+      else
+        System.out.println("The key is on the south side of the school.");
+    }
+    if(itemName.equalsIgnoreCase("flashlight")){
+      if(currentRoom.isDark())
+        System.out.println(currentRoom.longDescription(true));
+      else
+        System.out.println("It is not dark.");
     }
   }
 }
