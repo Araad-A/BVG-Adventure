@@ -28,6 +28,7 @@ public class Game {
     } catch (Exception e) {
       e.printStackTrace();
     }
+    inventory = new Inventory();
     parser = new Parser();
   }
 
@@ -66,13 +67,7 @@ public class Game {
       roomMap.put(roomId, room);
     }
   }
-  /**
-  "itemType":1,
-  "name": "Key 1",
-  "keyId": "key1",
-  "weight": 6,
-  "room" : "Grade12CommonArea"
-  */
+
   private void initItems(String fileName) throws Exception {
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
@@ -98,6 +93,10 @@ public class Game {
       }else if(itemType==Item.FLASHLIGHT){
         item = new Flashlight(weight, name);
         itemMap.put(name,item);
+      }else if(itemType==Item.READABLE){
+        String contents = (String) ((JSONObject) itemObj).get("contents");
+        item = new ReadableItem(weight, name, contents);
+        itemMap.put(name, item);
       }
       roomMap.get(room).getInventory().addItem(item);
     }
@@ -132,7 +131,7 @@ public class Game {
     System.out.println("You are a student at BVG, but something doesn't seem right...");
     System.out.println("Type 'help' if you need help.");
     System.out.println();
-    System.out.println(currentRoom.longDescription(true));
+    System.out.println(currentRoom.longDescription(false));
   }
 
   /**
@@ -148,9 +147,31 @@ public class Game {
     String commandWord = command.getCommandWord();
     if (commandWord.equals("help"))
       printHelp();
-    else if (commandWord.equals("go"))
-      goRoom(command);
-    else if (commandWord.equals("quit")) {
+    else if (commandWord.equals("go")){
+      if (!command.hasSecondWord()) {
+        // if there is no second word, we don't know where to go...
+        System.out.println("Go where?");
+      }else{
+        String direction = command.getSecondWord();
+        goRoom(direction);
+      }
+    }else if(commandWord.equalsIgnoreCase("n")||commandWord.equalsIgnoreCase("north")){
+      goRoom("North");
+    }else if(commandWord.equalsIgnoreCase("e")||commandWord.equalsIgnoreCase("east")){
+      goRoom("East");
+    }else if(commandWord.equalsIgnoreCase("s")||commandWord.equalsIgnoreCase("south")){
+      goRoom("South");
+    }else if(commandWord.equalsIgnoreCase("w")||commandWord.equalsIgnoreCase("west")){
+      goRoom("West");
+    }else if(commandWord.equalsIgnoreCase("ne")||commandWord.equalsIgnoreCase("northeast")){
+      goRoom("Northeast");
+    }else if(commandWord.equalsIgnoreCase("se")||commandWord.equalsIgnoreCase("southeast")){
+      goRoom("Southeast");
+    }else if(commandWord.equalsIgnoreCase("sw")||commandWord.equalsIgnoreCase("southwest")){
+      goRoom("Southwest");
+    }else if(commandWord.equalsIgnoreCase("nw")||commandWord.equalsIgnoreCase("northwest")){
+      goRoom("Northwest");
+    }else if (commandWord.equals("quit")) {
       if (command.hasSecondWord())
         System.out.println("Quit what?");
       else
@@ -160,10 +181,28 @@ public class Game {
     } else if (commandWord.equals("sleep")) {
       System.out.println("You took a nice, long nap. You feel refreshed and ready to continue on your journey.");
     } else if(commandWord.equals("leave")){
-      System.out.println(currentRoom.longDescription(true));
-      atDoor=false;
+      if(atDoor){
+        System.out.println(currentRoom.longDescription(false));
+        atDoor=false;
+      }else{
+        System.out.println("I don't know what you mean...");
+      }
     } else if(commandWord.equals("use")){
       useItem(command);
+    } else if(commandWord.equals("inventory")){
+      System.out.println(inventory.listItems());
+    } else if(commandWord.equals("take")){
+      if(!command.hasSecondWord()){
+        System.out.println("Take what?");
+      }else{
+        takeItem(command);
+      }
+    } else if(commandWord.equals("read")){
+      if(!command.hasSecondWord()){
+        System.out.println("Read what?");
+      }else{
+        readItem(command);
+      }
     }
     return false;
   }
@@ -190,14 +229,7 @@ public class Game {
    * Try to go to one direction. If there is an exit, enter the new room,
    * otherwise print an error message.
    */
-  private void goRoom(Command command) {
-    if (!command.hasSecondWord()) {
-      // if there is no second word, we don't know where to go...
-      System.out.println("Go where?");
-      return;
-    }
-
-    String direction = command.getSecondWord();
+  private void goRoom(String direction) {
 
     // Try to leave current room.
     Room nextRoom = currentRoom.nextRoom(direction);
@@ -209,7 +241,7 @@ public class Game {
       door=currentRoom.getExit(direction);
     }else {
       currentRoom = nextRoom;
-      System.out.println(currentRoom.longDescription(true));
+      System.out.println(currentRoom.longDescription(false));
     }
   }
 
@@ -219,17 +251,16 @@ public class Game {
       return;
     }
     String itemName=command.getSecondWord();
-    Item item = itemMap.get(itemName);
-    if(!inventory.hasItem(itemName)){
+    if(!(inventory.hasItem(itemName)||itemName.equalsIgnoreCase("key"))){
       System.out.println("You don't have this item.");
       return;
     }
     if(atDoor){
-      if(item instanceof Key&&item.getKeyId().equalsIgnoreCase(door.getKeyId())){
+      if(itemName.equalsIgnoreCase("key")&&inventory.hasKey(door.getKeyId())){
         door.setLocked(false);
         currentRoom = roomMap.get(door.getAdjacentRoom());
         atDoor=false;
-        System.out.println("The door opens. "+currentRoom.longDescription(true));
+        System.out.println("The door opens. "+currentRoom.longDescription(false));
         if(itemName.equalsIgnoreCase("acid")||itemName.equalsIgnoreCase("instrument")){
           inventory.removeItem(itemName);
           System.out.println("You lost your "+itemName);
@@ -255,5 +286,49 @@ public class Game {
       else
         System.out.println("It is not dark.");
     }
+  }
+
+  private void takeItem(Command command){
+    String itemName = command.getSecondWord();
+    Inventory roomInventory = currentRoom.getInventory();
+    if(itemName.equalsIgnoreCase("key")){
+      ArrayList<Item> items = roomInventory.getItems();
+      for(int i=0;i<items.size();i++){
+        if(items.get(i) instanceof Key){
+          boolean added = inventory.addItem(items.get(i));
+          if(added){
+            roomInventory.removeItem(items.get(i).getName());
+            System.out.println("You took this "+itemName+".");
+          }
+          return;
+        }
+      }
+      System.out.println("You can't find this item.");
+    }else{
+      if(roomInventory.hasItem(itemName)){
+        if(!(roomInventory.getItem(itemName) instanceof ReadableItem)){
+          boolean added = inventory.addItem(roomInventory.getItem("flashlight"));
+          if(added){
+            roomInventory.removeItem(itemName);
+            System.out.println("You took this "+itemName+".");
+          }
+        }else{
+          System.out.println("You can't take this item.");
+        }
+      }else{
+        System.out.println("You can't find this item.");
+      }
+    }
+  }
+
+  private void readItem(Command command){
+    String itemName = command.getSecondWord();
+    Inventory roomInventory = currentRoom.getInventory();
+    if(roomInventory.hasItem(itemName)&&roomInventory.getItem(itemName) instanceof ReadableItem){
+      ReadableItem readable = (ReadableItem)(roomInventory.getItem(itemName));
+      readable.read();
+      return;
+    }
+    System.out.println("You can't read this.");
   }
 }

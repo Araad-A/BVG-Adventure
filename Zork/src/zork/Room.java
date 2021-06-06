@@ -54,9 +54,9 @@ public class Room {
    */
   public String longDescription(boolean flashlightOn) {
     if (!isDark || flashlightOn)
-      return "\n" + "Room: " + roomName + "\n" + floor + "\n\n" + description + "\n" + exitString();
+      return "\n" + "Room: " + roomName + "\n" + floor + "\n\n" + description + "\n" + itemString() + "\n" + exitString();
     else
-      return "\n" + "Room: " + roomName + "\nIt is dark.";
+      return "\n" + "Room: " + roomName + "\n" + floor + "\n\nIt is dark.";
   }
 
   /**
@@ -69,6 +69,27 @@ public class Room {
       returnString += exit.getDirection() + " ";
     }
 
+    return returnString;
+  }
+
+  private String itemString(){
+    String returnString = "";
+    for(Item item:inventory.getItems()){
+      if(item.getName().substring(0,3).equalsIgnoreCase("key"))
+        returnString+="There is a key on a table.";
+      else if(item.getName().equalsIgnoreCase("flashlight"))
+        returnString+="There is a flashlight on the ground.";
+      else if(item.getName().equalsIgnoreCase("gps"))
+        returnString+="There is a GPS device on a table.";
+      else if(item.getName().equalsIgnoreCase("acid"))
+        returnString+="There is a beaker of acid on the counter.";
+      else if(item.getName().equalsIgnoreCase("instrument"))
+        returnString+="There is an instrument lying on the ground.";
+      else if(item.getName().equalsIgnoreCase("poster"))
+        returnString+="There is a poster on the wall.";
+      else if(item.getName().equalsIgnoreCase("book"))
+        returnString+="There are some open books lying around.";
+    }
     return returnString;
   }
 
