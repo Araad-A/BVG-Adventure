@@ -1,1 +1,35 @@
-"questions"
+{
+    "questions": [ 
+      {
+        "question": "What will 'System.out.print('Hello!');' print?",
+        "answers": [
+          {
+            "answer": "A",
+            "correctanswer": true,
+            "writtenanswer": "Hello!"
+          },
+          {
+            "answer": "B",
+            "correctanswer": false,
+            "writtenanswer": "Hello"
+          },
+          {
+            "answer": "C",
+            "correctanswer": false,
+            "adjacentRoom": "Hellol"
+          },
+          {
+            "answer": "D",
+            "correctanswer": false,
+            "adjacentRoom": "(Hello!)"
+          },
+          {
+            "answer": "E",
+            "correctanswer": false,
+            "adjacentRoom": "(Hello!);"
+          }
+        ]
+    }
+
+    ]
+}
