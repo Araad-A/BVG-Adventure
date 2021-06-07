@@ -1,7 +1,12 @@
 public class Zork {
     public static void main(String[] args) {
-      Game game = new Game(); //comment matthew wong
-      game.play(); //second comment comment
+      Game game = new Game(); 
+      game.play(); 
 
     }
   }
+
+  /*
+  Flashlight class, acid and instrument are all useless
+  To do: exit keyId, puzzle + code lock (overloaded constructor) for first boss, all boss fights, character class, ending after beating final boss
+  */

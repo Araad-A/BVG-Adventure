@@ -26,8 +26,10 @@ public class Inventory {
   }
 
   public boolean addItem(Item item) {
-    if (item.getWeight() + currentWeight <= maxWeight)
-      return items.add(item);
+    if (item.getWeight() + currentWeight <= maxWeight){
+      items.add(item);
+      return true;
+    }
     else {
       System.out.println("No room available to add this item!");
       return false;
@@ -55,5 +57,29 @@ public class Inventory {
         return item;
     }
     return null;
+  }
+
+  public String listItems(){
+    if(items.size()==0)
+      return "Your inventory is empty.";
+    String itemList = "Items: ";
+    for(Item item:items){
+      itemList+=item.getName()+", ";
+      itemList = itemList.substring(0,itemList.length()-2);
+    }
+    return itemList;
+  }
+
+  public ArrayList<Item> getItems(){
+    return items;
+  }
+
+  public boolean hasKey(String keyId){
+    for(Item item:items){
+      if(item instanceof Key && ((Key)item).getKeyId().equalsIgnoreCase(keyId)){
+        return true;
+      }
+    }
+    return false;
   }
 }

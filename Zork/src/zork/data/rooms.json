@@ -20,7 +20,8 @@
         {
           "isLocked": true,
           "direction": "SouthWest",
-          "adjacentRoom": "Science2"
+          "adjacentRoom": "Science2",
+          "keyId": "Key1"
         },
         {
           "isLocked": false,
@@ -44,7 +45,7 @@
         {
           "isLocked": false,
           "direction": "SouthWest",
-          "adjacentRoom": "SouthStaircase"
+          "adjacentRoom": "SouthStaircase1"
         },
         {
           "isLocked": false,
@@ -78,7 +79,7 @@
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "WestStaircase"
+          "adjacentRoom": "WestStaircase1"
         },
         {
           "isLocked": false,
@@ -93,7 +94,7 @@
         {
           "isLocked": false,
           "direction": "NorthEast",
-          "adjacentRoom": "CentralStaircase"
+          "adjacentRoom": "CentralStaircase1"
         },
         {
           "isLocked": false,
@@ -127,7 +128,7 @@
         {
           "isLocked": false,
           "direction": "NorthEast",
-          "adjacentRoom": "EastStaircase"
+          "adjacentRoom": "EastStaircase1"
         },
         {
           "isLocked": false,
@@ -156,7 +157,7 @@
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "EastStaircase"
+          "adjacentRoom": "EastStaircase1"
         },
         {
           "isLocked": false,
@@ -207,7 +208,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "NorthEast",
+          "direction": "North",
           "adjacentRoom": "Hallway1-2"
         }
       ]
@@ -221,7 +222,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "NorthWest",
+          "direction": "North",
           "adjacentRoom": "Hallway1-2"
         }
       ]
@@ -249,7 +250,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "SouthWest",
+          "direction": "South",
           "adjacentRoom": "Hallway1-5"
         }
       ]
@@ -263,7 +264,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "SouthEast",
+          "direction": "South",
           "adjacentRoom": "Hallway1-5"
         }
       ]
@@ -277,7 +278,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "SouthEast",
+          "direction": "South",
           "adjacentRoom": "Hallway1-4"
         }
       ]
@@ -973,7 +974,7 @@
         {
           "isLocked": true,
           "direction": "East",
-          "adjacentRoom": "UpperHallway1"
+          "adjacentRoom": "Hallway1-3"
         }
       ]
     },

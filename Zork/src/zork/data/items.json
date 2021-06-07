@@ -76,6 +76,48 @@
         "keyId": "Acid",
         "weight": 6,
         "room" : "Science3"
+      },
+      {
+        "itemType":3,
+        "name": "Poster",
+        "weight": 0,
+        "room" : "Science1",
+        "contents" : "placeholder"
+      },
+      {
+        "itemType":3,
+        "name": "Poster",
+        "weight": 0,
+        "room" : "Science2",
+        "contents" : "placeholder"
+      },
+      {
+        "itemType":3,
+        "name": "Poster",
+        "weight": 0,
+        "room" : "Science3",
+        "contents" : "placeholder"
+      },
+      {
+        "itemType":3,
+        "name": "Poster",
+        "weight": 0,
+        "room" : "UpperSchoolEquipmentRoom",
+        "contents" : "placeholder"
+      },
+      {
+        "itemType":3,
+        "name": "Poster",
+        "weight": 0,
+        "room" : "ITDepartment",
+        "contents" : "placeholder"
+      },
+      {
+        "itemType":3,
+        "name": "Book",
+        "weight": 0,
+        "room" : "LearningCommons",
+        "contents" : "placeholder"
       }
     ]
 }
