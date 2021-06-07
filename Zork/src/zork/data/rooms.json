@@ -146,7 +146,7 @@
       "id": "Hallway1-1",
       "name": "Outside Hallway",
       "floor": "First Floor",
-      "description": "You enter Bayview Glen with a feeling of discovery. You notice a flashlight near your feet.",
+      "description": "You enter Bayview Glen with a feeling of discovery.",
       "isDark": false,
       "exits": [
         {
@@ -217,7 +217,7 @@
       "id": "Science3",
       "name": "Physics Lab",
       "floor": "First Floor",
-      "description": "There are chemistry formulas written on the chalkboard. There is only one beaker left and it is filled with a strange acid.",
+      "description": "There are chemistry formulas written on the chalkboard.",
       "isDark": true,
       "exits": [
         {
