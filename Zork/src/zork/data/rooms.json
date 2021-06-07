@@ -18,7 +18,7 @@
           "adjacentRoom": "Hallway1-1"
         },
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "SouthWest",
           "adjacentRoom": "Science2"
         },
@@ -38,7 +38,7 @@
       "id": "Hallway1-3",
       "name": "Science Classroom Hallway",
       "floor": "First Floor",
-      "description": "You see a never ending amount of classroom doors.",
+      "description": "The number of different paths make your head spin.",
       "isDark": false,
       "exits": [
         {
@@ -111,7 +111,7 @@
       "id": "Hallway1-5",
       "name": "Computer Science Hallway",
       "floor": "First Floor",
-      "description": "You are in another hallway.",
+      "description": "You see shattered computers on the ground. You pick one up but they're all useless.",
       "isDark": false,
       "exits": [
         {
@@ -145,7 +145,7 @@
       "id": "Hallway1-1",
       "name": "Outside Hallway",
       "floor": "First Floor",
-      "description": "You can see a brief glimpse of the outside world.",
+      "description": "You enter Bayview Glen with a feeling of discovery. You notice a flashlight near your feet.",
       "isDark": false,
       "exits": [
         {
@@ -169,7 +169,7 @@
       "id": "Grade12CommonArea",
       "name": "Grade 12 Common Area",
       "floor": "First Floor",
-      "description": "It smells like coffee and stress",
+      "description": "The coffee stains on the sofas let out an odd smell. You catch a glimpse of a key.",
       "isDark": false,
       "exits": [
         {
@@ -188,7 +188,7 @@
       "id": "Outside",
       "name": "Outside",
       "floor": "First Floor",
-      "description": "The gasoline in the air makes you gag",
+      "description": "Don't give up just yet!.",
       "isDark": false,
       "exits": [
         {
@@ -202,7 +202,7 @@
       "id": "Science2",
       "name": "Chemistry Lab",
       "floor": "First Floor",
-      "description": "You see empty beakers shattered on the ground",
+      "description": "You see empty beakers shattered on the ground. They're sharp so be careful.",
       "isDark": false,
       "exits": [
         {
@@ -216,7 +216,7 @@
       "id": "Science3",
       "name": "Physics Lab",
       "floor": "First Floor",
-      "description": "There are chemistry formulas written on the chalkboard",
+      "description": "There are chemistry formulas written on the chalkboard. There is only one beaker left and it is filled with a strange acid.",
       "isDark": true,
       "exits": [
         {
@@ -230,7 +230,7 @@
       "id": "Science1",
       "name": "Biology Lab",
       "floor": "First Floor",
-      "description": "You can smell the chemicals",
+      "description": "There are hundreds of plants surrounding you. It feels like a forest.",
       "isDark": false,
       "exits": [
         {
@@ -244,7 +244,7 @@
       "id": "Robotics",
       "name": "Robotics",
       "floor": "First Floor",
-      "description": "A robot hand is right beside your face",
+      "description": "The robot at the end of the room is watching you. You feel its gaze",
       "isDark": true,
       "exits": [
         {
@@ -258,7 +258,7 @@
       "id": "ICS",
       "name": "Computer Science Class",
       "floor": "First Floor",
-      "description": "You can almost hear the rage of former computer science students.",
+      "description": "RUN!",
       "isDark": false,
       "exits": [
         {
@@ -286,7 +286,7 @@
       "id": "ITDepartment",
       "name": "IT Department",
       "floor": "First Floor",
-      "description": "There are wires everywhere",
+      "description": "There are wires everywhere that cover the room like jungle vines",
       "isDark": false,
       "exits": [
         {
@@ -300,7 +300,7 @@
       "id": "UpperSchoolGym",
       "name": "Upper School Gym",
       "floor": "First Floor",
-      "description": "The floor is squeaky and the time on the board is incorrect.",
+      "description": "The rock climbing wall is demolished and the board is powered off.",
       "isDark": false,
       "exits": [
         {
@@ -315,6 +315,7 @@
       "id": "Hallway2-1",
       "name": "Hallway",
       "floor": "Second Floor",
+      "description": "The sheer number of hallways and classes surrounding you is making your head spin.",
       "isDark": false,
       "exits": [
         {
@@ -353,6 +354,7 @@
       "id": "Hallway2-2",
       "name": "Hallway",
       "floor": "Second Floor",
+      "description": "You see open instrument cases around you and can smell a hint of valve oil.",
       "isDark": false,
       "exits": [
         {
@@ -396,6 +398,7 @@
       "id": "Hallway2-3",
       "name": "Hallway",
       "floor": "Second Floor",
+      "description": "The lockers in front of you are giving an odd smell. It's best you don't check what's in there.",
       "isDark": false,
       "exits": [
         {
@@ -439,6 +442,7 @@
       "id": "Hallway2-4",
       "name": "Hallway",
       "floor": "Second Floor",
+      "description": "You see a broken bench in front of the music room.",
       "isDark": false,
       "exits": [
         {
@@ -482,6 +486,7 @@
       "id": "Hallway2-5",
       "name": "Hallway",
       "floor": "Second Floor",
+      "description": "You walk past pictures of graduates. Some are ripped, some are intact, and some have fallen.",
       "isDark": false,
       "exits": [
         {
@@ -515,6 +520,7 @@
       "id": "Hallway2-6",
       "name": "Hallway",
       "floor": "Second Floor",
+      "description": "The shelf containing pictures and trophies has been knocked over and it is shattered into hundreds of pieces.",
       "isDark": false,
       "exits": [
         {
@@ -538,6 +544,7 @@
       "id": "Hallway2-7",
       "name": "Hallway",
       "floor": "Second Floor",
+      "description": "The TV in front of you is off and the Christmas tree to your right is filled with dust.",
       "isDark": false,
       "exits": [
         {
@@ -581,6 +588,7 @@
       "id": "Hallway2-8",
       "name": "Hallway",
       "floor": "Second Floor",
+      "description": "The doors to the change rooms are knocked down.",
       "isDark": false,
       "exits": [
         {
@@ -624,6 +632,7 @@
       "id": "Class1",
       "name": "Classroom",
       "floor": "Second Floor",
+      "description": "The drama props are covered in dust. You grab a chair but it instantly breaks.",
       "isDark": false,
       "exits": [
         {
@@ -637,6 +646,7 @@
       "id": "Class2",
       "name": "Classroom",
       "floor": "Second Floor",
+      "description": "The carpet gives off an odd smell. It hurts to breathe it in.",
       "isDark": false,
       "exits": [
         {
@@ -650,6 +660,7 @@
       "id": "Class3",
       "name": "Classroom",
       "floor": "Second Floor",
+      "description": "The rice cakes by the door are moldy.",
       "isDark": true,
       "exits": [
         {
@@ -663,6 +674,7 @@
       "id": "Class4",
       "name": "Classroom",
       "floor": "Second Floor",
+      "description": "You cannot see anything through the window in front of you.",
       "isDark": false,
       "exits": [
         {
@@ -676,6 +688,7 @@
       "id": "Class5",
       "name": "Classroom",
       "floor": "Second Floor",
+      "description": "The SMART board to your right is still flashing with a history presentation.",
       "isDark": false,
       "exits": [
         {
@@ -689,6 +702,7 @@
       "id": "Music1",
       "name": "Music Room",
       "floor": "Second Floor",
+      "description": "The floor is covered in saxophone, oboe and clarinet reeds.",
       "isDark": false,
       "exits": [
         {
@@ -702,6 +716,7 @@
       "id": "Music2",
       "name": "Music Room",
       "floor": "Second Floor",
+      "description": "The trombones on the wall have fallen over and are deformed. The speakers in the room are playing an odd sound but you can't quite recognize it.",
       "isDark": false,
       "exits": [
         {
@@ -715,6 +730,7 @@
       "id": "MusicEquipment",
       "name": "Music Equipment",
       "floor": "Second Floor",
+      "description": "The room is empty. The shelves have been collecting dust for a while.",
       "isDark": true,
       "exits": [
         {
@@ -733,6 +749,7 @@
       "id": "FitnessRoom",
       "name": "Fitness Room",
       "floor": "Second Floor",
+      "description": "Every weight is placed perfectly on the rack. It's as if no one has entered this room in years.",
       "isDark": false,
       "exits": [
         {
@@ -751,6 +768,7 @@
       "id": "LearningCommons",
       "name": "Learning Commons",
       "floor": "Second Floor",
+      "description": "The books have fallen of the shelf and hundreds of ripped pages cover the floor. Your catches a specific book on a table. It's untouched.",
       "isDark": true,
       "exits": [
         {
@@ -769,6 +787,7 @@
       "id": "Theater",
       "name": "Theater",
       "floor": "Second Floor",
+      "description": "Oh no! Why did you enter here?!? ITS OFF-LIMITS!.", 
       "isDark": true,
       "exits": [
         {
@@ -787,6 +806,7 @@
       "id": "Lobby",
       "name": "Lobby",
       "floor": "Second Floor",
+      "description": "The computer screen at reception is flickering and emitting a strange noise.",
       "isDark": false,
       "exits": [
         {
@@ -800,6 +820,7 @@
       "id": "Cafeteria",
       "name": "Cafeteria",
       "floor": "Second Floor",
+      "description": "The cucumbers in the salad bar are now a dull yellow. The food waste from the trash is spread across the floor.",
       "isDark": false,
       "exits": [
         {
@@ -813,6 +834,7 @@
       "id": "PrepSchoolGym",
       "name": "Gym",
       "floor": "Second Floor",
+      "description": "Basketballs are constantly bouncing around. You can hear the echo last for seconds in the air.",
       "isDark": false,
       "exits": [
         {
@@ -826,6 +848,7 @@
       "id": "PrepSchoolEquipmentRoom",
       "name": "Prep School Equipment Room",
       "floor": "Second Floor",
+      "description": "The ice packs are leaking out of the freezer.",
       "isDark": false,
       "exits": [
         {
@@ -839,11 +862,12 @@
       "id": "CentralStaircase1",
       "name": "Central Staircase",
       "floor": "First Floor",
+      "description": "The posters on the wall have been thrown to the ground.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "Up",
+          "direction": "North",
           "adjacentRoom": "CentralStaircase2"
         },
         {
@@ -857,16 +881,17 @@
       "id": "CentralStaircase2",
       "name": "Central Staircase",
       "floor": "Second Floor",
+      "description": "There are hundreds of thumbtacks on the floor. You should be careful.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "Up",
+          "direction": "North",
           "adjacentRoom": "CentralStaircase3"
         },
         {
           "isLocked": false,
-          "direction": "Down",
+          "direction": "South",
           "adjacentRoom": "CentralStaircase1"
         },
         {
@@ -880,11 +905,12 @@
       "id": "CentralStaircase3",
       "name": "Central Staircase",
       "floor": "Third Floor",
+      "description": "You feel the air around change. You are apporaching something.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "Down",
+          "direction": "South",
           "adjacentRoom": "CentralStaircase2"
         },
         {
@@ -898,11 +924,12 @@
       "id": "EastStaircase1",
       "name": "East Staircase",
       "floor": "First Floor",
+      "description": "The stairs are completely empty and deserted.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "Up",
+          "direction": "North",
           "adjacentRoom": "EastStaircase2"
         },
         {
@@ -916,11 +943,12 @@
       "id": "EastStaircase2",
       "name": "East Staircase",
       "floor": "Second Floor",
+      "description": "The stairs are cracked and large chunks of it are missing. It's hard to traverse up them.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "Down",
+          "direction": "South",
           "adjacentRoom": "EastStaircase1"
         },
         {
@@ -934,11 +962,12 @@
       "id": "SouthStaircase1",
       "name": "South Staircase",
       "floor": "First Floor",
+      "description": "There is a random basketball rolling down the stairs and it hits you in the shin.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "Up",
+          "direction": "North",
           "adjacentRoom": "SouthStaircase2"
         },
         {
@@ -952,16 +981,17 @@
       "id": "SouthStaircase2",
       "name": "South Staircase",
       "floor": "Second Floor",
+      "description": "There is shattered glass on one of the steps. Luckily you avoided that step.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "Up",
+          "direction": "North",
           "adjacentRoom": "SouthStaircase3"
         },
         {
           "isLocked": false,
-          "direction": "Down",
+          "direction": "South",
           "adjacentRoom": "SouthStaircase1"
         },
         {
@@ -975,11 +1005,12 @@
       "id": "SouthStaircase3",
       "name": "South Staircase",
       "floor": "Third Floor",
+      "description": "You feel the air around change. You are apporaching something.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "Down",
+          "direction": "South",
           "adjacentRoom": "SouthStaircase2"
         },
         {
@@ -993,11 +1024,12 @@
       "id": "WestStaircase1",
       "name": "West Staircase",
       "floor": "First Floor",
+      "description": "It is quiet. It's as if this stairway is completely detached from the school.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "Up",
+          "direction": "North",
           "adjacentRoom": "WestStaircase2"
         },
         {
@@ -1011,16 +1043,17 @@
       "id": "WestStaircase2",
       "name": "West Staircase",
       "floor": "Second Floor",
+      "description": "The railings have been ripped off. They now create a hazard on the ground.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "Up",
+          "direction": "North",
           "adjacentRoom": "WestStaircase3"
         },
         {
           "isLocked": false,
-          "direction": "Down",
+          "direction": "South",
           "adjacentRoom": "WestStaircase1"
         },
         {
@@ -1034,11 +1067,12 @@
       "id": "WestStaircase3",
       "name": "West Staircase",
       "floor": "Third Floor",
+      "description": "You feel the air around change. You are apporaching something.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "Down",
+          "direction": "South",
           "adjacentRoom": "WestStaircase2"
         },
         {
@@ -1052,6 +1086,7 @@
       "id": "Federico'sDomain",
       "name": "Federico's Domain",
       "floor": "Third Floor",
+      "description": "This is it.",
       "isDark": true,
       "exits": [
         {
