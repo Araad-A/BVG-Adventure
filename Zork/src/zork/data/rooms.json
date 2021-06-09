@@ -222,7 +222,7 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "NorthWest",
           "adjacentRoom": "Hallway1-2"
         }
       ]
@@ -872,9 +872,9 @@
           "adjacentRoom": "CentralStaircase2"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "WestHallway1"
+          "adjacentRoom": "Hallway1-4"
         }
       ]
     },
@@ -897,7 +897,7 @@
         },
         {
           "isLocked": true,
-          "direction": "South",
+          "direction": "SouthWest",
           "adjacentRoom": "Hallway2-1"
         }
       ]
@@ -929,14 +929,14 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "North",
           "adjacentRoom": "EastStaircase2"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway"
+          "adjacentRoom": "Hallway1-5"
         }
       ]
     },
@@ -953,7 +953,7 @@
           "adjacentRoom": "EastStaircase1"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
           "adjacentRoom": "Hallway2-4"
         }
@@ -967,12 +967,12 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "North",
           "adjacentRoom": "SouthStaircase2"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "East",
           "adjacentRoom": "Hallway1-3"
         }
@@ -1029,14 +1029,14 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "North",
           "adjacentRoom": "WestStaircase2"
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "WestHallway1"
+          "adjacentRoom": "Hallway1-4"
         }
       ]
     },
