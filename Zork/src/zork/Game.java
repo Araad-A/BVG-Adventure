@@ -10,12 +10,12 @@ import org.json.simple.parser.JSONParser;
 public class Game {
 
   public static HashMap<String, Room> roomMap = new HashMap<String, Room>();
-  public static HashMap<String, Item> itemMap = new HashMap<String, Item>();
   private Parser parser;
   private Room currentRoom;
   private boolean atDoor;
+  private boolean fighting;
   private Exit door;
-  private Inventory inventory;
+  private Character player;
 
   /**
    * Create the game and initialise its internal map.
@@ -28,8 +28,8 @@ public class Game {
     } catch (Exception e) {
       e.printStackTrace();
     }
-    inventory = new Inventory(13);
     parser = new Parser();
+    player = new Character("Student", 100, 13);
   }
 
   private void initRooms(String fileName) throws Exception {
@@ -86,18 +86,14 @@ public class Game {
       if(itemType==Item.DEFAULT){
         Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
         item = new Item(weight, name, isOpenable);
-        itemMap.put(name,item);
       }else if(itemType==Item.KEY){
         String keyId = (String) ((JSONObject) itemObj).get("keyId");
         item = new Key(keyId, name, weight);
-        itemMap.put(name,item);
       }else if(itemType==Item.FLASHLIGHT){
         item = new Flashlight(weight, name);
-        itemMap.put(name,item);
       }else if(itemType==Item.READABLE){
         String contents = (String) ((JSONObject) itemObj).get("contents");
         item = new ReadableItem(weight, name, contents);
-        itemMap.put(name, item);
       }
       roomMap.get(room).getInventory().addItem(item);
     }
@@ -107,7 +103,7 @@ public class Game {
    * Main play routine. Loops until end of play.
    */
   public void play() {
-    printWelcome();
+    welcome();
 
     boolean finished = false;
     while (!finished) {
@@ -120,17 +116,18 @@ public class Game {
       }
 
     }
-    System.out.println("Thank you for playing.  Good bye.");
+    System.out.println("Thank you for playing. Good bye.");
   }
 
   /**
    * Print out the opening message for the player.
    */
-  private void printWelcome() {
+  private void welcome() {
     System.out.println();
-    System.out.println("Welcome to Bayview Glen!");
+    System.out.println("Welcome to Bayview Glen!");    
     System.out.println("You are a student at BVG, but something doesn't seem right...");
     System.out.println("Type 'help' if you need help.");
+    System.out.println("Set your name at any time with 'name [name]'.");
     System.out.println();
     System.out.println(currentRoom.longDescription(false));
   }
@@ -154,7 +151,7 @@ public class Game {
         System.out.println("Go where?");
       }else{
         String direction = command.getSecondWord();
-        goRoom(direction);
+        return goRoom(direction);
       }
     }else if(commandWord.equalsIgnoreCase("n")||commandWord.equalsIgnoreCase("north")){
       goRoom("North");
@@ -195,9 +192,9 @@ public class Game {
         System.out.println("I don't know what you mean...");
       }
     } else if(commandWord.equals("use")){
-      useItem(command);
+      return useItem(command);
     } else if(commandWord.equals("inventory")){
-      System.out.println(inventory.listItems());
+      System.out.println(player.getInventory().listItems());
     } else if(commandWord.equals("take")){
       if(!command.hasSecondWord()){
         System.out.println("Take what?");
@@ -227,9 +224,15 @@ public class Game {
       }
     }else if(commandWord.equals("workout")){
       if(currentRoom.getRoomName().equals("Prep School Gym")||currentRoom.getRoomName().equals("Upper School Gym")||currentRoom.getRoomName().equals("Fitness Room")){
-        inventory.setMaxWeight(inventory.getMaxWeight()+6);
+        player.getInventory().setMaxWeight(player.getInventory().getMaxWeight()+6);
       }else{
         System.out.println("You can't do that here.");
+      }
+    }else if(commandWord.equals("name")){
+      if(!command.hasSecondWord()){
+        System.out.println("What would you like to name yourself?");
+      }else{
+        player.setName(command.getSecondWord());
       }
     }
     return false;
@@ -257,7 +260,7 @@ public class Game {
    * Try to go to one direction. If there is an exit, enter the new room,
    * otherwise print an error message.
    */
-  private void goRoom(String direction) {
+  private boolean goRoom(String direction) {
 
     // Try to leave current room.
     Room nextRoom = currentRoom.nextRoom(direction);
@@ -269,33 +272,40 @@ public class Game {
       atDoor=true;
     }else {
       currentRoom = nextRoom;
+      if(currentRoom.getRoomName().equalsIgnoreCase("outside")){
+        System.out.println("You take a breath of fresh air as you step outside. You have finally made it out of the school alive. Congratulations.");
+        return true;
+      }
       System.out.println(currentRoom.longDescription(false));
     }
+    return false;
   }
 
-  private void useItem(Command command){
+  private boolean useItem(Command command){
     if(!command.hasSecondWord()){
       System.out.println("Use what?");
-      return;
+      return false;
     }
     String itemName=command.getSecondWord();
-    if(!(inventory.hasItem(itemName)||itemName.equalsIgnoreCase("key"))){
+    if(!(player.getInventory().hasItem(itemName)||itemName.equalsIgnoreCase("key"))){
       System.out.println("You don't have this item.");
-      return;
+      return false;
     }
     if(atDoor){
       if(door.isCodeLock()){
         System.out.println("You must enter a code to open this door.");
       }else{
         if(itemName.equalsIgnoreCase("key")){
-          if(inventory.hasKey(door.getKeyId())){
+          if(player.getInventory().hasKey(door.getKeyId())){
             door.setLocked(false);
             currentRoom = roomMap.get(door.getAdjacentRoom());
             atDoor=false;
-            if(door.getKeyId().equalsIgnoreCase("shovel"))
+            if(door.getKeyId().equalsIgnoreCase("shovel")){
               System.out.println("A path has been cleared. "+currentRoom.longDescription(false));
-            else
+            }else{
               System.out.println("The door opens. "+currentRoom.longDescription(false));
+              return goRoom(door.getDirection());
+            }
           }else{
             System.out.println("You don't have a key that unlocks this door.");
           }
@@ -303,24 +313,27 @@ public class Game {
           System.out.println("You can't use that to open this door.");
         }
       }
-      return;
+      return false;
     }
     if(itemName.equalsIgnoreCase("gps")){
-      if(inventory.hasItem("Key 7"))
+      if(player.getInventory().hasItem("Key 7"))
         System.out.println("The GPS is blank.");
-      else if(inventory.hasItem("Key 6"))
+      else if(player.getInventory().hasItem("Key 6"))
         System.out.println("The key is on the west side of the school.");
-      else if(inventory.hasItem("Key 5"))
+      else if(player.getInventory().hasItem("Key 5"))
         System.out.println("The key is on the north side of the school.");
       else
         System.out.println("The key is on the south side of the school.");
+      return false;
     }
     if(itemName.equalsIgnoreCase("flashlight")){
       if(currentRoom.isDark())
         System.out.println("You can now see." + "\n"+currentRoom.longDescription(true));
       else
         System.out.println("It is not dark.");
+      return false;
     }
+    return false;
   }
 
   private void takeItem(Command command){
@@ -330,7 +343,7 @@ public class Game {
       ArrayList<Item> items = roomInventory.getItems();
       for(int i=0;i<items.size();i++){
         if(items.get(i) instanceof Key){
-          boolean added = inventory.addItem(items.get(i));
+          boolean added = player.getInventory().addItem(items.get(i));
           if(added){
             roomInventory.removeItem(items.get(i).getName());
             System.out.println("You took this "+itemName+".");
@@ -342,7 +355,7 @@ public class Game {
     }else{
       if(roomInventory.hasItem(itemName)){
         if(!(roomInventory.getItem(itemName) instanceof ReadableItem)){
-          boolean added = inventory.addItem(roomInventory.getItem(itemName));
+          boolean added = player.getInventory().addItem(roomInventory.getItem(itemName));
           if(added){
             roomInventory.removeItem(itemName);
             System.out.println("You took this "+itemName+".");

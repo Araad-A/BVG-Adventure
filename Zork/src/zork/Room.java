@@ -8,6 +8,7 @@ public class Room {
   private String floor;
   private boolean isDark;
   private Inventory inventory;
+  private Boss boss;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -31,6 +32,7 @@ public class Room {
     description = "DEFAULT DESCRIPTION";
     exits = new ArrayList<Exit>();
     inventory = new Inventory();
+    boss = null;
   }
 
   public void addExit(Exit exit) throws Exception {
@@ -168,5 +170,13 @@ public class Room {
 
   public Inventory getInventory(){
     return inventory;
+  }
+
+  public void setBoss(Boss boss){
+    this.boss = boss;
+  }
+
+  public Boss getBoss(){
+    return boss;
   }
 }
