@@ -22,8 +22,8 @@ public class Game {
    */
   public Game() {
     try {
-      initRooms("Zork\\src\\zork\\data\\rooms.json");
-      initItems("Zork\\src\\zork\\data\\items.json");
+      initRooms("BVG-Adventure\\Zork\\src\\zork\\data\\rooms.json");
+      initItems("BVG-Adventure\\Zork\\src\\zork\\data\\items.json");
       currentRoom = roomMap.get("Hallway1-1");
     } catch (Exception e) {
       e.printStackTrace();
@@ -306,13 +306,27 @@ public class Game {
         }
       }
       System.out.println("You can't find this item.");
-    }else{
+    }else if(itemName.equalsIgnoreCase("flashlight")){
       if(roomInventory.hasItem(itemName)){
         if(!(roomInventory.getItem(itemName) instanceof ReadableItem)){
           boolean added = inventory.addItem(roomInventory.getItem("flashlight"));
           if(added){
             roomInventory.removeItem(itemName);
             System.out.println("You took this "+itemName+".");
+          }
+        }else{
+          System.out.println("You can't take this item.");
+        }
+      }else{
+        System.out.println("You can't find this item.");
+      }
+    }else{
+      if(roomInventory.hasItem(itemName)){
+        if(!(roomInventory.getItem(itemName) instanceof ReadableItem)){
+          boolean added = inventory.addItem(roomInventory.getItem("Acid"));
+          if(added){
+            roomInventory.removeItem(itemName);
+            System.out.println("You took the "+itemName+".");
           }
         }else{
           System.out.println("You can't take this item.");
