@@ -6,8 +6,10 @@ public class Question {
     private String filler1;
     private String filler2;
     private String filler3;
+    int num;
 
-    public Question(String question, String answer, String filler1, String filler2, String filler3){
+    public Question(String question, String answer, String filler1, String filler2, String filler3, int num){
+        this.num = num;
         this.question = question;
         this.answer = answer;
         this.filler1 = filler1;
