@@ -28,7 +28,7 @@ public class Game {
     } catch (Exception e) {
       e.printStackTrace();
     }
-    inventory = new Inventory();
+    inventory = new Inventory(13);
     parser = new Parser();
   }
 
@@ -58,9 +58,10 @@ public class Game {
         String direction = (String) ((JSONObject) exitObj).get("direction");
         String adjacentRoom = (String) ((JSONObject) exitObj).get("adjacentRoom");
         String keyId = (String) ((JSONObject) exitObj).get("keyId");
+        String lockedMessage = (String) ((JSONObject) exitObj).get("lockedMessage");
         Boolean isLocked = (Boolean) ((JSONObject) exitObj).get("isLocked");
-        Boolean isOpen = (Boolean) ((JSONObject) exitObj).get("isOpen");
-        Exit exit = new Exit(direction, adjacentRoom, isLocked, keyId, isOpen);
+        Boolean isCodeLock = (Boolean) ((JSONObject) exitObj).get("isCodeLock");
+        Exit exit = new Exit(direction, adjacentRoom, isLocked, keyId, lockedMessage, isCodeLock);
         exits.add(exit);
       }
       room.setExits(exits);
@@ -171,6 +172,10 @@ public class Game {
       goRoom("Southwest");
     }else if(commandWord.equalsIgnoreCase("nw")||commandWord.equalsIgnoreCase("northwest")){
       goRoom("Northwest");
+    }else if(commandWord.equalsIgnoreCase("u")||commandWord.equalsIgnoreCase("up")){
+      goRoom("Up");
+    }else if(commandWord.equalsIgnoreCase("d")||commandWord.equalsIgnoreCase("down")){
+      goRoom("Down");
     }else if (commandWord.equals("quit")) {
       if (command.hasSecondWord())
         System.out.println("Quit what?");
@@ -202,6 +207,27 @@ public class Game {
         System.out.println("Read what?");
       }else{
         readItem(command);
+      }
+    } else if(commandWord.equals("enter")){
+      if(!atDoor||!door.isCodeLock()){
+        System.out.println("You can't do that here.");
+      }else{
+        if(!command.hasSecondWord()){
+          System.out.println("Enter what?");
+        }else if(command.getSecondWord().equalsIgnoreCase(door.getKeyId())){
+          door.setLocked(false);
+          currentRoom = roomMap.get(door.getAdjacentRoom());
+          atDoor=false;
+          System.out.println("The door opens. "+currentRoom.longDescription(false));
+        }else{
+          System.out.println("Incorrect passcode.");
+        }
+      }
+    }else if(commandWord.equals("workout")){
+      if(currentRoom.getRoomName().equals("Prep School Gym")||currentRoom.getRoomName().equals("Upper School Gym")||currentRoom.getRoomName().equals("Fitness Room")){
+        inventory.setMaxWeight(inventory.getMaxWeight()+6);
+      }else{
+        System.out.println("You can't do that here.");
       }
     }
     return false;
@@ -236,9 +262,9 @@ public class Game {
     if (nextRoom == null)
       System.out.println("There is no door!");
     else if(currentRoom.getExit(direction).isLocked()){
-      System.out.println("The door is locked. Will you open it or leave?");
-      atDoor=true;
       door=currentRoom.getExit(direction);
+      System.out.println(door.getLockedMessage());
+      atDoor=true;
     }else {
       currentRoom = nextRoom;
       System.out.println(currentRoom.longDescription(false));
@@ -256,17 +282,24 @@ public class Game {
       return;
     }
     if(atDoor){
-      if(itemName.equalsIgnoreCase("key")&&inventory.hasKey(door.getKeyId())){
-        door.setLocked(false);
-        currentRoom = roomMap.get(door.getAdjacentRoom());
-        atDoor=false;
-        System.out.println("The door opens. "+currentRoom.longDescription(false));
-        if(itemName.equalsIgnoreCase("acid")||itemName.equalsIgnoreCase("instrument")){
-          inventory.removeItem(itemName);
-          System.out.println("You lost your "+itemName);
-        }
+      if(door.isCodeLock()){
+        System.out.println("You must enter a code to open this door.");
       }else{
-        System.out.println("You can't use that to open this door.");
+        if(itemName.equalsIgnoreCase("key")){
+          if(inventory.hasKey(door.getKeyId())){
+            door.setLocked(false);
+            currentRoom = roomMap.get(door.getAdjacentRoom());
+            atDoor=false;
+            if(door.getKeyId().equalsIgnoreCase("shovel"))
+              System.out.println("A path has been cleared. "+currentRoom.longDescription(false));
+            else
+              System.out.println("The door opens. "+currentRoom.longDescription(false));
+          }else{
+            System.out.println("You don't have a key that unlocks this door.");
+          }
+        }else{
+          System.out.println("You can't use that to open this door.");
+        }
       }
       return;
     }
@@ -282,7 +315,7 @@ public class Game {
     }
     if(itemName.equalsIgnoreCase("flashlight")){
       if(currentRoom.isDark())
-        System.out.println(currentRoom.longDescription(true));
+        System.out.println("You can now see." + "\n"+currentRoom.longDescription(true));
       else
         System.out.println("It is not dark.");
     }
@@ -307,7 +340,7 @@ public class Game {
     }else{
       if(roomInventory.hasItem(itemName)){
         if(!(roomInventory.getItem(itemName) instanceof ReadableItem)){
-          boolean added = inventory.addItem(roomInventory.getItem("flashlight"));
+          boolean added = inventory.addItem(roomInventory.getItem(itemName));
           if(added){
             roomInventory.removeItem(itemName);
             System.out.println("You took this "+itemName+".");

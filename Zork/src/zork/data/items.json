@@ -5,77 +5,77 @@
         "itemType":1,
         "name": "Key 1",
         "keyId": "Key1",
-        "weight": 6,
+        "weight": 1,
         "room" : "Grade12CommonArea"
       },
       {
         "itemType":1,
         "name": "Key 2",
         "keyId": "Key2",
-        "weight": 6,
+        "weight": 1,
         "room" : "ITDepartment"
       },
       {
         "itemType":1,
         "name": "Key 3",
         "keyId": "Key3",
-        "weight": 6,
+        "weight": 1,
         "room" : "ICS"
       },
       {
         "itemType":1,
         "name": "Key 4",
         "keyId": "Key4",
-        "weight": 6,
+        "weight": 1,
         "room" : "Class5"
       },
       {
         "itemType":1,
         "name": "Key 5",
         "keyId": "Key5",
-        "weight": 6,
+        "weight": 1,
         "room" : "Class2"
       },
       {
         "itemType":1,
         "name": "Key 6",
         "keyId": "Key6",
-        "weight": 6,
+        "weight": 1,
         "room" : "Cafeteria"
       },
       {
         "itemType":1,
         "name": "Key 7",
         "keyId": "Key7",
-        "weight": 6,
+        "weight": 1,
         "room" : "FitnessRoom"
+      },
+      {
+        "itemType":1,
+        "name": "Key 8",
+        "keyId": "Key8",
+        "weight": 1,
+        "room" : "Federico'sDomain"
+      },
+      {
+        "itemType":1,
+        "name": "Shovel",
+        "keyId": "Shovel",
+        "weight": 5,
+        "room" : "Theater"
       },
       {
         "itemType":2,
         "name": "Flashlight",
-        "weight": 6,
+        "weight": 3,
         "room" : "Hallway1-1"
       },
       {
         "itemType":0,
         "name": "GPS",
         "isOpenable": false,
-        "weight": 6,
+        "weight": 3,
         "room" : "Class3"
-      },
-      {
-        "itemType":1,
-        "name": "Instrument",
-        "keyId": "Instrument",
-        "weight": 6,
-        "room" : "Music1"
-      },
-      {
-        "itemType":1,
-        "name": "Acid",
-        "keyId": "Acid",
-        "weight": 6,
-        "room" : "Science3"
       },
       {
         "itemType":3,
@@ -117,7 +117,7 @@
         "name": "Book",
         "weight": 0,
         "room" : "LearningCommons",
-        "contents" : "placeholder"
+        "contents" : "To get past this floor, make your way to the theater. Make sure you know your plays!"
       }
     ]
 }
