@@ -285,7 +285,7 @@
       "id": "Science3",
       "name": "Physics Lab",
       "floor": "First Floor",
-      "description": "There are chemistry formulas written on the chalkboard",
+      "description": "There are chemistry formulas written on the chalkboard.",
       "isDark": true,
       "exits": [
         {
@@ -333,7 +333,7 @@
       "id": "ICS",
       "name": "Computer Science Class",
       "floor": "First Floor",
-      "description": "You can almost hear the rage of former computer science students.",
+      "description": "RUN!",
       "isDark": false,
       "exits": [
         {

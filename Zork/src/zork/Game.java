@@ -185,7 +185,9 @@ public class Game {
       System.out.println("Do you really think you should be eating at a time like this?");
     } else if (commandWord.equals("sleep")) {
       System.out.println("You took a nice, long nap. You feel refreshed and ready to continue on your journey.");
-    } else if(commandWord.equals("leave")){
+    }else if (commandWord.equals("escape")) {
+      System.out.println("WHAT ARE YOU DOING? You can't run out of here. Don't give up just yet!!!"); 
+    }else if(commandWord.equals("leave")){
       if(atDoor){
         System.out.println(currentRoom.longDescription(false));
         atDoor=false;
