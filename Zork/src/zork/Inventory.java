@@ -21,6 +21,10 @@ public class Inventory {
     return maxWeight;
   }
 
+  public void setMaxWeight(int maxWeight){
+    this.maxWeight = maxWeight;
+  }
+
   public int getCurrentWeight() {
     return currentWeight;
   }
@@ -65,8 +69,8 @@ public class Inventory {
     String itemList = "Items: ";
     for(Item item:items){
       itemList+=item.getName()+", ";
-      itemList = itemList.substring(0,itemList.length()-2);
     }
+    itemList = itemList.substring(0,itemList.length()-2);
     return itemList;
   }
 

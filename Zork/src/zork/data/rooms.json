@@ -1,6 +1,37 @@
 {
   "rooms": [ 
     {
+      "id": "Hallway1-1",
+      "name": "Outside Hallway",
+      "floor": "First Floor",
+      "description": "You enter Bayview Glen with a feeling of discovery. The door to the outside is locked behind you.",
+      "isDark": false,
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "East",
+          "adjacentRoom": "Outside",
+          "keyId": "Key8",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Hallway1-5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Hallway1-2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
+        }
+      ]
+    },
+    {
       "id": "Hallway1-2",
       "name": "Grade 12 Common Area Hallway",
       "floor": "First Floor",
@@ -10,28 +41,39 @@
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Grade12CommonArea"
+          "adjacentRoom": "Grade12CommonArea",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway1-1"
+          "adjacentRoom": "Hallway1-1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "SouthWest",
           "adjacentRoom": "Science2",
-          "keyId": "Key1"
+          "keyId": "Key2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "SouthEast",
-          "adjacentRoom": "Science3"
+          "adjacentRoom": "Science3",
+          "keyId": "Key2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway1-3"
+          "adjacentRoom": "Hallway1-3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -43,29 +85,41 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "SouthWest",
-          "adjacentRoom": "SouthStaircase1"
+          "adjacentRoom": "SouthStaircase1",
+          "keyId": "Key3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "South",
-          "adjacentRoom": "Science1"
+          "adjacentRoom": "Science1",
+          "keyId": "Key1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway1-5"
+          "adjacentRoom": "Hallway1-5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway1-4"
+          "adjacentRoom": "Hallway1-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway1-2"
+          "adjacentRoom": "Hallway1-2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -77,34 +131,51 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "West",
-          "adjacentRoom": "WestStaircase1"
+          "adjacentRoom": "WestStaircase1",
+          "keyId": "Key3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "NorthWest",
-          "adjacentRoom": "UpperSchoolEquipmentRoom"
+          "adjacentRoom": "UpperSchoolEquipmentRoom",
+          "keyId": "Key1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "North",
-          "adjacentRoom": "ITDepartment"
+          "adjacentRoom": "ITDepartment",
+          "keyId": "Key1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "NorthEast",
-          "adjacentRoom": "CentralStaircase1"
+          "adjacentRoom": "CentralStaircase1",
+          "keyId": "Key3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "South",
-          "adjacentRoom": "UpperSchoolGym"
+          "adjacentRoom": "UpperSchoolGym",
+          "keyId": "Key2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway1-3"
+          "adjacentRoom": "Hallway1-3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -116,53 +187,42 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "NorthWest",
-          "adjacentRoom": "ICS"
+          "adjacentRoom": "ICS",
+          "keyId": "ICS3U",
+          "lockedMessage": "The door is locked with a code lock. Will you enter the code or leave?",
+          "isCodeLock":true
         },
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "North",
-          "adjacentRoom": "Robotics"
+          "adjacentRoom": "Robotics",
+          "keyId": "Key1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": false,
+          "isLocked": true,
           "direction": "NorthEast",
-          "adjacentRoom": "EastStaircase1"
+          "adjacentRoom": "EastStaircase1",
+          "keyId": "Key3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
-          "direction": "East",
-          "adjacentRoom": "Hallway1-1"
+          "direction": "SouthEast",
+          "adjacentRoom": "Hallway1-1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "SouthWest",
-          "adjacentRoom": "Hallway1-3"
-        }
-      ]
-    },
-    {
-      "id": "Hallway1-1",
-      "name": "Outside Hallway",
-      "floor": "First Floor",
-      "description": "You enter Bayview Glen with a feeling of discovery.",
-      "isDark": false,
-      "exits": [
-        {
-          "isLocked": false,
-          "direction": "East",
-          "adjacentRoom": "Outside"
-        },
-        {
-          "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "EastStaircase1"
-        },
-        {
-          "isLocked": false,
-          "direction": "West",
-          "adjacentRoom": "Hallway1-2"
+          "adjacentRoom": "Hallway1-3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -176,12 +236,16 @@
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway1-5"
+          "adjacentRoom": "Hallway1-5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway1-2"
+          "adjacentRoom": "Hallway1-2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -189,13 +253,15 @@
       "id": "Outside",
       "name": "Outside",
       "floor": "First Floor",
-      "description": "Don't give up just yet!.",
+      "description": "You take a breath of fresh air as you step outside.",
       "isDark": false,
       "exits": [
         {
-          "isLocked": false,
-          "direction": "West",
-          "adjacentRoom": "Hallway1-1"
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "CentralStaircase3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -203,13 +269,15 @@
       "id": "Science2",
       "name": "Chemistry Lab",
       "floor": "First Floor",
-      "description": "You see empty beakers shattered on the ground. They're sharp so be careful.",
+      "description": "You see empty beakers shattered on the ground. They're sharp, so be careful.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway1-2"
+          "adjacentRoom": "Hallway1-2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -222,8 +290,10 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "NorthWest",
-          "adjacentRoom": "Hallway1-2"
+          "direction": "Northwest",
+          "adjacentRoom": "Hallway1-2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -237,7 +307,9 @@
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway1-3"
+          "adjacentRoom": "Hallway1-3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -245,13 +317,15 @@
       "id": "Robotics",
       "name": "Robotics",
       "floor": "First Floor",
-      "description": "The robot at the end of the room is watching you. You feel its gaze",
+      "description": "The robot at the end of the room is watching you. You feel its gaze.",
       "isDark": true,
       "exits": [
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway1-5"
+          "adjacentRoom": "Hallway1-5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -265,7 +339,9 @@
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway1-5"
+          "adjacentRoom": "Hallway1-5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -279,7 +355,9 @@
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway1-4"
+          "adjacentRoom": "Hallway1-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -287,13 +365,15 @@
       "id": "ITDepartment",
       "name": "IT Department",
       "floor": "First Floor",
-      "description": "There are wires everywhere that cover the room like jungle vines",
+      "description": "There are wires everywhere that cover the room like jungle vines.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway1-4"
+          "adjacentRoom": "Hallway1-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -307,7 +387,9 @@
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway1-4"
+          "adjacentRoom": "Hallway1-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -322,32 +404,46 @@
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway 2-6"
+          "adjacentRoom": "Hallway2-6",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "Northeast",
-          "adjacentRoom": "Central Staircase"
+          "adjacentRoom": "CentralStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway 2-2"
+          "adjacentRoom": "Hallway2-2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Southwest",
-          "adjacentRoom": "Class 1"
+          "adjacentRoom": "Class1",
+          "keyId": "Key4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "West Staircase"
+          "adjacentRoom": "WestStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Northwest",
-          "adjacentRoom": "Theater"
+          "adjacentRoom": "Theater",
+          "keyId": "Key7",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     }, 
@@ -361,37 +457,54 @@
         {
           "isLocked": true,
           "direction": "North",
-          "adjacentRoom": "Music 1"
+          "adjacentRoom": "Music1",
+          "keyId": "Key4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "East",
-          "adjacentRoom": "Music Equipment"
+          "adjacentRoom": "MusicEquipment",
+          "keyId": "Key4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "Southeast",
-          "adjacentRoom": "Hallway 2-3"
+          "adjacentRoom": "Hallway 2-3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "South",
-          "adjacentRoom": "Class 2"
+          "adjacentRoom": "Class2",
+          "keyId": "Key4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "Southwest",
-          "adjacentRoom": "South Staircase"
+          "adjacentRoom": "SouthStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway 2-1"
+          "adjacentRoom": "Hallway2-1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "Northwest",
-          "adjacentRoom": "Central Staircase"
+          "adjacentRoom": "CentralStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -405,37 +518,55 @@
         {
           "isLocked": false,
           "direction": "Northeast",
-          "adjacentRoom": "Hallway 2-4"
+          "adjacentRoom": "Hallway2-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "East",
-          "adjacentRoom": "Class 5"
+          "adjacentRoom": "Class5",
+          "keyId": "Key3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Southeast",
-          "adjacentRoom": "Class 4"
+          "adjacentRoom": "Class4",
+          "keyId": "Key3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "South",
-          "adjacentRoom": "Class 3"
+          "adjacentRoom": "Class3",
+          "keyId": "Key3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Southwest",
-          "adjacentRoom": "Class 2"
+          "adjacentRoom": "Class2",
+          "keyId": "Key4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "South Staircase"
+          "adjacentRoom": "SouthStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "Northwest",
-          "adjacentRoom": "Hallway 2-2"
+          "adjacentRoom": "Hallway2-2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -449,37 +580,55 @@
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway 2-5"
+          "adjacentRoom": "Hallway2-5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "East Staircase"
+          "adjacentRoom": "EastStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Southeast",
-          "adjacentRoom": "Class 5"
+          "adjacentRoom": "Class5",
+          "keyId": "Key3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "South",
-          "adjacentRoom": "Class 4"
+          "adjacentRoom": "Class4",
+          "keyId": "Key3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "Southwest",
-          "adjacentRoom": "Hallway 2-3"
+          "adjacentRoom": "Hallway2-3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "West",
-          "adjacentRoom": "Music Equipment"
+          "adjacentRoom": "MusicEquipment",
+          "keyId": "Key3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Northwest",
-          "adjacentRoom": "Music 2"
+          "adjacentRoom": "Music2",
+          "keyId": "Key3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -493,27 +642,39 @@
         {
           "isLocked": true,
           "direction": "North",
-          "adjacentRoom": "Fitness Room"
+          "adjacentRoom": "FitnessRoom",
+          "keyId": "Key6",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "Southeast",
-          "adjacentRoom": "East Staircase"
+          "adjacentRoom": "EastStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway 2-4"
+          "adjacentRoom": "Hallway2-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway 2-6"
+          "adjacentRoom": "Hallway2-6",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Northwest",
-          "adjacentRoom": "Learning Commons"
+          "adjacentRoom": "LearningCommons",
+          "keyId": "Key6",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -527,17 +688,23 @@
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway 2-7"
+          "adjacentRoom": "Hallway2-7",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway 2-5"
+          "adjacentRoom": "Hallway2-5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway 2-1"
+          "adjacentRoom": "Hallway2-1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -551,37 +718,55 @@
         {
           "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Lobby"
+          "adjacentRoom": "Lobby",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Northeast",
-          "adjacentRoom": "Cafeteria"
+          "adjacentRoom": "Cafeteria",
+          "keyId": "Key5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway 2-8"
+          "adjacentRoom": "Hallway2-8",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Southeast",
-          "adjacentRoom": "Locked Staircase 2"
+          "adjacentRoom": "LockedStaircase",
+          "keyId": null,
+          "lockedMessage": "This door doesn't open, no matter what. It doesn't even have a keyhole. There doesn't seem to be anything important behind it.",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway 2-6"
+          "adjacentRoom": "Hallway2-6",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Southwest",
-          "adjacentRoom": "Theater"
+          "adjacentRoom": "Theater",
+          "keyId": "Key7",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "West",
-          "adjacentRoom": "Locked Staircase 1"
+          "adjacentRoom": "LockedStaircase",
+          "keyId": null,
+          "lockedMessage": "This door doesn't open, no matter what. It doesn't even have a keyhole. There doesn't seem to be anything important behind it.",
+          "isCodeLock":false
         }
       ]
     },
@@ -595,37 +780,57 @@
         {
           "isLocked": true,
           "direction": "North",
-          "adjacentRoom": "Gym"
+          "adjacentRoom": "PrepSchoolGym",
+          "keyId": "Key5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "East",
-          "adjacentRoom": "Locked Staircase 3"
+          "adjacentRoom": "LockedStaircase",
+          "keyId": null,
+          "lockedMessage": "This door doesn't open, no matter what. It doesn't even have a keyhole. There doesn't seem to be anything important behind it.",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Southeast",
-          "adjacentRoom": "Fitness Room"
+          "adjacentRoom": "FitnessRoom",
+          "keyId": "Key6",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "South",
-          "adjacentRoom": "Equipment Room"
+          "adjacentRoom": "PrepSchoolEquipmentRoom",
+          "keyId": "Key5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Southwest",
-          "adjacentRoom": "Learning Commons"
+          "adjacentRoom": "LearningCommons",
+          "keyId": "Key7",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway 2-7"
+          "adjacentRoom": "Hallway2-7",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": true,
           "direction": "Northwest",
-          "adjacentRoom": "Cafeteria"
+          "adjacentRoom": "Cafeteria",
+          "keyId": "Key5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -637,9 +842,11 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway 2-1"
+          "adjacentRoom": "Hallway2-1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -651,9 +858,11 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway 2-2"
+          "adjacentRoom": "Hallway2-2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -665,9 +874,11 @@
       "isDark": true,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway 2-3"
+          "adjacentRoom": "Hallway2-3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -679,9 +890,11 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway 2-4"
+          "adjacentRoom": "Hallway2-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -693,9 +906,11 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "Northwest",
-          "adjacentRoom": "Hallway 2-4"
+          "adjacentRoom": "Hallway2-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -707,9 +922,11 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway 2-2"
+          "adjacentRoom": "Hallway2-2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -721,9 +938,11 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway 2-4"
+          "adjacentRoom": "Hallway2-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -735,14 +954,18 @@
       "isDark": true,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway 2-2"
+          "adjacentRoom": "Hallway2-2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway 2-4"
+          "adjacentRoom": "Hallway2-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -754,14 +977,18 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway 2-8"
+          "adjacentRoom": "Hallway2-8",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "Southwest",
-          "adjacentRoom": "Hallway 2-5"
+          "adjacentRoom": "Hallway2-5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -773,14 +1000,18 @@
       "isDark": true,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway 2-7"
+          "adjacentRoom": "Hallway2-7",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "Southeast",
-          "adjacentRoom": "Hallway 2-5"
+          "adjacentRoom": "Hallway2-5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -788,18 +1019,22 @@
       "id": "Theater",
       "name": "Theater",
       "floor": "Second Floor",
-      "description": "Oh no! Why did you enter here?!? ITS OFF-LIMITS!.", 
+      "description": "The sound of the door slamming behind you echoes throughout this room.",
       "isDark": true,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway 2-7"
+          "adjacentRoom": "Hallway2-7",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway 2-1"
+          "adjacentRoom": "Hallway2-1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -813,7 +1048,17 @@
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway 2-7"
+          "adjacentRoom": "Hallway2-7",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
+        },
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "Outside",
+          "keyId": "Key8",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -825,23 +1070,27 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "Southwest",
-          "adjacentRoom": "Hallway 2-7"
+          "adjacentRoom": "Hallway2-7",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
     {
       "id": "PrepSchoolGym",
-      "name": "Gym",
+      "name": "Prep School Gym",
       "floor": "Second Floor",
       "description": "Basketballs are constantly bouncing around. You can hear the echo last for seconds in the air.",
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway 2-8"
+          "adjacentRoom": "Hallway2-8",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -853,9 +1102,11 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "Hallway 2-8"
+          "adjacentRoom": "Hallway2-8",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -868,13 +1119,17 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "CentralStaircase2"
+          "direction": "Up",
+          "adjacentRoom": "CentralStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway1-4"
+          "adjacentRoom": "Hallway1-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -886,19 +1141,26 @@
       "isDark": false,
       "exits": [
         {
+          "isLocked": true,
+          "direction": "Up",
+          "adjacentRoom": "CentralStaircase3",
+          "keyId": "Shovel",
+          "lockedMessage": "There is a large pile of rubble preventing you from getting up the stairs.",
+          "isCodeLock":false
+        },
+        {
           "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "CentralStaircase3"
+          "direction": "Down",
+          "adjacentRoom": "CentralStaircase1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "CentralStaircase1"
-        },
-        {
-          "isLocked": true,
-          "direction": "SouthWest",
-          "adjacentRoom": "Hallway2-1"
+          "adjacentRoom": "Hallway2-1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -906,18 +1168,22 @@
       "id": "CentralStaircase3",
       "name": "Central Staircase",
       "floor": "Third Floor",
-      "description": "You feel the air around change. You are apporaching something.",
+      "description": "You feel the air around change. You are approaching something.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "South",
-          "adjacentRoom": "CentralStaircase2"
+          "direction": "Down",
+          "adjacentRoom": "CentralStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Federico'sDomain"
+          "adjacentRoom": "Federico'sDomain",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -929,14 +1195,18 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
-          "direction": "North",
-          "adjacentRoom": "EastStaircase2"
+          "isLocked": false,
+          "direction": "Up",
+          "adjacentRoom": "EastStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
-          "direction": "West",
-          "adjacentRoom": "Hallway1-5"
+          "direction": "South",
+          "adjacentRoom": "Hallway1-5",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -949,13 +1219,17 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "South",
-          "adjacentRoom": "EastStaircase1"
+          "direction": "Down",
+          "adjacentRoom": "EastStaircase1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Hallway2-4"
+          "adjacentRoom": "Hallway2-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -967,14 +1241,18 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
-          "direction": "North",
-          "adjacentRoom": "SouthStaircase2"
+          "isLocked": false,
+          "direction": "Up",
+          "adjacentRoom": "SouthStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway1-3"
+          "adjacentRoom": "Hallway1-3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -986,19 +1264,26 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "SouthStaircase3"
-        },
-        {
-          "isLocked": false,
-          "direction": "South",
-          "adjacentRoom": "SouthStaircase1"
-        },
-        {
           "isLocked": true,
+          "direction": "Up",
+          "adjacentRoom": "SouthStaircase3",
+          "keyId": "Shovel",
+          "lockedMessage": "There is a large pile of rubble preventing you from getting up the stairs.",
+          "isCodeLock":false
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "SouthStaircase1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
+        },
+        {
+          "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway2-2"
+          "adjacentRoom": "Hallway2-2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -1006,18 +1291,22 @@
       "id": "SouthStaircase3",
       "name": "South Staircase",
       "floor": "Third Floor",
-      "description": "You feel the air around change. You are apporaching something.",
+      "description": "You feel the air around change. You are approaching something.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "South",
-          "adjacentRoom": "SouthStaircase2"
+          "direction": "Down",
+          "adjacentRoom": "SouthStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Federico'sDomain"
+          "adjacentRoom": "Federico'sDomain",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -1029,14 +1318,18 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": true,
-          "direction": "North",
-          "adjacentRoom": "WestStaircase2"
+          "isLocked": false,
+          "direction": "Up",
+          "adjacentRoom": "WestStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway1-4"
+          "adjacentRoom": "Hallway1-4",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -1048,19 +1341,26 @@
       "isDark": false,
       "exits": [
         {
-          "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "WestStaircase3"
-        },
-        {
-          "isLocked": false,
-          "direction": "South",
-          "adjacentRoom": "WestStaircase1"
-        },
-        {
           "isLocked": true,
+          "direction": "Up",
+          "adjacentRoom": "WestStaircase3",
+          "keyId": "Shovel",
+          "lockedMessage": "There is a large pile of rubble preventing you from getting up the stairs.",
+          "isCodeLock":false
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "WestStaircase1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
+        },
+        {
+          "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Hallway2-1"
+          "adjacentRoom": "Hallway2-1",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -1068,18 +1368,37 @@
       "id": "WestStaircase3",
       "name": "West Staircase",
       "floor": "Third Floor",
-      "description": "You feel the air around change. You are apporaching something.",
+      "description": "You feel the air around change. You are approaching something.",
       "isDark": false,
       "exits": [
         {
           "isLocked": false,
-          "direction": "South",
-          "adjacentRoom": "WestStaircase2"
+          "direction": "Down",
+          "adjacentRoom": "WestStaircase2",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Federico'sDomain"
+          "adjacentRoom": "Federico'sDomain",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
+        }
+      ]
+    },
+    {
+      "id": "LockedStaircase",
+      "name": "Locked Staircase",
+      "floor": "Second Floor",
+      "isDark": false,
+      "exits": [
+        {
+          "isLocked": true,
+          "direction": "North",
+          "adjacentRoom": "CentralStaircase3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     },
@@ -1087,23 +1406,29 @@
       "id": "Federico'sDomain",
       "name": "Federico's Domain",
       "floor": "Third Floor",
-      "description": "This is it.",
+      "description": "You've reached the final floor. You hear nothing but the sound of your own footsteps.",
       "isDark": true,
       "exits": [
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "North",
-          "adjacentRoom": "CentralStaircase3"
+          "adjacentRoom": "CentralStaircase3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "SouthStaircase3"
+          "adjacentRoom": "SouthStaircase3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         },
         {
-          "isLocked": true,
+          "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "WestStaircase3"
+          "adjacentRoom": "WestStaircase3",
+          "lockedMessage": "The door is locked. Will you open it or leave?",
+          "isCodeLock":false
         }
       ]
     }
