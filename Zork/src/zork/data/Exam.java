@@ -8,14 +8,7 @@ import org.json.simple.parser.JSONParser;
 import java.util.Scanner;
 
 public class Exam {
-    private String name;
-    private int numMinutes;
     private ArrayList<Question> questions = new ArrayList<Question>();
-
-    public Exam(int numMinutes){
-        name = "Mr. Deslauriers";
-        this.numMinutes = numMinutes;
-    }
 
     public void takeExam(Scanner in){
         String inputLine = "";
@@ -25,8 +18,18 @@ public class Exam {
 
         for(int i = 0; i < questions.size(); i++){
             questions.get(i).displayQuestion();
-            inputLine = in.nextLine();
+            boolean isValid = false;
+
+            while(!isValid){
+                inputLine = in.nextLine();
+                isValid = Question.isValidAnswer(inputLine);
+
+                if(!isValid)
+                    System.out.println("Not a valid answer");
+            }
+
             boolean isCorrect = questions.get(i).isCorrect(inputLine);
+
             if(isCorrect){
                 System.out.println("Great job! Next Question!");
                 score++;

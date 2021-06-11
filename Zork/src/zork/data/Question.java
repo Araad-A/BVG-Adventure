@@ -65,6 +65,13 @@ public class Question {
         return false;
     }
 
+    public static boolean isValidAnswer(String letter){
+        if(letter.equalsIgnoreCase("A") || letter.equalsIgnoreCase("B") || letter.equalsIgnoreCase("C") || letter.equalsIgnoreCase("D"))
+            return true;
+            
+        return false;
+    }
+
     public String getFiller3() {
         return filler3;
     }
