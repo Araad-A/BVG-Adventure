@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Zork",
+            "request": "launch",
+            "mainClass": "Zork",
+            "projectName": "BVG-Adventure_54918a0"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

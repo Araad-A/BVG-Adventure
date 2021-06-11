@@ -390,13 +390,27 @@ public class Game {
         }
       }
       System.out.println("You can't find this item.");
-    }else{
+    }else if(itemName.equalsIgnoreCase("flashlight")){
       if(roomInventory.hasItem(itemName)){
         if(!(roomInventory.getItem(itemName) instanceof ReadableItem)){
           boolean added = player.getInventory().addItem(roomInventory.getItem(itemName));
           if(added){
             roomInventory.removeItem(itemName);
             System.out.println("You took this "+itemName+".");
+          }
+        }else{
+          System.out.println("You can't take this item.");
+        }
+      }else{
+        System.out.println("You can't find this item.");
+      }
+    }else{
+      if(roomInventory.hasItem(itemName)){
+        if(!(roomInventory.getItem(itemName) instanceof ReadableItem)){
+          boolean added = player.getInventory().addItem(roomInventory.getItem("Acid"));
+          if(added){
+            roomInventory.removeItem(itemName);
+            System.out.println("You took the "+itemName+".");
           }
         }else{
           System.out.println("You can't take this item.");

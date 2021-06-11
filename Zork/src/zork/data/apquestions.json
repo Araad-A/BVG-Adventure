@@ -1,12 +1,12 @@
 {
     "questions": [ 
         {
-          "num": 1,
-          "question": "Which of the following is not a primitive data type?",
-          "answer": "String",
-          "filler1": "int",
-          "filler2": "double",
-          "filler3": "They are all primitive"
+            "num": 1,
+            "question": "Which of the following is not a primitive data type?",
+            "answer": "String",
+            "filler1": "int",
+            "filler2": "double",
+            "filler3": "They are all primitive"
         },
         {
             "num": 2,
@@ -51,10 +51,10 @@
         {
             "num": 7,
             "question": "How do you create a variable for a class? (int)",
-            "answer": "private int x",
-            "filler1": "public int x",
+            "answer": "private int x;",
+            "filler1": "public int x;",
             "filler2": "public string x",
-            "filler3": "private string x"
+            "filler3": "private string x;"
         },
         {
             "num": 8,
@@ -75,10 +75,13 @@
         {
             "num": 10,
             "question": "How do you initialize a 2d array? (int)",
-            "answer": "int[][] arrayName = new int[rows][columns]",
-            "filler1": "int arrayName = new int[rows][columns]",
+            "answer": "int[][] arrayName = new int[rows][columns];",
+            "filler1": "int arrayName = new int[rows][columns];",
             "filler2": "String[][] arrayName = new int[rows][columns]",
-            "filler3": "int[rows][columns] arrayName = new int[][]"
+            "filler3": "int[rows][columns] arrayName = new int[][];"
         }
+          
+
+
     ]
 }

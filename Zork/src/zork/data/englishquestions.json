@@ -1,0 +1,87 @@
+{
+    "questions": [ 
+        {
+            "num": 1,
+            "question": "What is Shakespeare's most famous play?",
+            "answer": "Romeo & Juliet",
+            "filler1": "Hamlet",
+            "filler2": "The Tempest",
+            "filler3": "Macbeth"
+        },
+        {
+            "num": 2,
+            "question": "What can make this sentence gramatically correct? 'Someone took Bellas apples!'",
+            "answer": "Change Bellas to Bella's",
+            "filler1": "Change Bellas to Bellas'",
+            "filler2": "Change apples to Apples",
+            "filler3": "Change Bellas into Bella"
+        },
+        {
+            "num": 3,
+            "question": "What is Shakespeare's first name?",
+            "answer": "William",
+            "filler1": "Henry",
+            "filler2": "Hamlet",
+            "filler3": "Romeo"
+        },
+        {
+            "num": 4,
+            "question": "Which of the following is a sentence fragment?",
+            "answer": "Packed all the things and ready to go.",
+            "filler1": "Let's go!",
+            "filler2": "No way!",
+            "filler3": "I have packed my bags and I'm ready to go."
+        },
+        {
+            "num": 5,
+            "question": "Who is Hamlet's right hand man?",
+            "answer": "Horatio",
+            "filler1": "His dad",
+            "filler2": "His uncle",
+            "filler3": "Rosencrantz"
+        },
+        {
+            "num": 6,
+            "question": "Who backstabs Hamlet's father and steals the throne from him?",
+            "answer": "Claudius",
+            "filler1": "Horatio",
+            "filler2": "Guildenstern",
+            "filler3": "Polonius"
+        },
+        {
+            "num": 7,
+            "question": "What is personification?",
+            "answer": "To give human characteristics to something that isn't human",
+            "filler1": "To give human characteristics to humans",
+            "filler2": "To give an inanimate object's characteristics to a human",
+            "filler3": "To give personality"
+        },
+        {
+            "num": 8,
+            "question": "What is it called when an actor creates lines off the top of their head?",
+            "answer": "Improvisation",
+            "filler1": "Method acting",
+            "filler2": "Read through",
+            "filler3": "Cue"
+        },
+        {
+            "num": 9,
+            "question": "Where does Funny Boy take place?",
+            "answer": "Sri Lanka",
+            "filler1": "Philipines",
+            "filler2": "Laos",
+            "filler3": "Cambodia"
+        },
+        {
+            "num": 10,
+            "question": "What is type of poem is typically written with 5 syllables in the first line, 7 in the second and 5 in the third?",
+            "answer": "Haiku",
+            "filler1": "Sonnet",
+            "filler2": "Rhymed poetry",
+            "filler3": "Limerick"
+        }
+          
+
+
+    ]
+}
