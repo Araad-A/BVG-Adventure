@@ -71,9 +71,14 @@ public class FightBoss extends Boss{
         System.out.println("Your health: " + player.getHealth());
         System.out.println("Mr. Federico's health: " + getHealth());
         if(player.getHealth()<=0){
+            player.setHealth(100);
+            setHealth(100);
+            move=0;
             return 1;
         }else if(getHealth()<=0){
+            player.setHealth(100);
             return 2;
+            
         }
         move=(int)(Math.random()*6);
 

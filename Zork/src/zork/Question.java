@@ -11,12 +11,12 @@ public class Question {
     private ArrayList<String> displayer;
     private int num;
 
-    public Question(){
-        setQuestion("default");
-        setAnswer("default");
-        setFiller1("default");
-        setFiller2("default");
-        setFiller3("default");
+    public Question(String question, String answer, String filler1, String filler2, String filler3){
+        this.question = question;
+        this.answer = answer;
+        this.filler1 = filler1;
+        this.filler2 = filler2;
+        this.filler3 = filler3;
         displayer = new ArrayList<String>(4);
     }
 
@@ -54,8 +54,7 @@ public class Question {
         System.out.println("D)" + displayer.get(3));
     }
 
-    public boolean isCorrect(Command command){
-        String letter = command.getSecondWord();
+    public boolean isCorrect(String letter){
         
         if(letter.equalsIgnoreCase("A")){
             return displayer.get(0).equals(answer);

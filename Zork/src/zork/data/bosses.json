@@ -9,6 +9,26 @@
         "lose": "You have lost to Mr. Federico. Triumphant, he sends you out into one of the staircases and tells you not to come back until you've fixed your uniform.",
         "room": "Federico'sDomain",
         "loseRoom": "CentralStaircase3"
+      },
+      {
+        "name": "Mr. Reynolds",
+        "type": 0,
+        "introduction": "placeholder",
+        "win": "placeholder",
+        "lose": "placeholder",
+        "room": "Theater",
+        "loseRoom": "Lobby",
+        "fileName": "Zork\\src\\zork\\data\\englishquestions.json"
+      },
+      {
+        "name": "Mr. Deslauriers",
+        "type": 0,
+        "introduction": "placeholder",
+        "win": "placeholder",
+        "lose": "placeholder",
+        "room": "ICS",
+        "loseRoom": "Grade12CommonArea",
+        "fileName": "Zork\\src\\zork\\data\\questions.json"
       }
     ]
 }

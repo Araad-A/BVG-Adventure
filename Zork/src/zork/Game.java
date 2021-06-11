@@ -26,7 +26,7 @@ public class Game {
       initRooms("Zork\\src\\zork\\data\\rooms.json");
       initItems("Zork\\src\\zork\\data\\items.json");
       initBosses("Zork\\src\\zork\\data\\bosses.json");
-      currentRoom = roomMap.get("Hallway1-1");
+      currentRoom = roomMap.get("Hallway1-5");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -117,7 +117,8 @@ public class Game {
       String loseRoom = (String) ((JSONObject) bossObj).get("loseRoom");
       Boss boss = null;
       if(type==Boss.TEST){
-        
+        String file = (String) ((JSONObject) bossObj).get("fileName");
+        boss = new TestBoss(name, introduction, win, lose, loseRoom, file);
       }else if(type==Boss.FIGHT){
         boss = new FightBoss(name, introduction, win, lose, loseRoom);
       }
@@ -261,8 +262,10 @@ public class Game {
       if(fighting&&currentBoss instanceof TestBoss){
         if(!command.hasSecondWord()){
           System.out.println("Answer what?");
-        }else{
+        }else if(command.getSecondWord().equalsIgnoreCase("A") || command.getSecondWord().equalsIgnoreCase("B") || command.getSecondWord().equalsIgnoreCase("C") || command.getSecondWord().equalsIgnoreCase("D")){
           answer(command.getSecondWord());
+        }else{
+          System.out.println("This is not a valid answer.");
         }
       }else{
         System.out.println("There is nothing to answer.");
@@ -287,9 +290,7 @@ public class Game {
     return false;
   }
 
-  public String answer(String secondWord){
-    return secondWord;
-  }
+ 
 
   // implementations of user commands:
 
@@ -329,6 +330,7 @@ public class Game {
         System.out.println("You take a breath of fresh air as you step outside. You have finally made it out of the school alive. Congratulations.");
         return true;
       }
+      System.out.println(currentRoom.getRoomName()+currentRoom.getBoss());
       if(currentRoom.getBoss()!=null){
         System.out.println(currentRoom.shortDescription(false));
         fighting=true;
@@ -484,6 +486,24 @@ public class Game {
       fighting = false;
     }else if(result==2){
       System.out.println(currentBoss.getWin());
+      currentRoom.removeBoss();
+      System.out.println(currentRoom.longDescription(false));
+      fighting = false;
+    }
+  }
+
+  public void answer(String secondWord){
+    int result = currentBoss.action(secondWord);
+    if(result==0){
+      return;
+    }else if(result==1){
+      System.out.println(currentBoss.getLose());
+      currentRoom = roomMap.get(currentBoss.getLoseRoom());
+      System.out.println(currentRoom.longDescription(false));
+      fighting = false;
+    }else if(result==2){
+      System.out.println(currentBoss.getWin());
+      currentRoom.removeBoss();
       System.out.println(currentRoom.longDescription(false));
       fighting = false;
     }

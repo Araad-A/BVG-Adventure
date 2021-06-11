@@ -67,6 +67,7 @@
       {
         "itemType":0,
         "name": "Flashlight",
+        "isOpenable": false,
         "weight": 3,
         "room" : "Hallway1-1"
       },
