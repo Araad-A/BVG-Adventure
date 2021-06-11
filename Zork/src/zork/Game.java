@@ -29,8 +29,7 @@ public class Game {
       initRooms("Zork\\src\\zork\\data\\rooms.json");
       initItems("Zork\\src\\zork\\data\\items.json");
       initBosses("Zork\\src\\zork\\data\\bosses.json");
-      initQuestions("Zork\\src\\zork\\data\\questions.json");
-      currentRoom = roomMap.get("Hallway1-1");
+      currentRoom = roomMap.get("Hallway1-5");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -122,7 +121,8 @@ public class Game {
       String loseRoom = (String) ((JSONObject) bossObj).get("loseRoom");
       Boss boss = null;
       if(type==Boss.TEST){
-        
+        String file = (String) ((JSONObject) bossObj).get("fileName");
+        boss = new TestBoss(name, introduction, win, lose, loseRoom, file);
       }else if(type==Boss.FIGHT){
         boss = new FightBoss(name, introduction, win, lose, loseRoom);
       }
@@ -267,15 +267,36 @@ public class Game {
       if(fighting&&currentBoss instanceof TestBoss){
         if(!command.hasSecondWord()){
           System.out.println("Answer what?");
+        }else if(command.getSecondWord().equalsIgnoreCase("A") || command.getSecondWord().equalsIgnoreCase("B") || command.getSecondWord().equalsIgnoreCase("C") || command.getSecondWord().equalsIgnoreCase("D")){
+          answer(command.getSecondWord());
         }else{
-         // answer(command.getSecondWord(), i);
+          System.out.println("This is not a valid answer.");
         }
       }else{
         System.out.println("There is nothing to answer.");
       }
+    }else if(commandWord.equals("attack")){
+      if(fighting&&currentBoss instanceof FightBoss){
+        if(!command.hasSecondWord()){
+          System.out.println("Attack where?");
+        }else{
+          fight(command);
+        }
+      }
+    }else if(commandWord.equals("block")){
+      if(fighting&&currentBoss instanceof FightBoss){
+        if(!command.hasSecondWord()){
+          System.out.println("Block where?");
+        }else{
+          fight(command);
+        }
+      }
     }
     return false;
   }
+
+ 
+
   // implementations of user commands:
 
   /**
@@ -314,10 +335,12 @@ public class Game {
         System.out.println("You take a breath of fresh air as you step outside. You have finally made it out of the school alive. Congratulations.");
         return true;
       }
+      System.out.println(currentRoom.getRoomName()+currentRoom.getBoss());
       if(currentRoom.getBoss()!=null){
         System.out.println(currentRoom.shortDescription(false));
         fighting=true;
         currentBoss = currentRoom.getBoss();
+        System.out.println(currentBoss.getIntroduction());
       }
       System.out.println(currentRoom.longDescription(false));
     }
@@ -435,5 +458,59 @@ public class Game {
       return;
     }
     System.out.println("You can't read this.");
+  }
+
+  private void fight(Command command){
+    String move = command.getCommandWord();
+    String area = command.getSecondWord();
+    int result = 0;
+    if(!area.equals("low")&&!area.equals("high")&&!area.equals("mid")&&!area.equals("middle")){
+      System.out.println("This isn't a valid area.");
+    }
+    if(move.equals("attack")){
+      if(area.equals("high"))
+        result = currentBoss.action(0);
+      else if(area.equals("mid")||area.equals("middle"))
+        result = currentBoss.action(1);
+      else if(area.equals("high"))
+        result = currentBoss.action(2);
+    } else if(move.equals("block")){
+      if(area.equals("high"))
+        result = currentBoss.action(3);
+      else if(area.equals("mid")||area.equals("middle"))
+        result = currentBoss.action(4);
+      else if(area.equals("high"))
+        result = currentBoss.action(5);
+    }
+    if(result==0){
+      return;
+    }else if(result==1){
+      System.out.println(currentBoss.getLose());
+      currentRoom = roomMap.get(currentBoss.getLoseRoom());
+      System.out.println(currentRoom.longDescription(false));
+      fighting = false;
+    }else if(result==2){
+      System.out.println(currentBoss.getWin());
+      currentRoom.removeBoss();
+      System.out.println(currentRoom.longDescription(false));
+      fighting = false;
+    }
+  }
+
+  public void answer(String secondWord){
+    int result = currentBoss.action(secondWord);
+    if(result==0){
+      return;
+    }else if(result==1){
+      System.out.println(currentBoss.getLose());
+      currentRoom = roomMap.get(currentBoss.getLoseRoom());
+      System.out.println(currentRoom.longDescription(false));
+      fighting = false;
+    }else if(result==2){
+      System.out.println(currentBoss.getWin());
+      currentRoom.removeBoss();
+      System.out.println(currentRoom.longDescription(false));
+      fighting = false;
+    }
   }
 }

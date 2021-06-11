@@ -179,4 +179,8 @@ public class Room {
   public Boss getBoss(){
     return boss;
   }
+
+  public void removeBoss(){
+    boss = null;
+  }
 }

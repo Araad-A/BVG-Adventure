@@ -333,7 +333,7 @@
       "id": "ICS",
       "name": "Computer Science Class",
       "floor": "First Floor",
-      "description": "RUN!",
+      "description": "You feel a sinister presence.",
       "isDark": false,
       "exits": [
         {

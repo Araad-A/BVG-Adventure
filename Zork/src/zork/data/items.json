@@ -55,7 +55,7 @@
         "name": "Key 8",
         "keyId": "Key8",
         "weight": 1,
-        "room" : "Hallway1-1"
+        "room" : "Federico'sDomain"
       },
       {
         "itemType":1,
@@ -67,6 +67,7 @@
       {
         "itemType":0,
         "name": "Flashlight",
+        "isOpenable": false,
         "weight": 3,
         "room" : "Hallway1-1"
       },
