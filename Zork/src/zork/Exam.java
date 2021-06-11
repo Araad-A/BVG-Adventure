@@ -1,14 +1,19 @@
-package data;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
 import java.util.Scanner;
 
 public class Exam {
     private ArrayList<Question> questions = new ArrayList<Question>();
+
+    public Exam(){
+        
+    }
 
     public void takeExam(Scanner in){
         String inputLine = "";
@@ -42,7 +47,7 @@ public class Exam {
         System.out.println("Exam is done! Here is your score: " + score + "/" + numQuestions);
     }
     
-    private void initQuestions(String fileName) throws Exception {
+    void initQuestions(String fileName) throws Exception {
         Path path = Path.of(fileName);
         String jsonString = Files.readString(path);
         JSONParser parser = new JSONParser();

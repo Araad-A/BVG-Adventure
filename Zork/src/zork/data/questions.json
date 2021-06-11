@@ -80,8 +80,5 @@
             "filler2": "String[][] arrayName = new int[rows][columns]",
             "filler3": "int[rows][columns] arrayName = new int[][]"
         }
-          
-
-
     ]
 }

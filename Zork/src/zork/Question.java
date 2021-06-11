@@ -1,4 +1,4 @@
-package data;
+
 
 import java.util.ArrayList;
 
@@ -68,7 +68,7 @@ public class Question {
     public static boolean isValidAnswer(String letter){
         if(letter.equalsIgnoreCase("A") || letter.equalsIgnoreCase("B") || letter.equalsIgnoreCase("C") || letter.equalsIgnoreCase("D"))
             return true;
-            
+
         return false;
     }
 
