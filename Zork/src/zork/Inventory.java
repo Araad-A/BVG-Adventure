@@ -52,10 +52,11 @@ public class Inventory {
   public boolean addItem(Item item) {
     if (item.getWeight() + currentWeight <= maxWeight){
       items.add(item);
+      currentWeight+=item.getWeight();
       return true;
     }
     else {
-      System.out.println("No room available to add this item!");
+      System.out.println("You're not strong enough to carry this item!");
       return false;
     }
   }

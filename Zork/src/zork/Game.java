@@ -35,12 +35,12 @@ public class Game {
       initRooms("Zork\\src\\zork\\data\\rooms.json");
       initItems("Zork\\src\\zork\\data\\items.json");
       initBosses("Zork\\src\\zork\\data\\bosses.json");
-      currentRoom = roomMap.get("Hallway1-5");
+      currentRoom = roomMap.get("Hallway1-1");
     } catch (Exception e) {
       e.printStackTrace();
     }
     parser = new Parser();
-    player = new Character("Student", 13);
+    player = new Character("Student", 10);
   }
 /**
  * Initializes rooms
@@ -408,7 +408,7 @@ public class Game {
       if(player.getInventory().hasItem("Key 7"))
         System.out.println("The GPS is blank.");
       else if(player.getInventory().hasItem("Key 6"))
-        System.out.println("The key is on the west side of the school.");
+        System.out.println("The key is on the east side of the school.");
       else if(player.getInventory().hasItem("Key 5"))
         System.out.println("The key is on the north side of the school.");
       else

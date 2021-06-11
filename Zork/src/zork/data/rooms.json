@@ -230,7 +230,7 @@
       "id": "Grade12CommonArea",
       "name": "Grade 12 Common Area",
       "floor": "First Floor",
-      "description": "The coffee stains on the sofas let out an odd smell. You catch a glimpse of a key.",
+      "description": "The coffee stains on the sofas let out an odd smell..",
       "isDark": false,
       "exits": [
         {
