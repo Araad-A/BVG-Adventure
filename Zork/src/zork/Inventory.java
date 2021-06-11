@@ -29,6 +29,12 @@ public class Inventory {
     return currentWeight;
   }
 
+  /**
+   * adds an Item to the inventory if it can fit based on current weight
+   * 
+   * @param item, an item object
+   * @return true if the item is succesfully added, false otherwise
+   */
   public boolean addItem(Item item) {
     if (item.getWeight() + currentWeight <= maxWeight){
       items.add(item);
@@ -40,6 +46,12 @@ public class Inventory {
     }
   }
 
+  /**
+   * checks if the inventory already contains an item
+   * 
+   * @param name, the name of the item
+   * @return true if the inventory has the item, false otherwise
+   */
   public boolean hasItem(String name){
     for(Item item : items){
       if(item.getName().equalsIgnoreCase(name))
@@ -48,6 +60,12 @@ public class Inventory {
     return false;
   }
   
+  /**
+   * removes and Item from the items ArrayList
+   * Given the name of the Item, and removes it 
+   * 
+   * @param name, the name of the item
+   */
   public void removeItem(String name){
     for(int i=0;i<items.size();i++){
       if(items.get(i).getName().equalsIgnoreCase(name))
@@ -55,6 +73,13 @@ public class Inventory {
     }
   }
 
+  /**
+   * based on the name, finds an item and returns it
+   * 
+   * @param name, the name of the item
+   * @return the item object if it is in the arraylist, null otherwise
+   *
+   */
   public Item getItem(String name){
     for(Item item : items){
       if(item.getName().equalsIgnoreCase(name))
@@ -63,6 +88,11 @@ public class Inventory {
     return null;
   }
 
+  /**
+   * Lists all the items in the item ArrayList
+   * 
+   * @return a string itemList containing a list of all items 
+   */
   public String listItems(){
     if(items.size()==0)
       return "Your inventory is empty.";
@@ -78,6 +108,12 @@ public class Inventory {
     return items;
   }
 
+  /**
+   * Checks to see if the items ArrayList has the appropiate key
+   * 
+   * @param keyId, the ID of a key object
+   * @return true if the items ArrayList has the key, false otherwise
+   */
   public boolean hasKey(String keyId){
     for(Item item:items){
       if(item instanceof Key && ((Key)item).getKeyId().equalsIgnoreCase(keyId)){

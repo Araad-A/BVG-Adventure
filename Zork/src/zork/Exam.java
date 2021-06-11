@@ -1,5 +1,4 @@
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -11,14 +10,13 @@ import java.util.Scanner;
 
 public class Exam {
     private ArrayList<Question> questions = new ArrayList<Question>();
-    private Parser parser = new Parser();
 
     public Exam(){
-       
+        
     }
 
-    public void takeExam() throws IOException{
-        //String inputLine = "";
+    public void takeExam(Scanner in){
+        String inputLine = "";
         int score = 0;
         int numQuestions = 0;
         System.out.println("Please answer with either \"A\" \"B\" \"C\" or \"D\"");
@@ -27,17 +25,16 @@ public class Exam {
             questions.get(i).randomizeAnswer();
             questions.get(i).displayQuestion();
             boolean isValid = false;
-            Command command = parser.getCommand();
 
             while(!isValid){
-                //inputLine = in.nextLine();
-                isValid = Question.isValidAnswer(command);
+                inputLine = in.nextLine();
+                isValid = Question.isValidAnswer(inputLine);
 
                 if(!isValid)
                     System.out.println("Not a valid answer");
             }
 
-            boolean isCorrect = questions.get(i).isCorrect(command);
+            boolean isCorrect = questions.get(i).isCorrect(inputLine);
 
             if(isCorrect){
                 System.out.println("Great job! Next Question!");

@@ -54,9 +54,8 @@ public class Question {
         System.out.println("D)" + displayer.get(3));
     }
 
-    public boolean isCorrect(Command command){
-        String letter = command.getSecondWord();
-        
+    public boolean isCorrect(String letter){
+
         if(letter.equalsIgnoreCase("A")){
             return displayer.get(0).equals(answer);
         } else if(letter.equalsIgnoreCase("B")){
@@ -69,8 +68,7 @@ public class Question {
         return false;
     }
 
-    public static boolean isValidAnswer(Command command){
-        String letter = command.getSecondWord();
+    public static boolean isValidAnswer(String letter){
         if(letter.equalsIgnoreCase("A") || letter.equalsIgnoreCase("B") || letter.equalsIgnoreCase("C") || letter.equalsIgnoreCase("D"))
             return true;
             

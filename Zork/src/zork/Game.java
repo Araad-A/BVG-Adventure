@@ -17,6 +17,9 @@ public class Game {
   private Boss currentBoss;
   private Exit door;
   private Character player;
+  private ArrayList<Question> questions = new ArrayList<Question>();
+  private String answer;
+  private int i;
 
   /**
    * Create the game and initialise its internal map.
@@ -26,10 +29,12 @@ public class Game {
       initRooms("Zork\\src\\zork\\data\\rooms.json");
       initItems("Zork\\src\\zork\\data\\items.json");
       initBosses("Zork\\src\\zork\\data\\bosses.json");
+      initQuestions("Zork\\src\\zork\\data\\questions.json");
       currentRoom = roomMap.get("Hallway1-1");
     } catch (Exception e) {
       e.printStackTrace();
     }
+    i = 0;
     parser = new Parser();
     player = new Character("Student", 13);
   }
@@ -130,7 +135,6 @@ public class Game {
    */
   public void play() {
     welcome();
-
     boolean finished = false;
     while (!finished) {
       Command command;
@@ -140,6 +144,8 @@ public class Game {
       } catch (IOException e) {
         e.printStackTrace();
       }
+
+      
 
     }
     System.out.println("Thank you for playing. Good bye.");
@@ -262,7 +268,7 @@ public class Game {
         if(!command.hasSecondWord()){
           System.out.println("Answer what?");
         }else{
-          answer(command.getSecondWord());
+         // answer(command.getSecondWord(), i);
         }
       }else{
         System.out.println("There is nothing to answer.");
@@ -270,11 +276,6 @@ public class Game {
     }
     return false;
   }
-
-  public String answer(String secondWord){
-    return secondWord;
-  }
-
   // implementations of user commands:
 
   /**
