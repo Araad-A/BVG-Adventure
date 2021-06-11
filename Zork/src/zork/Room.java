@@ -45,9 +45,9 @@ public class Room {
    */
   public String shortDescription(boolean flashlightOn) {
     if (!isDark || flashlightOn)
-      return "\n" + "Room: " + roomName + "\n\n" + description;
+      return "\n" + "Room: " + roomName + "\n" + floor + "\n\n" + description;
     else
-      return "\n" + "Room: " + roomName + "\n\nIt is dark.";
+      return "\n" + "Room: " + roomName + "\n" + floor + "\n\nIt is dark.";
   }
 
   /**

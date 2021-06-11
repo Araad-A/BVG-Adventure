@@ -3,15 +3,15 @@ public class Character {
     private int health;
     private Inventory inventory;
 
-    public Character(String name, int health, int inventoryMaxWeight){
-        this.setName(name);
-        this.setHealth(health);
+    public Character(String name, int inventoryMaxWeight){
+        this.name = name;
+        this.health = 100;
         inventory = new Inventory(inventoryMaxWeight);
     }
 
-    public Character(String name, int health){
-        this.setName(name);
-        this.setHealth(health);
+    public Character(String name){
+        this.name = name;
+        this.health = 100;
         inventory = new Inventory();
     }
 

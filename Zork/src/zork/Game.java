@@ -14,6 +14,7 @@ public class Game {
   private Room currentRoom;
   private boolean atDoor;
   private boolean fighting;
+  private Boss currentBoss;
   private Exit door;
   private Character player;
 
@@ -24,12 +25,13 @@ public class Game {
     try {
       initRooms("Zork\\src\\zork\\data\\rooms.json");
       initItems("Zork\\src\\zork\\data\\items.json");
+      initBosses("Zork\\src\\zork\\data\\bosses.json");
       currentRoom = roomMap.get("Hallway1-1");
     } catch (Exception e) {
       e.printStackTrace();
     }
     parser = new Parser();
-    player = new Character("Student", 100, 13);
+    player = new Character("Student", 13);
   }
 
   private void initRooms(String fileName) throws Exception {
@@ -89,13 +91,37 @@ public class Game {
       }else if(itemType==Item.KEY){
         String keyId = (String) ((JSONObject) itemObj).get("keyId");
         item = new Key(keyId, name, weight);
-      }else if(itemType==Item.FLASHLIGHT){
-        item = new Flashlight(weight, name);
       }else if(itemType==Item.READABLE){
         String contents = (String) ((JSONObject) itemObj).get("contents");
         item = new ReadableItem(weight, name, contents);
       }
       roomMap.get(room).getInventory().addItem(item);
+    }
+  }
+
+  private void initBosses(String fileName) throws Exception {
+    Path path = Path.of(fileName);
+    String jsonString = Files.readString(path);
+    JSONParser parser = new JSONParser();
+    JSONObject json = (JSONObject) parser.parse(jsonString);
+
+    JSONArray jsonBosses = (JSONArray) json.get("bosses");
+
+    for (Object bossObj : jsonBosses) {
+      int type =  ((Long)((JSONObject) bossObj).get("type")).intValue();
+      String name = (String) ((JSONObject) bossObj).get("name");
+      String room = (String) ((JSONObject) bossObj).get("room");
+      String introduction = (String) ((JSONObject) bossObj).get("introduction");
+      String win = (String) ((JSONObject) bossObj).get("win");
+      String lose = (String) ((JSONObject) bossObj).get("lose");
+      String loseRoom = (String) ((JSONObject) bossObj).get("loseRoom");
+      Boss boss = null;
+      if(type==Boss.TEST){
+        
+      }else if(type==Boss.FIGHT){
+        boss = new FightBoss(name, introduction, win, lose, loseRoom);
+      }
+      roomMap.get(room).setBoss(boss);
     }
   }
 
@@ -127,7 +153,6 @@ public class Game {
     System.out.println("Welcome to Bayview Glen!");    
     System.out.println("You are a student at BVG, but something doesn't seem right...");
     System.out.println("Type 'help' if you need help.");
-    System.out.println("Set your name at any time with 'name [name]'.");
     System.out.println();
     System.out.println(currentRoom.longDescription(false));
   }
@@ -143,6 +168,10 @@ public class Game {
     }
 
     String commandWord = command.getCommandWord();
+    if(fighting&&"goeatsleepuseleavetakereadenterneseswnwnortheastsoutheastsouthwestnorthwestupdown".indexOf(commandWord)>=0){
+      System.out.println("You can't do this when there is a teacher in the room.");
+      return false;
+    }
     if (commandWord.equals("help"))
       printHelp();
     else if (commandWord.equals("go")){
@@ -228,11 +257,15 @@ public class Game {
       }else{
         System.out.println("You can't do that here.");
       }
-    }else if(commandWord.equals("name")){
-      if(!command.hasSecondWord()){
-        System.out.println("What would you like to name yourself?");
+    }else if(commandWord.equals("answer")){
+      if(fighting&&currentBoss instanceof TestBoss){
+        if(!command.hasSecondWord()){
+          System.out.println("Answer what?");
+        }else{
+          answer(command.hasSecondWord());
+        }
       }else{
-        player.setName(command.getSecondWord());
+        System.out.println("There is nothing to answer.");
       }
     }
     return false;
@@ -275,6 +308,11 @@ public class Game {
       if(currentRoom.getRoomName().equalsIgnoreCase("outside")){
         System.out.println("You take a breath of fresh air as you step outside. You have finally made it out of the school alive. Congratulations.");
         return true;
+      }
+      if(currentRoom.getBoss()!=null){
+        System.out.println(currentRoom.shortDescription(false));
+        fighting=true;
+        currentBoss = currentRoom.getBoss();
       }
       System.out.println(currentRoom.longDescription(false));
     }

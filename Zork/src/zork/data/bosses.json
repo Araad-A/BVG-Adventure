@@ -1,0 +1,14 @@
+
+{
+    "bosses": [ 
+      {
+        "name": "Mr. Federico",
+        "type": 1,
+        "introduction": "From around a corner, the head of the Upper School, Mr. Federico, suddenly grabs you and intense inspects your uniform. He notices a spot on your shoe that is emitting 4 too many photons to be considered black, one unbuttoned button on your shirt and some hair follicles on your face. He declares that he is very proficient with a blade, and draws a sword to discipline you. Mr. Federico raises his sword above his head.",
+        "win": "Mr. Federico is worn-out. He decides to give you a pass on your dress code violations for today, and slumps into his chair while playing the bagpipe. He eventually falls asleep.",
+        "lose": "You have lost to Mr. Federico. Triumphant, he sends you out into one of the staircases and tells you not to come back until you've fixed your uniform.",
+        "room": "Federico'sDomain",
+        "loseRoom": "CentralStaircase3"
+      }
+    ]
+}

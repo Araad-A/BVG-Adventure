@@ -65,7 +65,7 @@
         "room" : "Theater"
       },
       {
-        "itemType":2,
+        "itemType":0,
         "name": "Flashlight",
         "weight": 3,
         "room" : "Hallway1-1"
@@ -78,42 +78,42 @@
         "room" : "Class3"
       },
       {
-        "itemType":3,
+        "itemType":2,
         "name": "Poster",
         "weight": 0,
         "room" : "Science1",
-        "contents" : "placeholder"
+        "contents" : "The poster reads 'S'. Maybe it's part of a puzzle?"
       },
       {
-        "itemType":3,
+        "itemType":2,
         "name": "Poster",
         "weight": 0,
         "room" : "Science2",
-        "contents" : "placeholder"
+        "contents" : "The poster reads 'U'. Maybe it's part of a puzzle?"
       },
       {
-        "itemType":3,
+        "itemType":2,
         "name": "Poster",
         "weight": 0,
         "room" : "Science3",
-        "contents" : "placeholder"
+        "contents" : "The poster reads 'C'. Maybe it's part of a puzzle?"
       },
       {
-        "itemType":3,
+        "itemType":2,
         "name": "Poster",
         "weight": 0,
         "room" : "UpperSchoolEquipmentRoom",
-        "contents" : "placeholder"
+        "contents" : "The poster reads '3'. Maybe it's part of a puzzle?"
       },
       {
-        "itemType":3,
+        "itemType":2,
         "name": "Poster",
         "weight": 0,
         "room" : "ITDepartment",
-        "contents" : "placeholder"
+        "contents" : "The poster reads 'I'. Maybe it's part of a puzzle?"
       },
       {
-        "itemType":3,
+        "itemType":2,
         "name": "Book",
         "weight": 0,
         "room" : "LearningCommons",
