@@ -31,4 +31,8 @@ public class Boss extends Character {
     public String getLose(){
         return lose;
     }
+
+    public int action(int x){
+        return 0;
+    }
 }

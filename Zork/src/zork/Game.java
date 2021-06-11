@@ -267,6 +267,22 @@ public class Game {
       }else{
         System.out.println("There is nothing to answer.");
       }
+    }else if(commandWord.equals("attack")){
+      if(fighting&&currentBoss instanceof FightBoss){
+        if(!command.hasSecondWord()){
+          System.out.println("Attack where?");
+        }else{
+          fight(command);
+        }
+      }
+    }else if(commandWord.equals("block")){
+      if(fighting&&currentBoss instanceof FightBoss){
+        if(!command.hasSecondWord()){
+          System.out.println("Block where?");
+        }else{
+          fight(command);
+        }
+      }
     }
     return false;
   }
@@ -313,6 +329,7 @@ public class Game {
         System.out.println(currentRoom.shortDescription(false));
         fighting=true;
         currentBoss = currentRoom.getBoss();
+        System.out.println(currentBoss.getIntroduction());
       }
       System.out.println(currentRoom.longDescription(false));
     }
@@ -430,5 +447,41 @@ public class Game {
       return;
     }
     System.out.println("You can't read this.");
+  }
+
+  private void fight(Command command){
+    String move = command.getCommandWord();
+    String area = command.getSecondWord();
+    int result = 0;
+    if(!area.equals("low")&&!area.equals("high")&&!area.equals("mid")&&!area.equals("middle")){
+      System.out.println("This isn't a valid area.");
+    }
+    if(move.equals("attack")){
+      if(area.equals("high"))
+        result = currentBoss.action(0);
+      else if(area.equals("mid")||area.equals("middle"))
+        result = currentBoss.action(1);
+      else if(area.equals("high"))
+        result = currentBoss.action(2);
+    } else if(move.equals("block")){
+      if(area.equals("high"))
+        result = currentBoss.action(3);
+      else if(area.equals("mid")||area.equals("middle"))
+        result = currentBoss.action(4);
+      else if(area.equals("high"))
+        result = currentBoss.action(5);
+    }
+    if(result==0){
+      return;
+    }else if(result==1){
+      System.out.println(currentBoss.getLose());
+      currentRoom = roomMap.get(currentBoss.getLoseRoom());
+      System.out.println(currentRoom.longDescription(false));
+      fighting = false;
+    }else if(result==2){
+      System.out.println(currentBoss.getWin());
+      System.out.println(currentRoom.longDescription(false));
+      fighting = false;
+    }
   }
 }
