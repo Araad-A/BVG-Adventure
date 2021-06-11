@@ -247,7 +247,8 @@ public class Game {
           door.setLocked(false);
           currentRoom = roomMap.get(door.getAdjacentRoom());
           atDoor=false;
-          System.out.println("The door opens. "+currentRoom.longDescription(false));
+          System.out.println("The door opens. ");
+          goRoom(door.getDirection());
         }else{
           System.out.println("Incorrect passcode.");
         }
