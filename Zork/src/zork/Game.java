@@ -17,6 +17,9 @@ public class Game {
   private Boss currentBoss;
   private Exit door;
   private Character player;
+  private ArrayList<Question> questions = new ArrayList<Question>();
+  private String answer;
+  private int i;
 
   /**
    * Create the game and initialise its internal map.
@@ -30,6 +33,7 @@ public class Game {
     } catch (Exception e) {
       e.printStackTrace();
     }
+    i = 0;
     parser = new Parser();
     player = new Character("Student", 13);
   }
@@ -131,7 +135,6 @@ public class Game {
    */
   public void play() {
     welcome();
-
     boolean finished = false;
     while (!finished) {
       Command command;
@@ -141,6 +144,8 @@ public class Game {
       } catch (IOException e) {
         e.printStackTrace();
       }
+
+      
 
     }
     System.out.println("Thank you for playing. Good bye.");

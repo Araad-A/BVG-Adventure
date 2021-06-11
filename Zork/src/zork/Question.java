@@ -68,8 +68,7 @@ public class Question {
         return false;
     }
 
-    public static boolean isValidAnswer(Command command){
-        String letter = command.getSecondWord();
+    public static boolean isValidAnswer(String letter){
         if(letter.equalsIgnoreCase("A") || letter.equalsIgnoreCase("B") || letter.equalsIgnoreCase("C") || letter.equalsIgnoreCase("D"))
             return true;
             
