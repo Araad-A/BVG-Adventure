@@ -262,7 +262,7 @@ public class Game {
         if(!command.hasSecondWord()){
           System.out.println("Answer what?");
         }else{
-          answer(command.hasSecondWord());
+          answer(command.getSecondWord());
         }
       }else{
         System.out.println("There is nothing to answer.");
@@ -285,6 +285,10 @@ public class Game {
       }
     }
     return false;
+  }
+
+  public String answer(String secondWord){
+    return secondWord;
   }
 
   // implementations of user commands:

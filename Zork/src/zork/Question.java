@@ -21,12 +21,13 @@ public class Question {
     }
 
     public void randomizeAnswer(){
-        for(int i = 0; i < displayer.size(); i++){
+        boolean set1 = false;
+        boolean set2 = false; 
+        boolean set3 = false; 
+        boolean set4 = false;
+
+        while((!set1 || !set2) || (!set3 || !set4)){
             int selector = (int) (Math.random() * 4);
-            boolean set1 = false;
-            boolean set2 = false; 
-            boolean set3 = false; 
-            boolean set4 = false;
 
             if(selector == 0 && !set1){
                 displayer.add(answer);
@@ -41,6 +42,7 @@ public class Question {
                 displayer.add(filler3);
                 set4 = true;
             }
+                
         }
     }
 
@@ -52,7 +54,9 @@ public class Question {
         System.out.println("D)" + displayer.get(3));
     }
 
-    public boolean isCorrect(String letter){
+    public boolean isCorrect(Command command){
+        String letter = command.getSecondWord();
+        
         if(letter.equalsIgnoreCase("A")){
             return displayer.get(0).equals(answer);
         } else if(letter.equalsIgnoreCase("B")){
@@ -65,10 +69,11 @@ public class Question {
         return false;
     }
 
-    public static boolean isValidAnswer(String letter){
+    public static boolean isValidAnswer(Command command){
+        String letter = command.getSecondWord();
         if(letter.equalsIgnoreCase("A") || letter.equalsIgnoreCase("B") || letter.equalsIgnoreCase("C") || letter.equalsIgnoreCase("D"))
             return true;
-
+            
         return false;
     }
 

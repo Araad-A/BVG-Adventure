@@ -5,10 +5,15 @@ public class TestBoss extends Boss{
         
     }
 
-    public void Test(String fileName, Scanner in){
+    public void Test(String fileName){
         Exam myExam = new Exam();
         myExam.initQuestions(fileName);
-        myExam.takeExam(in);
+
+
+        myExam.takeExam();
     }
     
+    public String answer(String secondWord){
+        return secondWord;
+    }
 }
