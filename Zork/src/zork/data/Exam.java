@@ -5,29 +5,39 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import java.util.Scanner;
 
 public class Exam {
     private String name;
-    private int numQuestions; //there will be max
     private int numMinutes;
     private ArrayList<Question> questions = new ArrayList<Question>();
 
-    public Exam(int numQuestions, int numMinutes){
+    public Exam(int numMinutes){
         name = "Mr. Deslauriers";
-        this.numQuestions = numQuestions;
         this.numMinutes = numMinutes;
     }
 
-    public void takeExam(){
-        //will use an arraylist to iterate through questions
-        //will use a checker to see if answer is correct
-        //may need to override the parser???
+    public void takeExam(Scanner in){
+        String inputLine = "";
+        int score = 0;
+        int numQuestions = 0;
+        System.out.println("Please answer with either \"A\" \"B\" \"C\" or \"D\"");
+
+        for(int i = 0; i < questions.size(); i++){
+            questions.get(i).displayQuestion();
+            inputLine = in.nextLine();
+            boolean isCorrect = questions.get(i).isCorrect(inputLine);
+            if(isCorrect){
+                System.out.println("Great job! Next Question!");
+                score++;
+            } else {
+                System.out.println("Wrong answer! Next Question!");
+            }
+            System.out.println();
+            numQuestions++;
+        }
+        System.out.println("Exam is done! Here is your score: " + score + "/" + numQuestions);
     }
-
-    public void RandomizeAnswer(Question question){
-
-    }
-
     
     private void initQuestions(String fileName) throws Exception {
         Path path = Path.of(fileName);

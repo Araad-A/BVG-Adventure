@@ -41,6 +41,28 @@ public class Question {
                 displayer.add(filler3);
                 set4 = true;
             }
+        }
+    }
+
+    public void displayQuestion(){
+        System.out.println(question);
+        System.out.println("A)" + displayer.get(0));
+        System.out.println("B)" + displayer.get(1));
+        System.out.println("C)" + displayer.get(2));
+        System.out.println("D)" + displayer.get(3));
+    }
+
+    public boolean isCorrect(String letter){
+        if(letter.equalsIgnoreCase("A")){
+            return displayer.get(0).equals(answer);
+        } else if(letter.equalsIgnoreCase("B")){
+            return displayer.get(1).equals(answer);
+        } else if(letter.equalsIgnoreCase("C")){
+            return displayer.get(2).equals(answer);
+        } else if(letter.equalsIgnoreCase("D")){
+            return displayer.get(3).equals(answer);
+        }
+        return false;
     }
 
     public String getFiller3() {
