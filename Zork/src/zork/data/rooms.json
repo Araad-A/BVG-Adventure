@@ -381,7 +381,7 @@
       "id": "UpperSchoolGym",
       "name": "Upper School Gym",
       "floor": "First Floor",
-      "description": "The rock climbing wall is demolished and the board is powered off.",
+      "description": "The rock climbing wall is demolished and the board is powered off. You can work out here.",
       "isDark": false,
       "exits": [
         {
@@ -973,7 +973,7 @@
       "id": "FitnessRoom",
       "name": "Fitness Room",
       "floor": "Second Floor",
-      "description": "Every weight is placed perfectly on the rack. It's as if no one has entered this room in years.",
+      "description": "Every weight is placed perfectly on the rack. It's as if no one has entered this room in years. You can work out here.",
       "isDark": false,
       "exits": [
         {
@@ -1082,7 +1082,7 @@
       "id": "PrepSchoolGym",
       "name": "Prep School Gym",
       "floor": "Second Floor",
-      "description": "Basketballs are constantly bouncing around. You can hear the echo last for seconds in the air.",
+      "description": "Basketballs are constantly bouncing around. You can hear the echo last for seconds in the air. You can work out here.",
       "isDark": false,
       "exits": [
         {

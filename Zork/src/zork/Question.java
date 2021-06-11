@@ -9,8 +9,14 @@ public class Question {
     private String filler2;
     private String filler3;
     private ArrayList<String> displayer;
-    private int num;
-
+/**
+ * Constructor for the Question class.
+ * @param question The string containing the question being asked
+ * @param answer The string containing the correct answer
+ * @param filler1 A string containing a wrong answer
+ * @param filler2 A string containing a wrong answer
+ * @param filler3 A string containing a wrong answer
+ */
     public Question(String question, String answer, String filler1, String filler2, String filler3){
         this.question = question;
         this.answer = answer;
@@ -19,8 +25,10 @@ public class Question {
         this.filler3 = filler3;
         displayer = new ArrayList<String>(4);
     }
-
-    public void randomizeAnswer(){
+/**
+ * Fill the displayer ArrayList with possible answers in a random order
+ */
+    public void randomizeAnswer(){ 
         boolean set1 = false;
         boolean set2 = false; 
         boolean set3 = false; 
@@ -45,7 +53,9 @@ public class Question {
                 
         }
     }
-
+/**
+ * Print the question and possible answers
+ */
     public void displayQuestion(){
         System.out.println(question);
         System.out.println("A)" + displayer.get(0));
@@ -53,7 +63,11 @@ public class Question {
         System.out.println("C)" + displayer.get(2));
         System.out.println("D)" + displayer.get(3));
     }
-
+/**
+ * Check if a letter that is inputted matches the correct answer
+ * @param letter The answer being passed in
+ * @return Whether the answer is right or not (letter matches correct letter)
+ */
     public boolean isCorrect(String letter){
         
         if(letter.equalsIgnoreCase("A")){
@@ -67,50 +81,73 @@ public class Question {
         }
         return false;
     }
-
-    public static boolean isValidAnswer(String letter){
-        if(letter.equalsIgnoreCase("A") || letter.equalsIgnoreCase("B") || letter.equalsIgnoreCase("C") || letter.equalsIgnoreCase("D"))
-            return true;
-            
-        return false;
-    }
-
+/**
+ * 
+ * @return The string of the third wrong answer
+ */
     public String getFiller3() {
         return filler3;
     }
-
+/**
+ * Set the string of the third wrong answer
+ * @param filler3
+ */
     public void setFiller3(String filler3) {
         this.filler3 = filler3;
     }
-
+/**
+ * 
+ * @return The string of the second wrong answer
+ */
     public String getFiller2() {
         return filler2;
     }
-
+/**
+ * Set the string of the second wrong answer
+ * @param filler2
+ */
     public void setFiller2(String filler2) {
         this.filler2 = filler2;
     }
-
+/**
+ * 
+ * @return the string of the first wrong answer
+ */
     public String getFiller1() {
         return filler1;
     }
-
+/**
+ * Set the string of the first wrong answer
+ * @param filler1
+ */
     public void setFiller1(String filler1) {
         this.filler1 = filler1;
     }
-
+/**
+ * 
+ * @return the string of the correct answer
+ */
     public String getAnswer() {
         return answer;
     }
-
+/**
+ * Set the string of the correct answer
+ * @param answer
+ */
     public void setAnswer(String answer) {
         this.answer = answer;
     }
-
+/**
+ * 
+ * @return the string of the question
+ */
     public String getQuestion() {
         return question;
     }
-
+/**
+ * Set the string of the question
+ * @param question
+ */
     public void setQuestion(String question) {
         this.question = question;
     }

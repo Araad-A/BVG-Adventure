@@ -8,7 +8,16 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class Game {
-
+/**
+ * roomMap: map for easier retreival of room objects from strings
+ * parser: processes inputs
+ * currentRoom: room occupied by the player
+ * atDoor: whether the player is in front of a locked exit or not
+ * fighting: whether the player is in a bossfight or not
+ * currentBoss: the boss being fought
+ * door: the locked exit in from of the player
+ * player: the player 
+ */
   public static HashMap<String, Room> roomMap = new HashMap<String, Room>();
   private Parser parser;
   private Room currentRoom;
@@ -33,7 +42,10 @@ public class Game {
     parser = new Parser();
     player = new Character("Student", 13);
   }
-
+/**
+ * Initializes rooms
+ * @param fileName JSON file name
+ */
   private void initRooms(String fileName) throws Exception {
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
@@ -70,7 +82,10 @@ public class Game {
       roomMap.put(roomId, room);
     }
   }
-
+/**
+ * Initializes items
+ * @param fileName JSON file name
+ */
   private void initItems(String fileName) throws Exception {
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
@@ -86,8 +101,7 @@ public class Game {
       String room = (String) ((JSONObject) itemObj).get("room");
       Item item = null;
       if(itemType==Item.DEFAULT){
-        Boolean isOpenable = (Boolean) ((JSONObject) itemObj).get("isOpenable");
-        item = new Item(weight, name, isOpenable);
+        item = new Item(weight, name);
       }else if(itemType==Item.KEY){
         String keyId = (String) ((JSONObject) itemObj).get("keyId");
         item = new Key(keyId, name, weight);
@@ -98,7 +112,10 @@ public class Game {
       roomMap.get(room).getInventory().addItem(item);
     }
   }
-
+/**
+ * Initializes bosses
+ * @param fileName JSON file name
+ */
   private void initBosses(String fileName) throws Exception {
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
@@ -169,6 +186,7 @@ public class Game {
     }
 
     String commandWord = command.getCommandWord();
+    //Restricts action during boss fights
     if(fighting&&"goeatsleepuseleavetakereadenterneseswnwnortheastsoutheastsouthwestnorthwestupdown".indexOf(commandWord)>=0){
       System.out.println("You can't do this when there is a teacher in the room.");
       return false;
@@ -183,6 +201,7 @@ public class Game {
         String direction = command.getSecondWord();
         return goRoom(direction);
       }
+    //Movement shortcuts
     }else if(commandWord.equalsIgnoreCase("n")||commandWord.equalsIgnoreCase("north")){
       goRoom("North");
     }else if(commandWord.equalsIgnoreCase("e")||commandWord.equalsIgnoreCase("east")){
@@ -223,7 +242,7 @@ public class Game {
       }
     } else if(commandWord.equals("use")){
       return useItem(command);
-    } else if(commandWord.equals("inventory")){
+    } else if(commandWord.equals("inventory")){ //lists inventory contents
       System.out.println(player.getInventory().listItems());
     } else if(commandWord.equals("take")){
       if(!command.hasSecondWord()){
@@ -237,7 +256,7 @@ public class Game {
       }else{
         readItem(command);
       }
-    } else if(commandWord.equals("enter")){
+    } else if(commandWord.equals("enter")){ //used to enter codes on code locks
       if(!atDoor||!door.isCodeLock()){
         System.out.println("You can't do that here.");
       }else{
@@ -245,21 +264,21 @@ public class Game {
           System.out.println("Enter what?");
         }else if(command.getSecondWord().equalsIgnoreCase(door.getKeyId())){
           door.setLocked(false);
-          currentRoom = roomMap.get(door.getAdjacentRoom());
           atDoor=false;
-          System.out.println("The door opens. ");
+          System.out.println("The door opens.");
           goRoom(door.getDirection());
         }else{
           System.out.println("Incorrect passcode.");
         }
       }
-    }else if(commandWord.equals("workout")){
+    }else if(commandWord.equals("workout")){ //increases player inventory max capacity
       if(currentRoom.getRoomName().equals("Prep School Gym")||currentRoom.getRoomName().equals("Upper School Gym")||currentRoom.getRoomName().equals("Fitness Room")){
         player.getInventory().setMaxWeight(player.getInventory().getMaxWeight()+6);
+        System.out.println("You got stronger. You can now carry heavier loads.");
       }else{
         System.out.println("You can't do that here.");
       }
-    }else if(commandWord.equals("answer")){
+    }else if(commandWord.equals("answer")){ //answer questions in test bossfights
       if(fighting&&currentBoss instanceof TestBoss){
         if(!command.hasSecondWord()){
           System.out.println("Answer what?");
@@ -271,7 +290,7 @@ public class Game {
       }else{
         System.out.println("There is nothing to answer.");
       }
-    }else if(commandWord.equals("attack")){
+    }else if(commandWord.equals("attack")){ //attack an enemy in fight bossfights
       if(fighting&&currentBoss instanceof FightBoss){
         if(!command.hasSecondWord()){
           System.out.println("Attack where?");
@@ -279,7 +298,7 @@ public class Game {
           fight(command);
         }
       }
-    }else if(commandWord.equals("block")){
+    }else if(commandWord.equals("block")){ //block an attack in fight bossfights
       if(fighting&&currentBoss instanceof FightBoss){
         if(!command.hasSecondWord()){
           System.out.println("Block where?");
@@ -319,30 +338,38 @@ public class Game {
 
     // Try to leave current room.
     Room nextRoom = currentRoom.nextRoom(direction);
-    if (nextRoom == null)
+    if (nextRoom == null) //if there is no room in that direction:, print error message
       System.out.println("There is no door!");
-    else if(currentRoom.getExit(direction).isLocked()){
+    else if(currentRoom.getExit(direction).isLocked()){ //if the door is locked, show locked message, keep track of which exit is ahead
       door=currentRoom.getExit(direction);
       System.out.println(door.getLockedMessage());
       atDoor=true;
-    }else {
+    }else { //if there is a valid unlocked room, enter
       currentRoom = nextRoom;
-      if(currentRoom.getRoomName().equalsIgnoreCase("outside")){
+      if(currentRoom.getRoomName().equalsIgnoreCase("outside")){ // end of game, return true to end main loop
         System.out.println("You take a breath of fresh air as you step outside. You have finally made it out of the school alive. Congratulations.");
         return true;
       }
-      System.out.println(currentRoom.getRoomName()+currentRoom.getBoss());
-      if(currentRoom.getBoss()!=null){
+      if(currentRoom.getBoss()!=null){ //if there is a boss, give a shorter description, introduce the boss and keep track of the boss object
         System.out.println(currentRoom.shortDescription(false));
         fighting=true;
         currentBoss = currentRoom.getBoss();
         System.out.println(currentBoss.getIntroduction());
+        if(currentBoss instanceof FightBoss&&!player.getInventory().hasItem("sword")){
+          System.out.println("You have no weapon to defend yourself, so you flee to a nearby staircase.");
+          currentRoom = roomMap.get(currentBoss.getLoseRoom());
+          System.out.println(currentRoom.longDescription(false));
+          fighting = false;
+        }
+        return false;
       }
       System.out.println(currentRoom.longDescription(false));
     }
     return false;
   }
-
+/**
+ * Use an object specified by the second word of the command
+ */
   private boolean useItem(Command command){
     if(!command.hasSecondWord()){
       System.out.println("Use what?");
@@ -353,19 +380,19 @@ public class Game {
       System.out.println("You don't have this item.");
       return false;
     }
-    if(atDoor){
+    if(atDoor){ //if you are at a locked door, you can only use items for the purpose of opening it
       if(door.isCodeLock()){
         System.out.println("You must enter a code to open this door.");
       }else{
-        if(itemName.equalsIgnoreCase("key")){
+        if(itemName.equalsIgnoreCase("key")||itemName.equalsIgnoreCase("shovel")){
           if(player.getInventory().hasKey(door.getKeyId())){
             door.setLocked(false);
-            currentRoom = roomMap.get(door.getAdjacentRoom());
             atDoor=false;
             if(door.getKeyId().equalsIgnoreCase("shovel")){
-              System.out.println("A path has been cleared. "+currentRoom.longDescription(false));
+              System.out.println("A path has been cleared.");
+              return goRoom(door.getDirection());
             }else{
-              System.out.println("The door opens. "+currentRoom.longDescription(false));
+              System.out.println("The door opens. ");
               return goRoom(door.getDirection());
             }
           }else{
@@ -377,7 +404,7 @@ public class Game {
       }
       return false;
     }
-    if(itemName.equalsIgnoreCase("gps")){
+    if(itemName.equalsIgnoreCase("gps")){ //read the gps for information on the next key
       if(player.getInventory().hasItem("Key 7"))
         System.out.println("The GPS is blank.");
       else if(player.getInventory().hasItem("Key 6"))
@@ -388,7 +415,7 @@ public class Game {
         System.out.println("The key is on the south side of the school.");
       return false;
     }
-    if(itemName.equalsIgnoreCase("flashlight")){
+    if(itemName.equalsIgnoreCase("flashlight")){ //used to get more information in dark rooms
       if(currentRoom.isDark())
         System.out.println("You can now see." + "\n"+currentRoom.longDescription(true));
       else
@@ -397,16 +424,18 @@ public class Game {
     }
     return false;
   }
-
+/**
+ * Take (move from room inventory to player inventory) an item specified by the second word of the command
+ */
   private void takeItem(Command command){
     String itemName = command.getSecondWord();
     Inventory roomInventory = currentRoom.getInventory();
-    if(itemName.equalsIgnoreCase("key")){
+    if(itemName.equalsIgnoreCase("key")){ //separate if statement for keys that does not require typing out the full key name
       ArrayList<Item> items = roomInventory.getItems();
-      for(int i=0;i<items.size();i++){
-        if(items.get(i) instanceof Key){
+      for(int i=0;i<items.size();i++){ //iterate through items in the room inventory, then attempt to take the item that is a Key object
+        if(items.get(i) instanceof Key){ 
           boolean added = player.getInventory().addItem(items.get(i));
-          if(added){
+          if(added){ //only transfer items from room to player inventory if addItem returns true (item fits within capacity)
             roomInventory.removeItem(items.get(i).getName());
             System.out.println("You took this "+itemName+".");
           }
@@ -414,24 +443,10 @@ public class Game {
         }
       }
       System.out.println("You can't find this item.");
-    }else if(itemName.equalsIgnoreCase("flashlight")){
-      if(roomInventory.hasItem(itemName)){
-        if(!(roomInventory.getItem(itemName) instanceof ReadableItem)){
-          boolean added = player.getInventory().addItem(roomInventory.getItem(itemName));
-          if(added){
-            roomInventory.removeItem(itemName);
-            System.out.println("You took this "+itemName+".");
-          }
-        }else{
-          System.out.println("You can't take this item.");
-        }
-      }else{
-        System.out.println("You can't find this item.");
-      }
     }else{
       if(roomInventory.hasItem(itemName)){
-        if(!(roomInventory.getItem(itemName) instanceof ReadableItem)){
-          boolean added = player.getInventory().addItem(roomInventory.getItem("Acid"));
+        if(!(roomInventory.getItem(itemName) instanceof ReadableItem)){ //cannot take readable items (posters, books)
+          boolean added = player.getInventory().addItem(roomInventory.getItem(itemName));
           if(added){
             roomInventory.removeItem(itemName);
             System.out.println("You took the "+itemName+".");
@@ -444,7 +459,9 @@ public class Game {
       }
     }
   }
-
+/**
+ * Read (return a string contained by) a readable item specified by the second word of the command
+ */
   private void readItem(Command command){
     String itemName = command.getSecondWord();
     Inventory roomInventory = currentRoom.getInventory();
@@ -455,7 +472,9 @@ public class Game {
     }
     System.out.println("You can't read this.");
   }
-
+/**
+ * Simulate a fight with a boss, process player input
+ */
   private void fight(Command command){
     String move = command.getCommandWord();
     String area = command.getSecondWord();
@@ -463,46 +482,49 @@ public class Game {
     if(!area.equals("low")&&!area.equals("high")&&!area.equals("mid")&&!area.equals("middle")){
       System.out.println("This isn't a valid area.");
     }
-    if(move.equals("attack")){
+    if(move.equals("attack")){ //converts command into corresponding move int
       if(area.equals("high"))
-        result = currentBoss.action(0);
+        result = ((FightBoss)currentBoss).fight(player, 0);
       else if(area.equals("mid")||area.equals("middle"))
-        result = currentBoss.action(1);
-      else if(area.equals("high"))
-        result = currentBoss.action(2);
+        result = ((FightBoss)currentBoss).fight(player, 1);
+      else if(area.equals("low"))
+        result = ((FightBoss)currentBoss).fight(player, 2);
     } else if(move.equals("block")){
       if(area.equals("high"))
-        result = currentBoss.action(3);
+        result = ((FightBoss)currentBoss).fight(player, 3);
       else if(area.equals("mid")||area.equals("middle"))
-        result = currentBoss.action(4);
-      else if(area.equals("high"))
-        result = currentBoss.action(5);
+        result = ((FightBoss)currentBoss).fight(player, 4);
+      else if(area.equals("low"))
+        result = ((FightBoss)currentBoss).fight(player, 5);
     }
-    if(result==0){
+    //process result of the fight
+    if(result==0){ //fight continues
       return;
-    }else if(result==1){
+    }else if(result==1){ //player loses, defeat message is shown, moved to different room and bossfight ends
       System.out.println(currentBoss.getLose());
       currentRoom = roomMap.get(currentBoss.getLoseRoom());
       System.out.println(currentRoom.longDescription(false));
       fighting = false;
-    }else if(result==2){
+    }else if(result==2){//player wins, victory message is shown, boss is removed from room and bossfight ends
       System.out.println(currentBoss.getWin());
       currentRoom.removeBoss();
       System.out.println(currentRoom.longDescription(false));
       fighting = false;
     }
   }
-
+/**
+ * Uses player input to answer test questions
+ */
   public void answer(String secondWord){
-    int result = currentBoss.action(secondWord);
-    if(result==0){
+    int result = ((TestBoss)currentBoss).test(secondWord);//passes answer into TestBoss class to simulate test question
+    if(result==0){//fight continues
       return;
-    }else if(result==1){
+    }else if(result==1){//player loses, defeat message is shown, moved to different room and bossfight ends
       System.out.println(currentBoss.getLose());
       currentRoom = roomMap.get(currentBoss.getLoseRoom());
       System.out.println(currentRoom.longDescription(false));
       fighting = false;
-    }else if(result==2){
+    }else if(result==2){//player wins, victory message is shown, boss is removed from room and bossfight ends
       System.out.println(currentBoss.getWin());
       currentRoom.removeBoss();
       System.out.println(currentRoom.longDescription(false));

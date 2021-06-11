@@ -1,10 +1,15 @@
 import java.util.ArrayList;
-
+/**
+ * Stores items and processes them with various methods
+ */
 public class Inventory {
   private ArrayList<Item> items;
   private int maxWeight;
   private int currentWeight;
-
+/**
+ * Constructor for the class Inventory
+ * @param maxWeight Maximum weight capacity of inventory
+ */
   public Inventory(int maxWeight) {
     this.items = new ArrayList<Item>();
     this.maxWeight = maxWeight;
@@ -16,15 +21,24 @@ public class Inventory {
     this.maxWeight = Integer.MAX_VALUE;
     this.currentWeight = 0;
   }
-
+/**
+ * 
+ * @return max weight capacity of inventory
+ */
   public int getMaxWeight() {
     return maxWeight;
   }
-
+/**
+ * Set max weight capacity of inventory
+ * @param maxWeight
+ */
   public void setMaxWeight(int maxWeight){
     this.maxWeight = maxWeight;
   }
-
+/**
+ * 
+ * @return current total weight of items contained in inventory
+ */
   public int getCurrentWeight() {
     return currentWeight;
   }
@@ -103,7 +117,10 @@ public class Inventory {
     itemList = itemList.substring(0,itemList.length()-2);
     return itemList;
   }
-
+/**
+ * 
+ * @return the ArrayList of Item objects
+ */
   public ArrayList<Item> getItems(){
     return items;
   }

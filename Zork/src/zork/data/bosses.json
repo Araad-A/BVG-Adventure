@@ -4,7 +4,7 @@
       {
         "name": "Mr. Federico",
         "type": 1,
-        "introduction": "From around a corner, the head of the Upper School, Mr. Federico, suddenly grabs you and intense inspects your uniform. He notices a spot on your shoe that is emitting 4 too many photons to be considered black, one unbuttoned button on your shirt and some hair follicles on your face. He declares that he is very proficient with a blade, and draws a sword to discipline you. Mr. Federico raises his sword above his head.",
+        "introduction": "From around a corner, the head of the Upper School, Mr. Federico, suddenly grabs you and intense inspects your uniform. He notices a spot on your shoe that is emitting 4 too many photons to be considered black, one unbuttoned button on your shirt and some hair follicles on your face. He declares that he is very proficient with a blade, and draws a sword to discipline you. \nMr. Federico raises his sword above his head.\n(Tip: use the commands 'block' or 'attack' combined with 'high', 'medium', and 'low')",
         "win": "Mr. Federico is worn-out. He decides to give you a pass on your dress code violations for today, and slumps into his chair while playing the bagpipe. He eventually falls asleep.",
         "lose": "You have lost to Mr. Federico. Triumphant, he sends you out into one of the staircases and tells you not to come back until you've fixed your uniform.",
         "room": "Federico'sDomain",
@@ -13,9 +13,9 @@
       {
         "name": "Mr. Reynolds",
         "type": 0,
-        "introduction": "placeholder",
-        "win": "placeholder",
-        "lose": "placeholder",
+        "introduction": "A single spotlight turns on, illuminating a man sitting on a pile of books on the stage. It's Mr. Reynolds. He stands up and grabs a handful of books from the pile, which include grammar books, poetry anthologies and various Shakespeare scripts. He orders you to leave, unless you can prove your knowledge of English and theater. \nWhat is Shakespeare's most famous play?\nA) Hamlet\nB) Romeo and Juliet\nC) The Tempest\nD) Macbeth\n(Tip: use the command 'answer')",
+        "win": "Impressed, Mr. Reynolds begins to pick up his books as the spotlight dims. Moments later, although you cannot see, you hear the sound of him running on the stage. He has disappeared backstage, never to be seen again.",
+        "lose": "Mr. Reynolds is infuriated by your lack of respect for the English language. Instead of kicking you out immediately, he begins a fiery speech on the importance of studying English. You leave of your own accord.",
         "room": "Theater",
         "loseRoom": "Lobby",
         "fileName": "Zork\\src\\zork\\data\\englishquestions.json"
@@ -23,9 +23,9 @@
       {
         "name": "Mr. Deslauriers",
         "type": 0,
-        "introduction": "placeholder",
-        "win": "placeholder",
-        "lose": "placeholder",
+        "introduction": "As soon as the door opens, Mr. Deslauriers stares at you and demands to know why you missed yesterday's AP exam review session. You stand there, confused, because the AP exam was a week ago. You explain that you need to look for keys, but he refuses to let you through the door until you have completed an AP exam practice worksheet. \nWhich of the following is not a primitive data type?\nA) int\nB) String\nC) double\nD) They are all primitive\n(Tip: use the command 'answer')",
+        "win": "Mr. Deslauriers is pleased that you are so well prepared for the exam coming up last week. He leaves to prepare some more practice questions.",
+        "lose": "Upon seeing your results, Mr. Deslauriers sighs and slams the door on you. From outside, you hear the sound of violent paper ripping. You decide it's best to stay out for a while.",
         "room": "ICS",
         "loseRoom": "Grade12CommonArea",
         "fileName": "Zork\\src\\zork\\data\\questions.json"

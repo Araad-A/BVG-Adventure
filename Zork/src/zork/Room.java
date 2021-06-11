@@ -5,8 +5,8 @@ public class Room {
   private String roomName;
   private String description;
   private ArrayList<Exit> exits;
-  private String floor;
-  private boolean isDark;
+  private String floor; //a string that describes what floor the room is on
+  private boolean isDark; //whether the room is dark or not
   private Inventory inventory;
   private Boss boss;
 
@@ -34,14 +34,17 @@ public class Room {
     inventory = new Inventory();
     boss = null;
   }
-
+/**
+ * Adds an exit to the room
+ * @param exit The Exit object being added
+ */
   public void addExit(Exit exit) throws Exception {
     exits.add(exit);
   }
 
   /**
-   * Return the description of the room (the one that was defined in the
-   * constructor).
+   * Return a short description of this room, consisting of: room name, floor, description text
+   * If flashlight is off and it is dark, only show room name and floor, and specify that it is dark
    */
   public String shortDescription(boolean flashlightOn) {
     if (!isDark || flashlightOn)
@@ -51,8 +54,9 @@ public class Room {
   }
 
   /**
-   * Return a long description of this room, on the form: You are in the kitchen.
-   * Exits: north west
+   * Return a long description of this room, consisting of: room name, floor, description text, list of items in the room, list of exits from the room
+   * If flashlight is off and it is dark, only show room name, floor, and exits, and specify that it is dark
+   * @param flashlightOn
    */
   public String longDescription(boolean flashlightOn) {
     if (!isDark || flashlightOn)
@@ -73,7 +77,10 @@ public class Room {
 
     return returnString;
   }
-
+/**
+ * 
+ * @return A string describing items that can be found in the room
+ */
   private String itemString(){
     String returnString = "";
     for(Item item:inventory.getItems()){
@@ -118,45 +125,67 @@ public class Room {
     System.out.println(direction + " is not a possible direction.");
     return null;
   }
-
-  /*
-   * private int getDirectionIndex(String direction) { int dirIndex = 0; for
-   * (String dir : directions) { if (dir.equals(direction)) return dirIndex; else
-   * dirIndex++; }
-   * 
-   * throw new IllegalArgumentException("Invalid Direction"); }
-   */
+/**
+ * 
+ * @return the name of the room
+ */
   public String getRoomName() {
     return roomName;
   }
-
+/**
+ * Set the name of the room
+ * @param roomName
+ */
   public void setRoomName(String roomName) {
     this.roomName = roomName;
   }
-
+/**
+ * 
+ * @return a string containing the description of the room
+ */
   public String getDescription() {
     return description;
   }
-
+/**
+ * Set the string containing the description of the room
+ * @param description
+ */
   public void setDescription(String description) {
     this.description = description;
   }
-
+/**
+ * 
+ * @return a string describing which floor the room is on
+ */
   public String getFloor(){
     return floor;
   }
-
+/**
+ * Set the string describing which floor the room is on
+ * @param floor
+ */
   public void setFloor(String floor){
     this.floor = floor;
   }
-
+/**
+ * Set whether the room is dark or not
+ * @param isDark
+ */
   public void setIsDark(boolean isDark){
     this.isDark = isDark;
   }
-
+/**
+ * 
+ * @return whether the room is dark or not
+ */
   public boolean isDark(){
     return isDark;
   }
+  /**
+   * 
+   * @param direction the direction of the exit to be returned
+   * @return The exit of this room in the direction that has been passed in
+   */
   public Exit getExit(String direction){
     for (Exit exit : exits) {
 
@@ -167,19 +196,30 @@ public class Room {
     }
     return null;
   }
-
+/**
+ * 
+ * @return the room's Inventory object
+ */
   public Inventory getInventory(){
     return inventory;
   }
-
+/**
+ * Set the Boss belonging to this room
+ * @param boss
+ */
   public void setBoss(Boss boss){
     this.boss = boss;
   }
-
+/**
+ * 
+ * @return the Boss object belonging to this room
+ */
   public Boss getBoss(){
     return boss;
   }
-
+/**
+ * Remove the Boss object from this room
+ */
   public void removeBoss(){
     boss = null;
   }
